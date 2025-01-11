@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqihnw5ybl811"]
+
+[ext_resource type="Script" path="res://Scripts/Turtle.cs" id="1_5j14m"]
+[ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="2_rioqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4shbe"]
+size = Vector2(128, 129)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_5j14m")
+
+[node name="Icon" type="Sprite2D" parent="."]
+self_modulate = Color(0.957061, 0.923983, 0, 1)
+texture = ExtResource("2_rioqm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_4shbe")
