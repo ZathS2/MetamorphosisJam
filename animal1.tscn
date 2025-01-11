@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bnluda6t77ppm"]
+
+[ext_resource type="Script" path="res://Animal1.cs" id="1_8286c"]
+[ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="1_op1ag"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atmmx"]
+size = Vector2(128, 127)
+
+[node name="characterbody2d" type="CharacterBody2D"]
+script = ExtResource("1_8286c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0.254902, 1, 1, 1)
+texture = ExtResource("1_op1ag")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_atmmx")
