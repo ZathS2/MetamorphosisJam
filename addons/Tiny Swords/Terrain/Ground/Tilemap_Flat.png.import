@@ -2,16 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjgimgn0yk878"
-path="res://.godot/imported/Tilemap_Flat.png-32473f37551e603e1440eb573267bdbb.ctex"
+
+uid="uid://c0l2rf5thfixh"
+path="res://.godot/imported/Tilemap_Flat.png-a2a9011df8d00013456768c87d2b0826.ctex"
+
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiny Swords/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Flat.png"
-dest_files=["res://.godot/imported/Tilemap_Flat.png-32473f37551e603e1440eb573267bdbb.ctex"]
+
+source_file="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png"
+dest_files=["res://.godot/imported/Tilemap_Flat.png-a2a9011df8d00013456768c87d2b0826.ctex"]
+
 
 [params]
 

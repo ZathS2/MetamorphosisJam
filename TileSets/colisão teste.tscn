@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b2cbxn42v2kvw"]
+
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_qiak2"]
+[ext_resource type="PackedScene" uid="uid://dfiyukc5b2j7q" path="res://Godot teste.tscn" id="2_od28j"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_qiak2")
+format = 2
+layer_0/tile_data = PackedInt32Array(1769500, 0, 3, 1769504, 65536, 3, 1769508, 65536, 3, 1769512, 65536, 3, 1769516, 131072, 3)
+
+[node name="Node2D" parent="." instance=ExtResource("2_od28j")]
+position = Vector2(582, 215)

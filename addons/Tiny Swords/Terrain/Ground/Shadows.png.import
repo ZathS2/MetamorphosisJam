@@ -2,16 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cdxisr6x4skko"
-path="res://.godot/imported/Shadows.png-933894d9b3e7f09456dfb56054e6ae7e.ctex"
+
+uid="uid://d2kq316fpep1l"
+path="res://.godot/imported/Shadows.png-b70ada182d444d72fb7987a123e8be2b.ctex"
+
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tiny Swords/Tiny Swords (Update 010)/Terrain/Ground/Shadows.png"
-dest_files=["res://.godot/imported/Shadows.png-933894d9b3e7f09456dfb56054e6ae7e.ctex"]
+
+source_file="res://addons/Tiny Swords/Terrain/Ground/Shadows.png"
+dest_files=["res://.godot/imported/Shadows.png-b70ada182d444d72fb7987a123e8be2b.ctex"]
+
 
 [params]
 
