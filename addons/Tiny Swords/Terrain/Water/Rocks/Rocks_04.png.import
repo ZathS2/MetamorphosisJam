@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-
 uid="uid://bmbi74wt1g651"
 path="res://.godot/imported/Rocks_04.png-9548416a2a8e7dde6339f3759259267b.ctex"
-
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-
 source_file="res://addons/Tiny Swords/Terrain/Water/Rocks/Rocks_04.png"
 dest_files=["res://.godot/imported/Rocks_04.png-9548416a2a8e7dde6339f3759259267b.ctex"]
-
 
 [params]
 

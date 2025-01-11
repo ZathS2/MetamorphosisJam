@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmp8be4oc0wpw"]
+
+[ext_resource type="PackedScene" uid="uid://cu8yym8uwuth0" path="res://Scenes/player.tscn" id="1_5kokv"]
+[ext_resource type="PackedScene" uid="uid://cqyv4qqvaqu84" path="res://Scenes/teste chão.tscn" id="2_1haq4"]
+
+[node name="Node2D2" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(41, -22)
+offset = Vector2(10, 0)
+
+[node name="PlayerNode" parent="." instance=ExtResource("1_5kokv")]
+position = Vector2(-26, -115)
+
+[node name="Node2D" parent="." instance=ExtResource("2_1haq4")]
+position = Vector2(56, 116)
