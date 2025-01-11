@@ -8,6 +8,7 @@ size = Vector2(128, 129)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_5j14m")
+maxBreathTime = 30.0
 
 [node name="Icon" type="Sprite2D" parent="."]
 self_modulate = Color(0.957061, 0.923983, 0, 1)
@@ -16,3 +17,6 @@ texture = ExtResource("2_rioqm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_4shbe")
+
+[node name="BreathBar" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-60, -80, -60, -90, 60, -90, 60, -80)

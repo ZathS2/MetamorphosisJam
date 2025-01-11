@@ -8,10 +8,55 @@ public partial class Turtle : CharacterBody2D
 
 	float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity"); 
 
+	float currentBreathTime;
+	
+	[Export] private float maxBreathTime;
+	[Export] private float increaseRateBreathTime;
+
+	Timer timer;
+
+	Polygon2D breathBar;
+
+	float maxHealthBarWidth;
+	
+
 	Vector2 getInput()
 	{
 		var vector = new Vector2(Input.GetAxis("ui_left", "ui_right"), Input.GetAxis("ui_up", "ui_down"));
 		return vector.Normalized();
+	}
+
+	public override void _Ready()
+	{
+		timer = new Timer();
+		timer.SetOneShot(true);
+		AddChild(timer);
+
+		currentBreathTime = maxBreathTime;
+		resetAndStartBreathTimer();
+
+		breathBar = (Polygon2D) FindChild("BreathBar");
+
+		var vertices = breathBar.GetPolygon();
+
+		var x0Vertice = vertices[0];
+		for (int i = 1; i < vertices.Length; i++)
+		{
+			if (vertices[i].X == x0Vertice.X)
+				continue;
+			
+			maxHealthBarWidth = vertices[i].X - x0Vertice.X;
+			break;
+		}
+		
+	}
+	
+	public override void _Process(double delta)
+	{
+		currentBreathTime = (float)timer.TimeLeft;
+		GD.Print("breath: " + currentBreathTime);
+
+		updateBreathBar();
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -76,6 +121,38 @@ public partial class Turtle : CharacterBody2D
 		
 		Velocity = velocity;
 		MoveAndSlide();
+	}
+
+	void resetAndStartBreathTimer()
+	{
+		timer.WaitTime = currentBreathTime;
+		timer.Start();
+	}
+
+	void increaseBreathTime()
+	{
+		if (currentBreathTime < maxBreathTime)
+		{
+			currentBreathTime += increaseRateBreathTime;
+		}
+	}
+
+	void updateBreathBar()
+	{
+		var vertices = breathBar.GetPolygon();
+
+		double ratio = currentBreathTime / maxBreathTime;
+
+		double healthBarWidth = maxHealthBarWidth * ratio;
+
+		Vector2 leftDownVertice = vertices[0]; 
+		Vector2 leftUpVertice = vertices[1];
+
+		Vector2 rightUpVertice = leftUpVertice + new Vector2((float)healthBarWidth,0);
+		Vector2 rightDownVertice = leftDownVertice + new Vector2((float)healthBarWidth,0);
+
+		breathBar.SetPolygon(new Vector2[]{leftDownVertice, leftUpVertice, rightUpVertice, rightDownVertice});
+		
 	}
 
 	void setGrounded()
