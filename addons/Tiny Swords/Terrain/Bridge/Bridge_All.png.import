@@ -2,16 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
+
 uid="uid://berrnoafjqpmw"
 path="res://.godot/imported/Bridge_All.png-b8489f5e9f4ff0b5e993eb1d3d8a9861.ctex"
+
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+
 source_file="res://addons/Tiny Swords/Terrain/Bridge/Bridge_All.png"
 dest_files=["res://.godot/imported/Bridge_All.png-b8489f5e9f4ff0b5e993eb1d3d8a9861.ctex"]
+
 
 [params]
 

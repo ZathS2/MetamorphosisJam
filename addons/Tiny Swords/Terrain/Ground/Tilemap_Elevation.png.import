@@ -2,16 +2,21 @@
 
 importer="texture"
 type="CompressedTexture2D"
+
 uid="uid://bh7tn4r7sfnf"
 path="res://.godot/imported/Tilemap_Elevation.png-cd3ece34e85dae341734195b558d5ee7.ctex"
+
+
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+
 source_file="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png"
 dest_files=["res://.godot/imported/Tilemap_Elevation.png-cd3ece34e85dae341734195b558d5ee7.ctex"]
+
 
 [params]
 
