@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=4 uid="uid://blx2oedpieisn"]
+
+[ext_resource type="PackedScene" uid="uid://c105lbhbtsd50" path="res://teste_peixe.tscn" id="1_biw5v"]
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="2_621x0"]
+[ext_resource type="Texture2D" uid="uid://c0udlkapk20js" path="res://addons/Tiny Swords/Terrain/Water/Water.png" id="3_k5dda"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ka6x"]
+resource_name = "Water"
+texture = ExtResource("3_k5dda")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_6op8t"]
+sources/1 = SubResource("TileSetAtlasSource_2ka6x")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TestePeixe" parent="." instance=ExtResource("1_biw5v")]
+position = Vector2(573, 271)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_621x0")
+format = 2
+
+[node name="Layer0" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAjAB4AAAABAAMAAAAnAB4AAAABAAMAAAAfAB4AAAABAAMAAAArAB4AAAABAAMAAAAbAB4AAAABAAMAAAAvAB4AAAACAAMAAAAXAB4AAAAAAAMAAAA=")
+tile_set = ExtResource("2_621x0")
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+tile_set = SubResource("TileSet_6op8t")

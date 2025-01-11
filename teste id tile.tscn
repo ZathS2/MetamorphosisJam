@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=4 uid="uid://blx2oedpieisn"]
+
+[ext_resource type="PackedScene" uid="uid://c105lbhbtsd50" path="res://teste_peixe.tscn" id="1_biw5v"]
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="2_621x0"]
+[ext_resource type="TileSet" uid="uid://bu4saaha55sba" path="res://TileSets/water.tres" id="3_1nbs6"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TestePeixe" parent="." instance=ExtResource("1_biw5v")]
+position = Vector2(573, 271)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_621x0")
+format = 2
+layer_1/name = "Layer"
+
+[node name="Layer1" type="TileMapLayer" parent="TileMap"]
+use_parent_material = true
+tile_map_data = PackedByteArray("AAAvAB4AAAACAAMAAAAXAB4AAAAAAAMAAAArAB4AAAAAAAAAAAAbAB4AAAACAAAAAAAbACIAAAADAAEAAAArACIAAAADAAEAAAAjACQAAAABAAMAAAAnACQAAAABAAMAAAAfACQAAAABAAMAAAAbACQAAAAAAAIAAAArACQAAAACAAIAAAA4AB4AAAABAAMAAAA2AB4AAAAAAAMAAAA7AB4AAAACAAMAAAA=")
+tile_set = ExtResource("2_621x0")
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource("3_1nbs6")
+format = 2
+layer_0/z_index = -1
+layer_0/tile_data = PackedInt32Array(1966130, 1, 0, 1966134, 1, 0, 1966138, 1, 0, 2162724, 1, 0, 2162720, 1, 0, 2162716, 1, 0, 2162728, 1, 0, 2031644, 1, 0, 2031648, 1, 0, 2031652, 1, 0, 2031656, 1, 0)
