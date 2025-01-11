@@ -1,7 +1,7 @@
 using Godot;
 using System;
 
-public partial class ChangeAnimal : Node2D
+public partial class PlayerScript : Node2D
 {
 
 	enum ANIMALS
@@ -17,11 +17,16 @@ public partial class ChangeAnimal : Node2D
 
 	Node2D currentInstantiatedScene;
 
+	[Signal]
+	public delegate void PlayerInWaterEventHandler();
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{	
 		//scene1 = (PackedScene) GD.Load<PackedScene>("res://Scenes//animal1.tscn");
 		//scene2 = (PackedScene) GD.Load<PackedScene>("res://Scenes//animal2.tscn");
+
+		//PlayerInWaterEventHandler += OnWaterEnter;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -91,5 +96,10 @@ public partial class ChangeAnimal : Node2D
 			}
 		}
 		base._Input(@event);
+	}
+
+	private void OnWaterEnter()
+	{
+		GD.Print("NA AGUA");
 	}
 }

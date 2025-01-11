@@ -54,7 +54,7 @@ public partial class Turtle : CharacterBody2D
 	public override void _Process(double delta)
 	{
 		currentBreathTime = (float)timer.TimeLeft;
-		GD.Print("breath: " + currentBreathTime);
+		//GD.Print("breath: " + currentBreathTime);
 
 		updateBreathBar();
 	}
