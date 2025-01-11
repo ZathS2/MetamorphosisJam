@@ -1,8 +1,6 @@
 using Godot;
 using System;
 
-// C:\\Program Files\\Godot_v4.3-stable_mono_win64
-
 public partial class Animal1 : CharacterBody2D
 {
 	public const float Speed = 300.0f;

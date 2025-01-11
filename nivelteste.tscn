@@ -1,16 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://kucljj6o1r08"]
+[gd_scene load_steps=3 format=3 uid="uid://cvjtg6uwwr3of"]
 
-[ext_resource type="PackedScene" uid="uid://csxmb6v1r4ttf" path="res://testeChao.tscn" id="3_g7pa3"]
-[ext_resource type="PackedScene" uid="uid://ce7bkp5ex7he4" path="res://player.tscn" id="4_3rmc7"]
+[ext_resource type="PackedScene" uid="uid://d1ax44a1wjxvf" path="res://teste chão.tscn" id="2_xerlc"]
+[ext_resource type="PackedScene" uid="uid://45botdnvi0da" path="res://player.tscn" id="4_3rmc7"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(41, -22)
 offset = Vector2(10, 0)
 
-[node name="StaticBody2D" parent="." instance=ExtResource("3_g7pa3")]
-position = Vector2(-221, 129)
-
 [node name="PlayerNode" parent="." instance=ExtResource("4_3rmc7")]
-position = Vector2(-115, -114)
+position = Vector2(-26, -115)
+
+[node name="Node2D" parent="." instance=ExtResource("2_xerlc")]
+position = Vector2(41, 2)
