@@ -3,22 +3,23 @@ using System;
 
 public partial class Turtle : CharacterBody2D
 {
-	public const float groundSpeed = 300.0f;
-	public const float waterSpeed = 500.0f;
+	[Export] float groundSpeed = 100.0f;
+	[Export] float waterSpeed = 300.0f;
 
 	float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity"); 
 
 	float currentBreathTime;
 	
 	[Export] private float maxBreathTime;
-	[Export] private float increaseRateBreathTime;
 
-	Timer timer;
+	Timer holdTimer;
+	Timer recoverTimer;
 
 	Polygon2D breathBar;
 
 	float maxHealthBarWidth;
 	
+	bool canStartTimer = false;
 
 	Vector2 getInput()
 	{
@@ -28,12 +29,16 @@ public partial class Turtle : CharacterBody2D
 
 	public override void _Ready()
 	{
-		timer = new Timer();
-		timer.SetOneShot(true);
-		AddChild(timer);
+		holdTimer = new Timer();
+		recoverTimer = new Timer();
+
+		holdTimer.SetOneShot(true);
+		recoverTimer.SetOneShot(true);
+
+		AddChild(holdTimer);
+		AddChild(recoverTimer);
 
 		currentBreathTime = maxBreathTime;
-		resetAndStartBreathTimer();
 
 		breathBar = (Polygon2D) FindChild("BreathBar");
 
@@ -53,7 +58,7 @@ public partial class Turtle : CharacterBody2D
 	
 	public override void _Process(double delta)
 	{
-		currentBreathTime = (float)timer.TimeLeft;
+		
 		//GD.Print("breath: " + currentBreathTime);
 
 		updateBreathBar();
@@ -61,7 +66,33 @@ public partial class Turtle : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		setFloating();
+		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
+
+		
+		if ((bool)GameManager.Get("is_player_in_water"))
+		{
+			setFloating();
+			if (canStartTimer)
+			{
+				GD.Print("Começou a segurar");
+				resetAndStartHoldTimer();
+				canStartTimer = false;
+			}
+			currentBreathTime = (float)holdTimer.TimeLeft;
+
+			
+
+		}else{
+			setGrounded();
+			if (canStartTimer == false)
+			{
+				GD.Print("começou a recuperar");
+				increaseBreathTime();
+
+				canStartTimer = true;
+			}
+			currentBreathTime = (float)maxBreathTime - (float)recoverTimer.TimeLeft;
+		}
 
 		switch (MotionMode)
 		{
@@ -123,18 +154,27 @@ public partial class Turtle : CharacterBody2D
 		MoveAndSlide();
 	}
 
-	void resetAndStartBreathTimer()
+	void resetAndStartHoldTimer()
 	{
-		timer.WaitTime = currentBreathTime;
-		timer.Start();
+		holdTimer.WaitTime = currentBreathTime;
+		recoverTimer.Stop();
+		holdTimer.Start();
+	}
+
+	void resetAndStartRecoverTimer()
+	{
+		if (maxBreathTime - currentBreathTime == 0)
+		{
+			return;
+		}
+
+		recoverTimer.WaitTime = maxBreathTime - currentBreathTime;
+		recoverTimer.Start();
 	}
 
 	void increaseBreathTime()
 	{
-		if (currentBreathTime < maxBreathTime)
-		{
-			currentBreathTime += increaseRateBreathTime;
-		}
+		resetAndStartRecoverTimer();
 	}
 
 	void updateBreathBar()

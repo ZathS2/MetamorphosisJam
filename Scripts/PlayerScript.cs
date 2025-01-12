@@ -31,7 +31,7 @@ public partial class PlayerScript : Node2D
 	{
 		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
 
-		GD.Print(GameManager.Get("is_player_in_water"));
+		
 	}
 
 	void switchAnimal(ANIMALS animal)
