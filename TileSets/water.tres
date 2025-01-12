@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c8ct6ghgrf0qs"]
 
-[ext_resource type="Texture2D" uid="uid://4scbl0t4e86x" path="res://addons/Water Tile 2.png" id="1_rpdo5"]
+[ext_resource type="Texture2D" path="res://addons/Water Tile 2.png" id="1_rpdo5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ka6x"]
 resource_name = "Water"

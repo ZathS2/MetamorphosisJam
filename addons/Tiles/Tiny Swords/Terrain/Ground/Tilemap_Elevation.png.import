@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bh7tn4r7sfnf"
-path="res://.godot/imported/Tilemap_Elevation.png-cd3ece34e85dae341734195b558d5ee7.ctex"
+path="res://.godot/imported/Tilemap_Elevation.png-06661d6ff2df11751fc8a68fff31e915.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png"
-dest_files=["res://.godot/imported/Tilemap_Elevation.png-cd3ece34e85dae341734195b558d5ee7.ctex"]
+source_file="res://addons/Tiles/Tiny Swords/Terrain/Ground/Tilemap_Elevation.png"
+dest_files=["res://.godot/imported/Tilemap_Elevation.png-06661d6ff2df11751fc8a68fff31e915.ctex"]
 
 [params]
 

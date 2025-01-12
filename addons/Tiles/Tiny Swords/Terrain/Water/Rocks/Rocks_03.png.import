@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0hqn7p5gki4o"
-path="res://.godot/imported/Foam.png-db4f4b7852c538a6bb7f88c6256f111f.ctex"
+uid="uid://f7n3f3c47qlv"
+path="res://.godot/imported/Rocks_03.png-c333e1ed6b7d06bce98bcc67e7a3890b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Tiny Swords/Terrain/Water/Foam/Foam.png"
-dest_files=["res://.godot/imported/Foam.png-db4f4b7852c538a6bb7f88c6256f111f.ctex"]
+source_file="res://addons/Tiles/Tiny Swords/Terrain/Water/Rocks/Rocks_03.png"
+dest_files=["res://.godot/imported/Rocks_03.png-c333e1ed6b7d06bce98bcc67e7a3890b.ctex"]
 
 [params]
 

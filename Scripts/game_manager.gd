@@ -2,6 +2,7 @@ extends Node
 
 var is_player_in_water
 var can_breathe
+var last_checkpoint_pos
 
 var last_is_player_in_water
 var last_can_breathe

@@ -1,6 +1,6 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b4po35v0qj341"]
 
-[ext_resource type="Texture2D" uid="uid://c0l2rf5thfixh" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="1_vynhg"]
+[ext_resource type="Texture2D" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="1_vynhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l3e3"]
 resource_name = "Ground"

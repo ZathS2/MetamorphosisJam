@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0l2rf5thfixh"
-path="res://.godot/imported/Tilemap_Flat.png-a2a9011df8d00013456768c87d2b0826.ctex"
+uid="uid://n4bff4mulvsq"
+path="res://.godot/imported/Rocks_02.png-c6067618fb6689953a420210d575bce0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png"
-dest_files=["res://.godot/imported/Tilemap_Flat.png-a2a9011df8d00013456768c87d2b0826.ctex"]
+source_file="res://addons/Tiles/Tiny Swords/Terrain/Water/Rocks/Rocks_02.png"
+dest_files=["res://.godot/imported/Rocks_02.png-c6067618fb6689953a420210d575bce0.ctex"]
 
 [params]
 
