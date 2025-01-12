@@ -13,7 +13,7 @@ public partial class PlayerScript : Node2D
 	ANIMALS currentAnimal = ANIMALS.ANIMAL1;
 
 	[Export] PackedScene scene1;
-	PackedScene scene2;
+	[Export] PackedScene scene2;
 
 	Node2D currentInstantiatedScene;
 
@@ -48,11 +48,14 @@ public partial class PlayerScript : Node2D
 				if (currentInstantiatedScene != null)
 				{
 					GlobalPosition = currentInstantiatedScene.GlobalPosition;
+					currentInstantiatedScene.QueueFree();
 					RemoveChild(currentInstantiatedScene);
 				}
 
 
 				currentInstantiatedScene = (Node2D)scene1.Instantiate();
+				
+				currentInstantiatedScene.Position = Vector2.Zero;
 
 				AddChild(currentInstantiatedScene);
 
@@ -65,10 +68,13 @@ public partial class PlayerScript : Node2D
 				if (currentInstantiatedScene != null)
 				{
 					GlobalPosition = currentInstantiatedScene.GlobalPosition;
+					currentInstantiatedScene.QueueFree();
 					RemoveChild(currentInstantiatedScene);
 				}
 
 				currentInstantiatedScene = (Node2D)scene2.Instantiate();
+
+				currentInstantiatedScene.Position = Vector2.Zero;
 
 				AddChild(currentInstantiatedScene);
 
