@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dmp8be4oc0wpw"]
 
-[ext_resource type="PackedScene" uid="uid://cu8yym8uwuth0" path="res://Scenes/player.tscn" id="1_5kokv"]
 [ext_resource type="PackedScene" uid="uid://cqyv4qqvaqu84" path="res://Scenes/teste chão.tscn" id="2_1haq4"]
+[ext_resource type="PackedScene" uid="uid://dqihnw5ybl811" path="res://Scenes/turtle.tscn" id="2_sx3n3"]
 
 [node name="Node2D2" type="Node2D"]
 
@@ -9,8 +9,9 @@
 position = Vector2(41, -22)
 offset = Vector2(10, 0)
 
-[node name="PlayerNode" parent="." instance=ExtResource("1_5kokv")]
-position = Vector2(-26, -115)
-
 [node name="Node2D" parent="." instance=ExtResource("2_1haq4")]
 position = Vector2(56, 116)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_sx3n3")]
+position = Vector2(-63, -25)
+maxBreathTime = 15.0

@@ -1,0 +1,18 @@
+[gd_resource type="TileSet" load_steps=4 format=3 uid="uid://c8ct6ghgrf0qs"]
+
+[ext_resource type="Texture2D" uid="uid://c0udlkapk20js" path="res://addons/Tiny Swords/Terrain/Water/Water.png" id="1_7b2ek"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cjn6h"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ka6x"]
+resource_name = "Water"
+texture = ExtResource("1_7b2ek")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
+
+[resource]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 2
+physics_layer_0/physics_material = SubResource("PhysicsMaterial_cjn6h")
+sources/1 = SubResource("TileSetAtlasSource_2ka6x")
