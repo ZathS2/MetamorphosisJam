@@ -1,10 +1,6 @@
 extends Area2D
 
 func _ready():
-	#body_entered.connect(on_body_entered)
-	#body_exited.connect(on_body_exited)
-	#var playerScript = load("res://Scripts/PlayerScript.cs")
-	#player = playerScript.new()
 	pass
 	
 func _process(delta):
@@ -14,14 +10,3 @@ func _process(delta):
 			is_player_in_water = true
 			break
 	GameManager.is_player_in_water = is_player_in_water
-'''
-func on_body_entered(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		GameManager.player_entered_water.emit()
-		queue_free()
-
-func on_body_exited(body: Node2D) -> void:
-	if body.is_in_group("Player"):
-		GameManager.player_exited_water.emit()
-		queue_free()
-'''

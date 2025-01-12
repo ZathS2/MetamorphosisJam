@@ -1,13 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqihnw5ybl811"]
+[gd_scene load_steps=6 format=3 uid="uid://dqihnw5ybl811"]
 
 [ext_resource type="Script" path="res://Scripts/Turtle.cs" id="1_5j14m"]
 [ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="2_rioqm"]
+[ext_resource type="Script" path="res://Scenes/breathing_area.gd" id="3_g5bqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4shbe"]
 size = Vector2(128, 129)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xj23u"]
+size = Vector2(128, 6)
+
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.5, 0.5)
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_5j14m")
 groundSpeed = 200.0
 maxBreathTime = 10.0
@@ -24,3 +30,15 @@ shape = SubResource("RectangleShape2D_4shbe")
 
 [node name="BreathBar" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-60, -80, -60, -90, 60, -90, 60, -80)
+
+[node name="BreathingArea" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("3_g5bqw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreathingArea"]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(0, 63)
+shape = SubResource("RectangleShape2D_xj23u")
+debug_color = Color(0, 0, 0.701961, 0.419608)

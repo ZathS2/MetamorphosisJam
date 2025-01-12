@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://b4po35v0qj341"]
 
-[ext_resource type="Texture2D" uid="uid://c0l2rf5thfixh" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="1_r6ag3"]
+[ext_resource type="Texture2D" uid="uid://c0l2rf5thfixh" path="res://addons/Tiny Swords/Terrain/Ground/Tilemap_Flat.png" id="1_vynhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8l3e3"]
 resource_name = "Ground"
-texture = ExtResource("1_r6ag3")
+texture = ExtResource("1_vynhg")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-24, -24, 32, -24, 32, 32, -24, 32)
@@ -75,6 +75,6 @@ texture_region_size = Vector2i(64, 64)
 9:1/0 = 0
 
 [resource]
-resource_name = "TileSet"
+tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8l3e3")
