@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://c105lbhbtsd50"]
 
-[ext_resource type="Script" path="res://teste_peixe.gd" id="1_yj4uk"]
+[ext_resource type="Script" path="res://Scripts/teste_peixe.gd" id="1_yj4uk"]
 [ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="2_emct1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mvg4d"]
