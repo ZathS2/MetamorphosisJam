@@ -17,9 +17,6 @@ public partial class PlayerScript : Node2D
 
 	Node2D currentInstantiatedScene;
 
-	[Signal]
-	public delegate void PlayerInWaterEventHandler();
-
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{	
