@@ -61,7 +61,10 @@ public partial class Turtle : CharacterBody2D
 		
 		//GD.Print("breath: " + currentBreathTime);
 
-		
+		if (currentBreathTime <= 0)
+		{
+			goToCheckPoint();
+		}
 
 		updateBreathBar();
 	}
@@ -98,7 +101,7 @@ public partial class Turtle : CharacterBody2D
 				currentBreathTime = (float)holdTimer.TimeLeft;
 
 			}
-			
+
 		}else{
 			setGrounded();
 			if (canStartTimer == false)
@@ -220,5 +223,14 @@ public partial class Turtle : CharacterBody2D
 	void setFloating()
 	{
 		MotionMode = MotionModeEnum.Floating;
+	}
+
+	void goToCheckPoint()
+	{
+		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
+
+		GlobalPosition = (Vector2)GameManager.Get("last_checkpoint_pos");
+
+		currentBreathTime = maxBreathTime;
 	}
 }

@@ -10,7 +10,7 @@ size = Vector2(128, 129)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_5j14m")
 groundSpeed = 200.0
-maxBreathTime = 30.0
+maxBreathTime = 10.0
 
 [node name="Icon" type="Sprite2D" parent="."]
 self_modulate = Color(0.957061, 0.923983, 0, 1)
