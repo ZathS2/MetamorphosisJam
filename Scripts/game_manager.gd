@@ -3,7 +3,8 @@ extends Node
 signal player_entered_water
 signal player_exited_water
 
-var is_player_in_water
+var is_player_in_water = false
+var can_breathe = false
 
 
 # Called when the node enters the scene tree for the first time.

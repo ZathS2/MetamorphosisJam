@@ -61,6 +61,8 @@ public partial class Turtle : CharacterBody2D
 		
 		//GD.Print("breath: " + currentBreathTime);
 
+		
+
 		updateBreathBar();
 	}
 
@@ -72,16 +74,31 @@ public partial class Turtle : CharacterBody2D
 		if ((bool)GameManager.Get("is_player_in_water"))
 		{
 			setFloating();
-			if (canStartTimer)
+
+			if ((bool)GameManager.Get("can_breathe"))
 			{
-				GD.Print("Começou a segurar");
-				resetAndStartHoldTimer();
-				canStartTimer = false;
+				if (canStartTimer == false)
+				{
+					GD.Print("começou a recuperar");
+					increaseBreathTime();
+
+					canStartTimer = true;
+				}
+				currentBreathTime = (float)maxBreathTime - (float)recoverTimer.TimeLeft;
+				
+			} else {
+
+
+				if (canStartTimer)
+				{
+					GD.Print("Começou a segurar");
+					resetAndStartHoldTimer();
+					canStartTimer = false;
+				}
+				currentBreathTime = (float)holdTimer.TimeLeft;
+
 			}
-			currentBreathTime = (float)holdTimer.TimeLeft;
-
 			
-
 		}else{
 			setGrounded();
 			if (canStartTimer == false)
