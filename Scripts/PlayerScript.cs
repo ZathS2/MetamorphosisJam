@@ -12,7 +12,7 @@ public partial class PlayerScript : Node2D
 
 	ANIMALS currentAnimal = ANIMALS.ANIMAL1;
 
-	PackedScene scene1;
+	[Export] PackedScene scene1;
 	PackedScene scene2;
 
 	Node2D currentInstantiatedScene;
