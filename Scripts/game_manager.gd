@@ -1,8 +1,5 @@
 extends Node
 
-signal player_entered_water
-signal player_exited_water
-
 var is_player_in_water = false
 var can_breathe = false
 var last_checkpoint_pos = null
@@ -20,5 +17,5 @@ func _ready():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process():
 	pass
