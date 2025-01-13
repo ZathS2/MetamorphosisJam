@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=4 uid="uid://t7rswwvpbph6"]
+
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_3ppwi"]
+[ext_resource type="PackedScene" uid="uid://mnswrgmvocji" path="res://Scenes/Gaivota.tscn" id="2_bnamq"]
+[ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="3_1jqg5"]
+
+[node name="GaivotaTesteScene" type="Node2D"]
+
+[node name="ground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD9////AAABAAAAAAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAEAAAACAP7/AAAAAAEAAAACAP3/AAAAAAEAAAACAPz/AAAAAAEAAAACAPv/AAAAAAEAAAACAPr/AAAAAAAAAAADAPr/AAABAAAAAAAEAPr/AAABAAAAAAADAPv/AAABAAEAAAAEAPv/AAABAAEAAAAEAPz/AAABAAEAAAADAPz/AAABAAEAAAADAP3/AAABAAEAAAAEAP3/AAABAAEAAAADAP7/AAABAAEAAAADAP//AAABAAEAAAAEAP//AAABAAEAAAAEAP7/AAABAAEAAAD9/wAAAAABAAEAAAD+/wAAAAABAAEAAAD//wAAAAABAAEAAAADAAAAAAABAAEAAAAEAAAAAAABAAEAAAACAAAAAAABAAEAAAABAAAAAAABAAEAAAAAAAAAAAABAAEAAAD8////AAABAAAAAAD7////AAABAAAAAAD6////AAABAAAAAAD5////AAAAAAAAAAD8/wAAAAABAAEAAAD7/wAAAAABAAEAAAD6/wAAAAABAAEAAAD5/wAAAAAAAAEAAAA=")
+tile_set = ExtResource("1_3ppwi")
+
+[node name="Gaivota" parent="." instance=ExtResource("2_bnamq")]
+position = Vector2(-364, -176)
+groundSpeed = 200.0
+flySpeed = 500.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer2" instance=ExtResource("3_1jqg5")]
+visible = false
