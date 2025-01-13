@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmxq3c1vfdbb2"]
+
+[ext_resource type="Script" path="res://Scripts/floating_player.gd" id="1_l8842"]
+[ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="2_d5jlv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hsjgg"]
+size = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_piku1"]
+size = Vector2(128, 3)
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+motion_mode = 1
+script = ExtResource("1_l8842")
+
+[node name="Icon" type="Sprite2D" parent="."]
+texture = ExtResource("2_d5jlv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_hsjgg")
+
+[node name="CatchingArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CatchingArea"]
+position = Vector2(0, 65.5)
+shape = SubResource("RectangleShape2D_piku1")
+debug_color = Color(0.741176, 0.666667, 0, 0.419608)

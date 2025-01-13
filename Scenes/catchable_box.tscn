@@ -1,28 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://dibjuib2x2nb8"]
+[gd_scene load_steps=5 format=3 uid="uid://dgv05ltagsndi"]
 
-[ext_resource type="Script" path="res://Scripts/box.gd" id="1_37mf1"]
-[ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="1_s0816"]
+[ext_resource type="Script" path="res://Scripts/box.gd" id="1_vmbhu"]
+[ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="2_ux14e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qo1ie"]
-size = Vector2(130.526, 130.526)
+size = Vector2(124, 124)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2adko"]
 size = Vector2(131, 132)
 
-[node name="RigidBody2D" type="RigidBody2D"]
+[node name="RigidBody2D" type="RigidBody2D" groups=["Catchable"]]
 position = Vector2(12, 12)
-script = ExtResource("1_37mf1")
+script = ExtResource("1_vmbhu")
 
 [node name="Icon" type="Sprite2D" parent="."]
 self_modulate = Color(1, 0.592157, 0, 1)
-texture = ExtResource("1_s0816")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ux14e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.90735e-06, 0)
-scale = Vector2(0.95, 0.95)
+position = Vector2(-9.53674e-07, 0)
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_qo1ie")
 
 [node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -3.05176e-05)

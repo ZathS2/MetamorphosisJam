@@ -26,6 +26,7 @@ project/assembly_name="MetamorfoseJam"
 [global_group]
 
 Player=""
+Catchable=""
 
 [input]
 
