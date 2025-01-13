@@ -1,10 +1,10 @@
 [gd_resource type="TileSet" load_steps=3 format=3 uid="uid://c8ct6ghgrf0qs"]
 
-[ext_resource type="Texture2D" path="res://addons/Water Tile 2.png" id="1_rpdo5"]
+[ext_resource type="Texture2D" uid="uid://blo3nuxmognd3" path="res://addons/Tiles/Water Tile 2.png" id="1_5wnr7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2ka6x"]
 resource_name = "Water"
-texture = ExtResource("1_rpdo5")
+texture = ExtResource("1_5wnr7")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
