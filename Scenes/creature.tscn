@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://8cvqut36tdb0"]
+[gd_scene load_steps=12 format=3 uid="uid://d4jrfjlenh78s"]
 
 [ext_resource type="Script" path="res://Scripts/Creature.cs" id="1_6iigq"]
 [ext_resource type="Texture2D" uid="uid://by7o73hs7oh1k" path="res://addons/Player/playermetamorfoseidle.png" id="1_dm57x"]
@@ -63,7 +63,7 @@ animations = [{
 "speed": 6.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_6iigq")
 

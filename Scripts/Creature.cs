@@ -10,6 +10,18 @@ public partial class Creature : CharacterBody2D
 
 	public override void _PhysicsProcess(double delta)
 	{
+		Movement(delta);
+
+		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
+
+		if ((bool)GameManager.Get("is_player_in_water"))
+		{
+			goToCheckPoint();
+		}
+	}
+
+	void Movement(double delta)
+	{
 		Vector2 velocity = Velocity;
 
 		// Add the gravity.
@@ -33,5 +45,12 @@ public partial class Creature : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
+	}
+
+	void goToCheckPoint()
+	{
+		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
+
+		GlobalPosition = (Vector2)GameManager.Get("last_checkpoint_pos");
 	}
 }

@@ -7,6 +7,11 @@ var is_player_in_water = false
 var can_breathe = false
 var last_checkpoint_pos = null
 
+const CREATURE = 0
+const TURTLE = 1
+
+var current_animal = CREATURE
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,5 +21,4 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	
 	pass
