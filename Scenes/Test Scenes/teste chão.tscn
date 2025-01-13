@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqyv4qqvaqu84"]
+[gd_scene load_steps=4 format=3 uid="uid://btcuqxb58ixqk"]
 
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_sxi3u"]
+[ext_resource type="PackedScene" uid="uid://cu8yym8uwuth0" path="res://Scenes/player.tscn" id="2_ies5k"]
 
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgnvn"]
@@ -15,3 +16,8 @@ shape = SubResource("RectangleShape2D_jgnvn")
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray(0, 0, 246, 255, 255, 255, 0, 0, 0, 0, 0, 0, 0, 0, 250, 255, 255, 255, 0, 0, 1, 0, 0, 0, 0, 0, 254, 255, 255, 255, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 255, 255, 0, 0, 2, 0, 0, 0, 0, 0)
 tile_set = ExtResource("1_sxi3u")
+
+[node name="PlayerNode" parent="." instance=ExtResource("2_ies5k")]
+position = Vector2(-161, -81)
+
+[node name="Camera2D" type="Camera2D" parent="."]

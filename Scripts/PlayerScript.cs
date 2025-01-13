@@ -4,37 +4,68 @@ using System;
 public partial class PlayerScript : Node2D
 {
 
-	enum ANIMALS
-	{
-		ANIMAL1,
-		ANIMAL2
-	}
+	[Export] PackedScene creatureScene;
+	[Export] PackedScene turtleScene;
 
-	ANIMALS currentAnimal = ANIMALS.ANIMAL1;
-
-	PackedScene scene1;
-	PackedScene scene2;
+	PackedScene currentAnimalScene;
 
 	Node2D currentInstantiatedScene;
+
+	GodotObject GameManager;
+
+	int instantiatedAnimal = 999;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		//scene1 = (PackedScene) GD.Load<PackedScene>("res://Scenes//animal1.tscn");
-		//scene2 = (PackedScene) GD.Load<PackedScene>("res://Scenes//animal2.tscn");
-
-		//PlayerInWaterEventHandler += OnWaterEnter;
+		GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
+		updateAnimal();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
-
-		
+		updateAnimal();
 	}
 
-	void switchAnimal(ANIMALS animal)
+	void updateAnimal()
+	{
+		int currentAnimal = (int)GameManager.Get("current_animal");
+
+		if (currentAnimal == instantiatedAnimal)
+		{
+			return;
+		}
+
+		instantiatedAnimal = currentAnimal;
+
+		if (instantiatedAnimal == (int)GameManager.Get("CREATURE"))
+		{
+			if (currentInstantiatedScene != null)
+			{
+				GlobalPosition = currentInstantiatedScene.GlobalPosition;
+				RemoveChild(currentInstantiatedScene);
+			}
+
+			currentInstantiatedScene = (Node2D)creatureScene.Instantiate();
+
+			AddChild(currentInstantiatedScene);
+
+		} else if (instantiatedAnimal == (int)GameManager.Get("TURTLE")) {
+
+			if (currentInstantiatedScene != null)
+			{
+				GlobalPosition = currentInstantiatedScene.GlobalPosition;
+				RemoveChild(currentInstantiatedScene);
+			}
+
+			currentInstantiatedScene = (Node2D)turtleScene.Instantiate();
+
+			AddChild(currentInstantiatedScene);
+		}
+	}
+
+	/*void switchAnimal(ANIMALS animal)
 	{
 		if (animal == currentAnimal)
 			return;
@@ -77,25 +108,6 @@ public partial class PlayerScript : Node2D
 
 				break;
 		}
-	}
-
-	public override void _Input(InputEvent @event)
-	{
-		if (@event is InputEventKey keyEvent && keyEvent.Pressed)
-		{
-			if (keyEvent.Keycode == Key.A)
-			{
-				switchAnimal(ANIMALS.ANIMAL1);
-
-			}
-
-			if (keyEvent.Keycode == Key.S)
-			{
-				switchAnimal(ANIMALS.ANIMAL2);
-
-			}
-		}
-		base._Input(@event);
-	}
+	}*/
 
 }

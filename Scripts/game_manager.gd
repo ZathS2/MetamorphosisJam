@@ -1,23 +1,24 @@
 extends Node
 
-var is_player_in_water
-var can_breathe
-var last_checkpoint_pos
+signal player_entered_water
+signal player_exited_water
 
-var last_is_player_in_water
-var last_can_breathe
+var is_player_in_water = false
+var can_breathe = false
+var last_checkpoint_pos = null
+
+const CREATURE = 0
+const TURTLE = 1
+
+var current_animal = CREATURE
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	#player_entered_water.connect(func(): is_player_in_water=true; print("Player in water"))
+	#player_exited_water.connect(func(): is_player_in_water=false; print("Player out of water"))
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if last_is_player_in_water!= is_player_in_water or last_can_breathe!=can_breathe:
-		print(is_player_in_water)
-		last_is_player_in_water = is_player_in_water
-		print(can_breathe)
-		last_can_breathe=can_breathe
-		print("\n")
 	pass
