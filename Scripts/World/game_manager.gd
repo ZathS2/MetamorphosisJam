@@ -9,11 +9,18 @@ var rope_seg_area = null
 var last_checkpoint_pos = null
 
 
-const CREATURE = 0
-const TURTLE = 1
+const CREATURE: int = 0
+const TURTLE: int = 1
+const HERON: int = 2
+const MACAW: int = 3
+const MONKEY: int = 4
+const ONCA: int = 5
+const GAROUPA: int = 6
 
 var current_animal = CREATURE
 
+# salva os animais desbloquados em um int, vulgo byte
+var animal_status: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
