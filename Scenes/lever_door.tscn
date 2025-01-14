@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctp30vv8sl2ym"]
+
+[ext_resource type="Script" path="res://Scripts/World/LeverDoor.cs" id="1_6anxg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_faltg"]
+size = Vector2(151, 19)
+
+[node name="LeverDoor" type="CharacterBody2D"]
+script = ExtResource("1_6anxg")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(9.585, -5)
+rotation = 1.5708
+polygon = PackedVector2Array(-70, -1, 81, -1, 81, 18, -70, 18)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_faltg")

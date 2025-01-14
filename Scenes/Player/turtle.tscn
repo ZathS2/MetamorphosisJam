@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://Scripts/Player/Turtle.cs" id="1_5j14m"]
 [ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="2_rioqm"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4shbe"]
 size = Vector2(128, 129)
 
