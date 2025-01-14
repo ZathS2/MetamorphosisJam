@@ -76,5 +76,4 @@ position = Vector2(0, -3)
 sprite_frames = SubResource("SpriteFrames_b5mna")
 animation = &"idle"
 autoplay = "idle"
-frame = 4
-frame_progress = 0.972008
+frame_progress = 0.0626015
