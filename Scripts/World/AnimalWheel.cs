@@ -27,12 +27,14 @@ public partial class AnimalWheel : Control
 		{
 			var angleToCenter = (GetViewport().GetMousePosition() - (GetViewport().GetVisibleRect().Size / 2)).Angle();
 
-			GD.Print("length: " + (GetViewport().GetMousePosition() - (GetViewport().GetVisibleRect().Size / 2)).Length());
+			//GD.Print("length: " + (GetViewport().GetMousePosition() - (GetViewport().GetVisibleRect().Size / 2)).Length());
 			if ((GetViewport().GetMousePosition() - (GetViewport().GetVisibleRect().Size / 2)).Length() < 60)
 			{
 				centerCircle.Visible = true;
 				Visible = false;
-			} else {
+			}
+			else
+			{
 				centerCircle.Visible = false;
 				Visible = true;
 			}
@@ -44,11 +46,11 @@ public partial class AnimalWheel : Control
 	void toggleMenu()
 	{
 		opened = !opened;
-		
+
 		var parent = (Control)GetParent();
 
 		parent.Visible = opened;
-		
+
 	}
 
 	float convertAngle(float angle)
@@ -59,6 +61,13 @@ public partial class AnimalWheel : Control
 	void SelectAnimal()
 	{
 		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
+
+		if ((GetViewport().GetMousePosition() - (GetViewport().GetVisibleRect().Size / 2)).Length() < 60)
+		{
+			GameManager.Set("current_animal", GameManager.Get("CREATURE"));
+			GD.Print("no gamemanager: " + GameManager.Get("current_animal"));
+			return;
+		}
 
 		if (Mathf.IsZeroApprox(Mathf.AngleDifference(Mathf.Floor((Mathf.RadToDeg(Rotation) + 60) / 60.0), Mathf.Floor((turtleAngle) / 60.0))))
 		{
@@ -97,7 +106,8 @@ public partial class AnimalWheel : Control
 		}
 	}
 
-	public override void _Input(InputEvent @event) {
+	public override void _Input(InputEvent @event)
+	{
 
 		if (@event is InputEventKey keyEvent)
 		{
@@ -105,7 +115,7 @@ public partial class AnimalWheel : Control
 			{
 				toggleMenu();
 			}
-		}			
+		}
 
 		if (@event is InputEventMouseButton mouseEvent && opened == true)
 		{
