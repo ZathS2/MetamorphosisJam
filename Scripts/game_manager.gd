@@ -14,6 +14,11 @@ var last_checkpoint_pos = null
 
 const CREATURE = 0
 const TURTLE = 1
+const HERON = 2
+const MACAW = 3
+const MONKEY = 4
+const ONCA = 5
+const GAROUPA = 6
 
 var current_animal = CREATURE
 

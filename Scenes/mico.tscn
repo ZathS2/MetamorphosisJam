@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhptthpdx8j4i"]
+[gd_scene load_steps=4 format=3 uid="uid://car3ttktaa3y1"]
 
 [ext_resource type="Script" path="res://Scripts/Mico.cs" id="1_gdm6f"]
 [ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="2_cw563"]

@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b04hx67bporj"]
+[gd_scene load_steps=7 format=3 uid="uid://b04hx67bporj"]
 
 [ext_resource type="Texture2D" uid="uid://bsr54kansh2ne" path="res://addons/circuloAnimais.png" id="1_02j0u"]
 [ext_resource type="Script" path="res://Scripts/AnimalWheel.cs" id="1_8lil2"]
+[ext_resource type="Texture2D" uid="uid://u403o44xqpqi" path="res://addons/circulomeio.png" id="1_m2fvt"]
 [ext_resource type="Texture2D" uid="uid://8ck8dwpop4vs" path="res://addons/semicirculoAnimais.png" id="2_blpl4"]
 [ext_resource type="Texture2D" uid="uid://dew53lm5ofn8x" path="res://addons/Player/singleSpritePlayerMetamorfose.png" id="4_cxte4"]
 [ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="5_28aey"]
 
 [node name="Control" type="Control"]
-visible = false
 self_modulate = Color(0.89, 0.89, 0.89, 1)
 layout_mode = 3
 anchors_preset = 15
@@ -25,7 +25,24 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.16, 0.16, 0.16, 0.713726)
 
-[node name="CenterContainer2" type="CenterContainer" parent="."]
+[node name="Circulo" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -324.0
+offset_top = -324.0
+offset_right = 324.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+pivot_offset = Vector2(321.875, 322.535)
+texture = ExtResource("1_m2fvt")
+
+[node name="CenterContainer2" type="CenterContainer" parent="." node_paths=PackedStringArray("centerCircle")]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -41,8 +58,13 @@ grow_vertical = 2
 scale = Vector2(1.001, 1.001)
 pivot_offset = Vector2(256, 256)
 script = ExtResource("1_8lil2")
-creatureAngle = 60.0
-turtleAngle = -60.0
+turtleAngle = 60.0
+heronAngle = 120.0
+macawAngle = 180.0
+monkeyAngle = 240.0
+oncaAngle = -60.0
+garoupaAngle = -120.0
+centerCircle = NodePath("../Circulo")
 
 [node name="TextureRect2" type="TextureRect" parent="CenterContainer2"]
 layout_mode = 2
@@ -69,14 +91,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -33.0
-offset_top = -33.0
-offset_right = -1.0
-offset_bottom = -1.0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
-pivot_offset = Vector2(-150, 70)
+pivot_offset = Vector2(15.95, 15.525)
 texture = ExtResource("4_cxte4")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -90,6 +112,96 @@ offset_left = -32.0
 offset_top = -34.0
 offset_right = 96.0
 offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0, -300)
+texture = ExtResource("5_28aey")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+self_modulate = Color(1, 0.53, 0.53, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = 38.0
+offset_right = -59.0
+offset_bottom = 166.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0, -300)
+texture = ExtResource("5_28aey")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+self_modulate = Color(0.53, 1, 0.733667, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = 195.0
+offset_right = -49.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0, -300)
+texture = ExtResource("5_28aey")
+
+[node name="TextureRect5" type="TextureRect" parent="."]
+self_modulate = Color(0.55, 0.6025, 1, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.0
+offset_top = 268.0
+offset_right = 95.0
+offset_bottom = 396.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0, -300)
+texture = ExtResource("5_28aey")
+
+[node name="TextureRect6" type="TextureRect" parent="."]
+self_modulate = Color(1, 0.31, 0.6205, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 115.0
+offset_top = 199.0
+offset_right = 243.0
+offset_bottom = 327.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0, -300)
+texture = ExtResource("5_28aey")
+
+[node name="TextureRect7" type="TextureRect" parent="."]
+self_modulate = Color(1, 0.8735, 0.31, 1)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 106.0
+offset_top = 41.0
+offset_right = 234.0
+offset_bottom = 169.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5, 0.5)
