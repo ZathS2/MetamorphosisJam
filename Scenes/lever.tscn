@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dvjwossdjawar" path="res://addons/leverhandle.png" id="1_xgyvs"]
 [ext_resource type="Texture2D" uid="uid://sof7youfic6t" path="res://addons/leverbase.png" id="2_alsei"]
-[ext_resource type="Script" path="res://Scripts/World/LeverScript.cs" id="3_38kav"]
+[ext_resource type="Script" path="res://Scripts/Objects/LeverScript.cs" id="3_38kav"]
 
 [sub_resource type="Animation" id="Animation_xahg3"]
 length = 0.001

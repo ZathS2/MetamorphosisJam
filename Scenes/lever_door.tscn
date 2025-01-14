@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctp30vv8sl2ym"]
 
-[ext_resource type="Script" path="res://Scripts/World/LeverDoor.cs" id="1_6anxg"]
+[ext_resource type="Script" path="res://Scripts/Objects/LeverDoor.cs" id="1_6anxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_faltg"]
 size = Vector2(151, 19)

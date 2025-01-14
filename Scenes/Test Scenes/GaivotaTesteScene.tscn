@@ -13,7 +13,6 @@ tile_set = ExtResource("1_3ppwi")
 [node name="Gaivota" parent="." instance=ExtResource("2_bnamq")]
 position = Vector2(-364, -176)
 groundSpeed = 200.0
-flySpeed = 500.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
