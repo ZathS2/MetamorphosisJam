@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://djrwexhrenucv"]
+
+[ext_resource type="PackedScene" uid="uid://d38k0sx0m8gt8" path="res://Scenes/button.tscn" id="1_5q4gr"]
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="2_fkhu4"]
+[ext_resource type="PackedScene" uid="uid://cnf4qrmqjokm8" path="res://Scenes/platform.tscn" id="3_c5f4i"]
+[ext_resource type="PackedScene" uid="uid://d4jrfjlenh78s" path="res://Scenes/Player/creature.tscn" id="4_l81ef"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Node2D" parent="." node_paths=PackedStringArray("platform") instance=ExtResource("1_5q4gr")]
+position = Vector2(415, 580)
+scale = Vector2(3, 3)
+platform = NodePath("../Node2D2")
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = ExtResource("2_fkhu4")
+format = 2
+layer_0/tile_data = PackedInt32Array(589836, 65536, 0, 589837, 65536, 0, 589838, 65536, 0, 589839, 65536, 0, 589840, 65536, 0, 589841, 65536, 0, 589842, 65536, 1, 589824, 65536, 0, 589825, 65536, 0, 589826, 65536, 0, 589827, 65536, 0, 589828, 131072, 0, 589833, 65536, 0, 589834, 65536, 0, 589835, 65536, 0, 720895, 65536, 1, 655360, 65536, 1, 655361, 65536, 1, 655362, 65536, 1, 655363, 65536, 1, 655364, 65536, 1, 655368, 65536, 1, 655369, 65536, 1, 655370, 65536, 1, 655371, 65536, 1, 655372, 65536, 1, 655373, 65536, 1, 655374, 65536, 1, 655375, 65536, 1, 655376, 65536, 1, 655377, 65536, 1, 655378, 65536, 1, -65518, 65536, 1, 18, 65536, 1, 65554, 65536, 1, 131090, 65536, 1, 196626, 65536, 1, 262162, 65536, 1, 327698, 65536, 1, 393234, 65536, 1, 458770, 65536, 1, 524306, 65536, 1, -1, 65536, 1, -65536, 65536, 1, -65535, 65536, 1, -65534, 65536, 1, -65533, 65536, 1, -65532, 65536, 1, -65531, 65536, 1, -65530, 65536, 1, -65529, 65536, 1, -65528, 65536, 1, -65527, 65536, 1, -65526, 65536, 1, -65525, 65536, 1, -65524, 65536, 1, -65523, 65536, 1, -65522, 65536, 1, -65521, 65536, 1, -65520, 65536, 1, -65519, 65536, 1, 65535, 65536, 1, 131071, 65536, 1, 196607, 65536, 1, 262143, 65536, 1, 327679, 65536, 1, 393215, 65536, 1, 458751, 65536, 1, 524287, 65536, 1, 589823, 65536, 1, 655359, 65536, 1, 655365, 65536, 0, 655366, 65536, 0, 655367, 65536, 0, 589832, 0, 0)
+
+[node name="Node2D2" parent="." instance=ExtResource("3_c5f4i")]
+position = Vector2(960, 519)
+scale = Vector2(3, 3)
+final_position = Vector2(960, 236)
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_l81ef")]
+position = Vector2(202, 510)
