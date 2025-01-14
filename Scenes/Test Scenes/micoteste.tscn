@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=4 uid="uid://g450qonf6rx6"]
+
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_3mspg"]
+[ext_resource type="PackedScene" uid="uid://b0lax7hqyif6c" path="res://Scenes/rope.tscn" id="2_ex6gg"]
+[ext_resource type="PackedScene" uid="uid://dhptthpdx8j4i" path="res://Scenes/mico.tscn" id="3_7djlg"]
+
+[node name="testemico" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD9////AAAAAAAAAAD+////AAABAAAAAAD/////AAABAAAAAAAAAP//AAABAAAAAAABAP//AAABAAAAAAACAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAABAAAAAAAFAP//AAABAAAAAAAGAP//AAABAAAAAAAHAP//AAABAAAAAAAIAP//AAACAAAAAAA=")
+tile_set = ExtResource("1_3mspg")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("3_7djlg")]
+position = Vector2(-98, -192)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(517, -381)
+
+[node name="Node2D3" parent="." instance=ExtResource("2_ex6gg")]
+position = Vector2(683, -411)
+
+[node name="Node2D2" parent="." instance=ExtResource("2_ex6gg")]
+position = Vector2(230, -310)
+
+[node name="Node2D" parent="." instance=ExtResource("2_ex6gg")]
+position = Vector2(1025, -569)
