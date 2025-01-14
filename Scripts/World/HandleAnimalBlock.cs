@@ -37,4 +37,12 @@ public partial class HandleAnimalBlock : Node
 		return (status & (1 << animal)) != 0;
 	}
 
+	public void UnlockAll()
+	{
+		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
+		int status = 255;
+		GameManager.Set("animal_status", status);
+		GD.Print($"Desbloqueado todos, Status: {Convert.ToString(status, 2).PadLeft(8, '0')}");
+	}
+
 }

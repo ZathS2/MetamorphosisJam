@@ -1,0 +1,69 @@
+[gd_scene load_steps=8 format=3 uid="uid://ds67bn1h0rho3"]
+
+[ext_resource type="Texture2D" uid="uid://dvjwossdjawar" path="res://addons/leverhandle.png" id="1_xgyvs"]
+[ext_resource type="Texture2D" uid="uid://sof7youfic6t" path="res://addons/leverbase.png" id="2_alsei"]
+[ext_resource type="Script" path="res://Scripts/World/LeverScript.cs" id="3_38kav"]
+
+[sub_resource type="Animation" id="Animation_krnd0"]
+resource_name = "push_lever_anim"
+length = 0.35
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandleHolder:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -1.5708]
+}
+
+[sub_resource type="Animation" id="Animation_xahg3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HandleHolder:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kj10e"]
+_data = {
+"RESET": SubResource("Animation_xahg3"),
+"push_lever_anim": SubResource("Animation_krnd0")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_msaaq"]
+size = Vector2(79, 71)
+
+[node name="Lever" type="Node2D"]
+
+[node name="HandleHolder" type="Node2D" parent="."]
+position = Vector2(8.855, 2)
+
+[node name="handle" type="Sprite2D" parent="HandleHolder"]
+position = Vector2(-4.08058, -6.43031)
+texture = ExtResource("1_xgyvs")
+
+[node name="base" type="Sprite2D" parent="."]
+texture = ExtResource("2_alsei")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kj10e")
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_38kav")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-28.5, 2.5)
+shape = SubResource("RectangleShape2D_msaaq")

@@ -20,7 +20,6 @@ public partial class AnimalWheel : Control
 	{
 		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
 		var AnimalBlock = (HandleAnimalBlock)GetNode<Node>("/root/HandleAnimalBlock");
-		AnimalBlock.UnlockAnimal((int)GameManager.Get("MONKEY"));
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -104,6 +103,8 @@ public partial class AnimalWheel : Control
 				GD.Print("ta travado MACAW");
 				return;
 			}
+
+			GD.Print("MACAW");
 
 			GameManager.Set("current_animal", GameManager.Get("MACAW"));
 			GD.Print("no gamemanager: " + GameManager.Get("current_animal"));
