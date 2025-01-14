@@ -1,13 +1,13 @@
 [gd_scene load_steps=6 format=3 uid="uid://b04hx67bporj"]
 
 [ext_resource type="Texture2D" uid="uid://bsr54kansh2ne" path="res://addons/circuloAnimais.png" id="1_02j0u"]
-[ext_resource type="Script" path="res://Scripts/AnimalWheel.cs" id="1_8lil2"]
+[ext_resource type="Script" path="res://Scripts/World/AnimalWheel.cs" id="1_8lil2"]
 [ext_resource type="Texture2D" uid="uid://8ck8dwpop4vs" path="res://addons/semicirculoAnimais.png" id="2_blpl4"]
 [ext_resource type="Texture2D" uid="uid://dew53lm5ofn8x" path="res://addons/Player/singleSpritePlayerMetamorfose.png" id="4_cxte4"]
 [ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="5_28aey"]
 
+
 [node name="Control" type="Control"]
-visible = false
 self_modulate = Color(0.89, 0.89, 0.89, 1)
 layout_mode = 3
 anchors_preset = 15

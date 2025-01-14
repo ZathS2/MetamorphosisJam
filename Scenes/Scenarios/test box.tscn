@@ -1,0 +1,69 @@
+[gd_scene load_steps=12 format=3 uid="uid://bmc4kn514qcio"]
+
+[ext_resource type="TileSet" uid="uid://c8ct6ghgrf0qs" path="res://TileSets/water.tres" id="1_376kq"]
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="2_nbv7d"]
+[ext_resource type="PackedScene" uid="uid://dibjuib2x2nb8" path="res://Scenes/box.tscn" id="3_4dbwh"]
+[ext_resource type="Script" path="res://Scripts/World/water.gd" id="5_t4x5f"]
+[ext_resource type="Script" path="res://Scripts/World/breath_area.gd" id="6_bndqt"]
+[ext_resource type="Script" path="res://Scripts/World/check_point_area.gd" id="7_gpmso"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_crjt4"]
+size = Vector2(590, 282.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_62rjp"]
+size = Vector2(339, 309)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dycgr"]
+size = Vector2(269.5, 145)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t38eh"]
+size = Vector2(229.5, 106.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lk81u"]
+size = Vector2(61, 132.5)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Water" type="TileMap" parent="."]
+tile_set = ExtResource("1_376kq")
+format = 2
+layer_0/tile_data = PackedInt32Array(327695, 65537, 0, 327696, 65537, 0, 327697, 65537, 0, 393233, 1, 1, 458769, 1, 1, 524305, 1, 1, 589841, 65537, 2, 589840, 65537, 2, 589839, 65537, 2, 589838, 65537, 2, 589837, 65537, 2, 589836, 65537, 2, 589835, 65537, 2, 589834, 65537, 2, 589833, 65537, 2, 589832, 65537, 2, 589831, 65537, 2, 589830, 65537, 2, 589829, 65537, 2, 589828, 65537, 2, 589827, 65537, 2, 589826, 65537, 2, 589825, 65537, 2, 589824, 65537, 2, 524288, 1, 1, 458752, 1, 1, 393216, 1, 1, 393217, 1, 1, 393218, 1, 1, 393219, 1, 1, 393220, 1, 1, 393221, 1, 1, 393222, 1, 1, 393223, 1, 1, 393224, 1, 1, 458753, 1, 1, 524289, 1, 1, 458754, 1, 1, 524290, 1, 1, 458755, 1, 1, 524291, 1, 1, 458756, 1, 1, 524292, 1, 1, 458757, 1, 1, 524293, 1, 1, 458758, 1, 1, 524294, 1, 1, 458759, 1, 1, 524295, 1, 1, 458760, 1, 1, 524296, 1, 1, 524297, 1, 1, 524298, 1, 1, 524299, 1, 1, 524300, 1, 1, 524301, 1, 1, 524302, 1, 1, 393229, 1, 1, 458765, 1, 1, 393230, 1, 1, 458766, 1, 1, 393231, 1, 1, 458767, 1, 1, 524303, 1, 1, 393232, 1, 1, 458768, 1, 1, 524304, 1, 1)
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = ExtResource("2_nbv7d")
+format = 2
+layer_0/tile_data = PackedInt32Array(458761, 0, 2, 458764, 131072, 2, 327680, 0, 3, 327681, 65536, 3, 327682, 65536, 3, 327683, 65536, 3, 327684, 65536, 3, 327685, 65536, 3, 327686, 65536, 3, 327687, 65536, 3, 327688, 65536, 3, 327689, 131072, 0, 393225, 196608, 1, 458762, 65536, 3, 458763, 65536, 3, 327692, 0, 0, 393228, 196608, 1, 327693, 65536, 3, 327694, 131072, 3, 196607, 65536, 1, 262143, 65536, 1, 327679, 65536, 1, 393215, 65536, 1, 458751, 65536, 1, 524287, 65536, 1, 589823, 65536, 1, 655359, 65536, 1, 720895, 65536, 1, 655360, 65536, 1, 655361, 65536, 1, 655362, 65536, 1, 655363, 65536, 1, 655364, 65536, 1, 655365, 65536, 1, 655366, 65536, 1, 655367, 65536, 1, 655368, 65536, 1, 655369, 65536, 1, 655370, 65536, 1, 655371, 65536, 1, 655372, 65536, 1, 655373, 65536, 1, 655374, 65536, 1, 655375, 65536, 1, 655376, 65536, 1, 655377, 65536, 1, 655378, 65536, 1, 589842, 65536, 1, 524306, 65536, 1, 458770, 65536, 1, 393234, 65536, 1, 327698, 65536, 1, 262162, 65536, 1, 196626, 65536, 1, 131090, 65536, 1)
+
+[node name="Box" parent="." instance=ExtResource("3_4dbwh")]
+position = Vector2(529, 88)
+
+[node name="WaterArea" type="Area2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+script = ExtResource("5_t4x5f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterArea"]
+position = Vector2(291, 506.75)
+shape = SubResource("RectangleShape2D_crjt4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="WaterArea"]
+position = Vector2(988.5, 491.5)
+shape = SubResource("RectangleShape2D_62rjp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="WaterArea"]
+position = Vector2(703.25, 571.5)
+shape = SubResource("RectangleShape2D_dycgr")
+
+[node name="BreathingArea" type="Area2D" parent="."]
+script = ExtResource("6_bndqt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BreathingArea"]
+position = Vector2(1041.25, 295.75)
+shape = SubResource("RectangleShape2D_t38eh")
+
+[node name="CheckPoint" type="Area2D" parent="."]
+modulate = Color(0, 1, 0, 1)
+script = ExtResource("7_gpmso")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CheckPoint"]
+position = Vector2(921, 244.25)
+shape = SubResource("RectangleShape2D_lk81u")
