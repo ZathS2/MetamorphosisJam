@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://c8ct6ghgrf0qs" path="res://TileSets/water.tres" id="1_376kq"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="2_nbv7d"]
-[ext_resource type="PackedScene" uid="uid://dibjuib2x2nb8" path="res://Scenes/box.tscn" id="3_4dbwh"]
+[ext_resource type="PackedScene" path="res://Scenes/box.tscn" id="3_4dbwh"]
 [ext_resource type="Script" path="res://Scripts/World/water.gd" id="5_t4x5f"]
 [ext_resource type="Script" path="res://Scripts/World/breath_area.gd" id="6_bndqt"]
 [ext_resource type="PackedScene" uid="uid://d1lxrov08wusk" path="res://Scenes/Player/turtle.tscn" id="7_fba34"]

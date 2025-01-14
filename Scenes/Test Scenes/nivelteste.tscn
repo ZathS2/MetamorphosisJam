@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjhjt8dbe6gqs"]
 
-[ext_resource type="PackedScene" path="res://Scenes/Test Scenes/teste chão.tscn" id="1_0uqod"]
+[ext_resource type="PackedScene" uid="uid://btcuqxb58ixqk" path="res://Scenes/Test Scenes/teste chão.tscn" id="1_0uqod"]
 [ext_resource type="PackedScene" uid="uid://d1lxrov08wusk" path="res://Scenes/Player/turtle.tscn" id="2_f4186"]
 
 [node name="Node2D2" type="Node2D"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=4 uid="uid://t7rswwvpbph6"]
 
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_3ppwi"]
-[ext_resource type="PackedScene" uid="uid://mnswrgmvocji" path="res://Scenes/Gaivota.tscn" id="2_bnamq"]
+[ext_resource type="PackedScene" uid="uid://cx3ib3io0q6lw" path="res://Scenes/Player/Gaivota.tscn" id="2_bnamq"]
 [ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="3_1jqg5"]
 
 [node name="GaivotaTesteScene" type="Node2D"]

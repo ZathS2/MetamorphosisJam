@@ -12,6 +12,8 @@ size = Vector2(128, 3)
 
 [node name="Gaivota" type="CharacterBody2D"]
 script = ExtResource("1_3ac7y")
+groundSpeed = 300.0
+flySpeed = 500.0
 
 [node name="Icon" type="Sprite2D" parent="."]
 self_modulate = Color(0.685667, 0.18, 1, 1)
