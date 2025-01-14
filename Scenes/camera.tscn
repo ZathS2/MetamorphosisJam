@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://nxvwagfcu5vx"]
+
+[ext_resource type="Script" path="res://Scripts/Camera.cs" id="1_xbqi6"]
+
+[node name="Camera" type="Camera2D"]
+editor_draw_limits = true
+script = ExtResource("1_xbqi6")
