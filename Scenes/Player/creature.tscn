@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://d4jrfjlenh78s"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Creature.cs" id="1_6iigq"]
+[ext_resource type="Texture2D" uid="uid://by7o73hs7oh1k" path="res://addons/Player/playermetamorfoseidle.png" id="1_dm57x"]
+
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sqp4"]
+size = Vector2(22, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4lxld"]
+atlas = ExtResource("1_dm57x")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p7ei6"]
+atlas = ExtResource("1_dm57x")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rihn3"]
+atlas = ExtResource("1_dm57x")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cove"]
+atlas = ExtResource("1_dm57x")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5ot3"]
+atlas = ExtResource("1_dm57x")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urjb6"]
+atlas = ExtResource("1_dm57x")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruicq"]
+atlas = ExtResource("1_dm57x")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b5mna"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4lxld")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p7ei6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rihn3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cove")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5ot3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urjb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ruicq")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_6iigq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_2sqp4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -3)
+sprite_frames = SubResource("SpriteFrames_b5mna")
+animation = &"idle"
+autoplay = "idle"
+frame = 4
+frame_progress = 0.972008

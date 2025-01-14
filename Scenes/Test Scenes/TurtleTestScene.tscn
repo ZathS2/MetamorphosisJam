@@ -1,14 +1,15 @@
 [gd_scene load_steps=12 format=4 uid="uid://6igbqgvg1tqv"]
 
 [ext_resource type="TileSet" uid="uid://c8ct6ghgrf0qs" path="res://TileSets/water.tres" id="1_ooykj"]
-[ext_resource type="Script" path="res://Scripts/water.gd" id="2_ud7qw"]
+[ext_resource type="Script" path="res://Scripts/World/water.gd" id="2_ud7qw"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="3_pcbgb"]
-[ext_resource type="PackedScene" uid="uid://d1lxrov08wusk" path="res://Scenes/turtle.tscn" id="4_1ps30"]
-[ext_resource type="Script" path="res://Scripts/breath_area.gd" id="5_7sw3y"]
+[ext_resource type="PackedScene" uid="uid://d1lxrov08wusk" path="res://Scenes/Player/turtle.tscn" id="4_1ps30"]
+[ext_resource type="Script" path="res://Scripts/World/breath_area.gd" id="5_7sw3y"]
 [ext_resource type="PackedScene" uid="uid://cbdrl7rq1ftbh" path="res://Scenes/CheckPoint.tscn" id="6_p0qeb"]
 [ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="7_2utew"]
-[ext_resource type="PackedScene" uid="uid://cu8yym8uwuth0" path="res://Scenes/player.tscn" id="7_e0lva"]
-[ext_resource type="PackedScene" uid="uid://d4jrfjlenh78s" path="res://Scenes/creature.tscn" id="8_y40pq"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/player.tscn" id="7_e0lva"]
+[ext_resource type="PackedScene" uid="uid://d4jrfjlenh78s" path="res://Scenes/Player/creature.tscn" id="8_y40pq"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_do00e"]
 size = Vector2(768, 402)

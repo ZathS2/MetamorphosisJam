@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dew53lm5ofn8x" path="res://addons/Player/singleSpritePlayerMetamorfose.png" id="4_cxte4"]
 [ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="5_28aey"]
 
+
 [node name="Control" type="Control"]
 self_modulate = Color(0.89, 0.89, 0.89, 1)
 layout_mode = 3
