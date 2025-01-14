@@ -8,7 +8,7 @@ public partial class Gaivota : CharacterBody2D
 
 	bool isFlying = false;
 
-	float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity"); 
+	float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -28,16 +28,17 @@ public partial class Gaivota : CharacterBody2D
 				isFlying = true;
 				GlobalPosition += UpDirection * 20;
 			}
-		} else {
+		}
+		else
+		{
 			airMovement();
-
-			if (IsOnFloor())
+			if (Input.IsActionJustPressed("stop_fly"))
 			{
 				isFlying = false;
 			}
 		}
-		
-		
+
+
 
 	}
 
@@ -45,7 +46,7 @@ public partial class Gaivota : CharacterBody2D
 	{
 		if (!IsOnFloor())
 			velocity.Y += gravity * (float)delta;
-		
+
 		return velocity;
 	}
 
@@ -66,7 +67,9 @@ public partial class Gaivota : CharacterBody2D
 		if (input != Vector2.Zero)
 		{
 			velocity.X = input.X * groundSpeed;
-		} else {
+		}
+		else
+		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, groundSpeed);
 		}
 
@@ -84,11 +87,13 @@ public partial class Gaivota : CharacterBody2D
 		{
 			velocity.X = input.X * flySpeed;
 			velocity.Y = input.Y * flySpeed;
-		} else {
+		}
+		else
+		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, flySpeed);
 			velocity.Y = Mathf.MoveToward(Velocity.Y, 0, flySpeed);
 		}
-		
+
 		Velocity = velocity;
 		MoveAndSlide();
 	}
