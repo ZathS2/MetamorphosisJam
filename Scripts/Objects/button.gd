@@ -13,6 +13,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
+	print(body)
 	if body.get_class()!="StaticBody2D":
 		animatio_player.play("button_pressed")
 		print("Pressed")

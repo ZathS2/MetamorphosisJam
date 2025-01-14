@@ -1,12 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmc4kn514qcio"]
+[gd_scene load_steps=12 format=3 uid="uid://bmc4kn514qcio"]
 
 [ext_resource type="TileSet" uid="uid://c8ct6ghgrf0qs" path="res://TileSets/water.tres" id="1_376kq"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="2_nbv7d"]
 [ext_resource type="PackedScene" uid="uid://dibjuib2x2nb8" path="res://Scenes/box.tscn" id="3_4dbwh"]
-[ext_resource type="PackedScene" uid="uid://cu8yym8uwuth0" path="res://Scenes/Player/player.tscn" id="4_tojgc"]
-[ext_resource type="Script" path="res://Scripts/water.gd" id="5_t4x5f"]
-[ext_resource type="Script" path="res://Scripts/breath_area.gd" id="6_bndqt"]
-[ext_resource type="Script" path="res://Scripts/check_point_area.gd" id="7_gpmso"]
+[ext_resource type="Script" path="res://Scripts/World/water.gd" id="5_t4x5f"]
+[ext_resource type="Script" path="res://Scripts/World/breath_area.gd" id="6_bndqt"]
+[ext_resource type="Script" path="res://Scripts/World/check_point_area.gd" id="7_gpmso"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crjt4"]
 size = Vector2(590, 282.5)
@@ -37,9 +36,6 @@ layer_0/tile_data = PackedInt32Array(458761, 0, 2, 458764, 131072, 2, 327680, 0,
 
 [node name="Box" parent="." instance=ExtResource("3_4dbwh")]
 position = Vector2(529, 88)
-
-[node name="PlayerNode" parent="." instance=ExtResource("4_tojgc")]
-position = Vector2(327, 87)
 
 [node name="WaterArea" type="Area2D" parent="."]
 modulate = Color(0, 0, 1, 1)

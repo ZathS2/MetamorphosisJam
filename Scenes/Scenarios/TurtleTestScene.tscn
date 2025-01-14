@@ -1,11 +1,12 @@
 [gd_scene load_steps=11 format=4 uid="uid://6igbqgvg1tqv"]
 
 [ext_resource type="TileSet" uid="uid://c8ct6ghgrf0qs" path="res://TileSets/water.tres" id="1_ooykj"]
-[ext_resource type="Script" path="res://Scripts/water.gd" id="2_ud7qw"]
+[ext_resource type="Script" path="res://Scripts/World/water.gd" id="2_ud7qw"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="3_pcbgb"]
-[ext_resource type="PackedScene" uid="uid://dqihnw5ybl811" path="res://Scenes/Player/turtle.tscn" id="4_1ps30"]
-[ext_resource type="Script" path="res://Scripts/breath_area.gd" id="5_7sw3y"]
-[ext_resource type="Script" path="res://Scripts/check_point_area.gd" id="6_040t7"]
+[ext_resource type="PackedScene" uid="uid://d1lxrov08wusk" path="res://Scenes/Player/turtle.tscn" id="4_1ps30"]
+[ext_resource type="Script" path="res://Scripts/World/breath_area.gd" id="5_7sw3y"]
+[ext_resource type="Script" path="res://Scripts/World/check_point_area.gd" id="6_040t7"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_do00e"]
 size = Vector2(1241, 451)

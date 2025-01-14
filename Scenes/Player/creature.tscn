@@ -1,7 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://d4jrfjlenh78s"]
 
-[ext_resource type="Script" path="res://Scripts/Creature.cs" id="1_6iigq"]
+[ext_resource type="Script" path="res://Scripts/Player/Creature.cs" id="1_6iigq"]
 [ext_resource type="Texture2D" uid="uid://by7o73hs7oh1k" path="res://addons/Player/playermetamorfoseidle.png" id="1_dm57x"]
+
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2sqp4"]
 size = Vector2(22, 26)
