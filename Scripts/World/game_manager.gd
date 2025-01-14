@@ -2,7 +2,12 @@ extends Node
 
 var is_player_in_water = false
 var can_breathe = false
+var is_on_rope = false
+var jumped_out_of_rope = false
+
+var rope_seg_area = null
 var last_checkpoint_pos = null
+
 
 const CREATURE = 0
 const TURTLE = 1
@@ -19,3 +24,4 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
