@@ -6,6 +6,11 @@ public partial class PlayerScript : Node2D
 
 	[Export] PackedScene creatureScene;
 	[Export] PackedScene turtleScene;
+	[Export] PackedScene heronScene;
+	[Export] PackedScene macawScene;
+	[Export] PackedScene monkeyScene;
+	[Export] PackedScene oncaScene;
+	[Export] PackedScene garoupaScene;
 
 	PackedScene currentAnimalScene;
 
@@ -51,7 +56,9 @@ public partial class PlayerScript : Node2D
 
 			AddChild(currentInstantiatedScene);
 
-		} else if (instantiatedAnimal == (int)GameManager.Get("TURTLE")) {
+		}
+		else if (instantiatedAnimal == (int)GameManager.Get("TURTLE"))
+		{
 
 			if (currentInstantiatedScene != null)
 			{
@@ -63,51 +70,72 @@ public partial class PlayerScript : Node2D
 
 			AddChild(currentInstantiatedScene);
 		}
+		else if (instantiatedAnimal == (int)GameManager.Get("HERON"))
+		{
+
+			if (currentInstantiatedScene != null)
+			{
+				GlobalPosition = currentInstantiatedScene.GlobalPosition;
+				RemoveChild(currentInstantiatedScene);
+			}
+
+			currentInstantiatedScene = (Node2D)heronScene.Instantiate();
+
+			AddChild(currentInstantiatedScene);
+		}
+		else if (instantiatedAnimal == (int)GameManager.Get("MACAW"))
+		{
+
+			if (currentInstantiatedScene != null)
+			{
+				GlobalPosition = currentInstantiatedScene.GlobalPosition;
+				RemoveChild(currentInstantiatedScene);
+			}
+
+			currentInstantiatedScene = (Node2D)macawScene.Instantiate();
+
+			AddChild(currentInstantiatedScene);
+		}
+		else if (instantiatedAnimal == (int)GameManager.Get("MONKEY"))
+		{
+
+			if (currentInstantiatedScene != null)
+			{
+				GlobalPosition = currentInstantiatedScene.GlobalPosition;
+				RemoveChild(currentInstantiatedScene);
+			}
+
+			currentInstantiatedScene = (Node2D)monkeyScene.Instantiate();
+
+			AddChild(currentInstantiatedScene);
+		}
+		else if (instantiatedAnimal == (int)GameManager.Get("ONCA"))
+		{
+
+			if (currentInstantiatedScene != null)
+			{
+				GlobalPosition = currentInstantiatedScene.GlobalPosition;
+				RemoveChild(currentInstantiatedScene);
+			}
+
+			currentInstantiatedScene = (Node2D)oncaScene.Instantiate();
+
+			AddChild(currentInstantiatedScene);
+		}
+		else if (instantiatedAnimal == (int)GameManager.Get("GAROUPA"))
+		{
+
+			if (currentInstantiatedScene != null)
+			{
+				GlobalPosition = currentInstantiatedScene.GlobalPosition;
+				RemoveChild(currentInstantiatedScene);
+			}
+
+			currentInstantiatedScene = (Node2D)garoupaScene.Instantiate();
+
+			AddChild(currentInstantiatedScene);
+		}
 	}
 
-	/*void switchAnimal(ANIMALS animal)
-	{
-		if (animal == currentAnimal)
-			return;
-
-		currentAnimal = animal;
-
-		switch (currentAnimal)
-		{
-			case (ANIMALS.ANIMAL1):
-
-				if (currentInstantiatedScene != null)
-				{
-					GlobalPosition = currentInstantiatedScene.GlobalPosition;
-					RemoveChild(currentInstantiatedScene);
-				}
-
-
-				currentInstantiatedScene = (Node2D)scene1.Instantiate();
-
-				AddChild(currentInstantiatedScene);
-
-
-
-				break;
-
-			case (ANIMALS.ANIMAL2):
-
-				if (currentInstantiatedScene != null)
-				{
-					GlobalPosition = currentInstantiatedScene.GlobalPosition;
-					RemoveChild(currentInstantiatedScene);
-				}
-
-				currentInstantiatedScene = (Node2D)scene2.Instantiate();
-
-				AddChild(currentInstantiatedScene);
-
-
-
-
-				break;
-		}
-	}*/
 
 }

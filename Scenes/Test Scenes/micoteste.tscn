@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_3mspg"]
 [ext_resource type="PackedScene" path="res://Scenes/rope.tscn" id="2_ex6gg"]
-[ext_resource type="PackedScene" path="res://Scenes/mico.tscn" id="3_7djlg"]
+[ext_resource type="PackedScene" uid="uid://dcamwxo51muer" path="res://Scenes/mico.tscn" id="3_7djlg"]
 
 [node name="testemico" type="Node2D"]
 

@@ -1,10 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cgw2b7lqyp3of"]
+[gd_scene load_steps=4 format=3 uid="uid://cgw2b7lqyp3of"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerScript.cs" id="1_1xw2t"]
 [ext_resource type="PackedScene" uid="uid://d1lxrov08wusk" path="res://Scenes/Player/turtle.tscn" id="2_j41gg"]
+[ext_resource type="PackedScene" uid="uid://d4jrfjlenh78s" path="res://Scenes/Player/creature.tscn" id="2_yxuhv"]
 
 [node name="PlayerNode" type="Node2D"]
 script = ExtResource("1_1xw2t")
-
-[node name="CharacterBody2D" parent="." instance=ExtResource("2_j41gg")]
-collision_layer = 3
+creatureScene = ExtResource("2_yxuhv")
+turtleScene = ExtResource("2_j41gg")
