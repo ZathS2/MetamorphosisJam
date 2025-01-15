@@ -54,6 +54,4 @@ func flip_h():
 		$"../Garça".flip_h = !$"../Garça".flip_h
 		$"../Marker2D".position = Vector2($"../Marker2D".position*Vector2(-1, 1))
 		$"../CollisionShape2D".position = Vector2($"../CollisionShape2D".position*Vector2(-1, 1))
-		print($CollisionShape2D.position)
 		$CollisionShape2D.position = Vector2($CollisionShape2D.position*Vector2(-1, 1))
-		print($CollisionShape2D.position)
