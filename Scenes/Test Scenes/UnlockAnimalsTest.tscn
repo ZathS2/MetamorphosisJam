@@ -14,7 +14,13 @@ tile_set = ExtResource("1_al34a")
 
 [node name="AnimalUnlocker" parent="." instance=ExtResource("2_xtnmb")]
 position = Vector2(167, -31)
-animalIndex = 2
+animalIndex = 3
+turtleColor = Color(0.2849, 0.584045, 0.77, 0.784314)
+heronColor = Color(0.61, 0.4575, 0.604917, 0.784314)
+macawColor = Color(0.62, 0.2666, 0.30783, 0.784314)
+monkeyColor = Color(0.89, 0.403022, 0.2937, 0.784314)
+oncaColor = Color(0.38, 0.30875, 0.285, 0.784314)
+garoupaColor = Color(0.52, 0.66, 0.8, 0.784314)
 
 [node name="PlayerNode" parent="." instance=ExtResource("3_grbnt")]
 position = Vector2(-253, -107)
