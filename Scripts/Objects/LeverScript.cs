@@ -14,6 +14,7 @@ public partial class LeverScript : Area2D
 	public override void _Ready()
 	{
 		anim = (AnimationPlayer)GetParent().FindChild("AnimationPlayer");
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,7 +24,9 @@ public partial class LeverScript : Area2D
 
 		foreach (Node2D body in GetOverlappingBodies())
 		{
-			if (body.GetGroups().Contains("Player") && (int)GameManager.Get("current_animal") == (int)GameManager.Get("MACAW"))
+			if (body.GetGroups().Contains("Player") && ((int)GameManager.Get("current_animal") == (int)GameManager.Get("MACAW") ||
+				(int)GameManager.Get("current_animal") == (int)GameManager.Get("CREATURE") ||
+				(int)GameManager.Get("current_animal") == (int)GameManager.Get("MONKEY")))
 			{
 				if (Input.IsActionJustPressed("interact"))
 				{
@@ -42,8 +45,6 @@ public partial class LeverScript : Area2D
 				}
 			}
 		}
-
-
 	}
 
 

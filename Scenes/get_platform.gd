@@ -1,6 +1,7 @@
-extends StaticBody2D
+extends Node2D
 
-@export var platform: CharacterBody2D = null
+@export var platform: Node2D = null
+@export var door: Node2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export var final_position: Vector2
 @export var speed: float = 100
+@export var leverscript : Node
 
 var inicial_position
 var is_button_pressed = false
@@ -12,6 +13,8 @@ func _ready():
 	if final_position == null:
 		final_position = global_position
 	inicial_position = global_position
+	leverscript.PushedLever.connect(_move_plataform_lever())
+	
 	pass # Replace with function body.
 
 
@@ -32,3 +35,7 @@ func _process(delta):
 			velocity = Vector2(0, 0)
 			move_and_slide()
 	pass
+
+func _move_plataform_lever():
+	is_button_pressed = !is_button_pressed
+	
