@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://bg51vvmjh7q47"]
+
+[ext_resource type="Texture2D" uid="uid://bs1hd7mfpoej1" path="res://addons/dinhero.png" id="2_j801s"]
+[ext_resource type="Script" path="res://Scripts/AnimalUnlocker.cs" id="2_tlfn3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kesgj"]
+size = Vector2(116.667, 86.6667)
+
+[node name="AnimalUnlocker" type="Node2D" node_paths=PackedStringArray("Area")]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("2_tlfn3")
+Area = NodePath("Area2D")
+turtleColor = Color(0.284079, 0.580047, 0.766157, 1)
+heronColor = Color(0.607843, 0.458824, 0.603922, 1)
+macawColor = Color(0.623529, 0.266667, 0.305882, 1)
+monkeyColor = Color(0.890196, 0.403922, 0.290196, 1)
+oncaColor = Color(0.380392, 0.309804, 0.286275, 1)
+garoupaColor = Color(0.517647, 0.658824, 0.796078, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(5.625, 5.625)
+texture = ExtResource("2_j801s")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1.66667, 3.33333)
+shape = SubResource("RectangleShape2D_kesgj")
