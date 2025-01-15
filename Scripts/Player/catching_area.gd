@@ -1,11 +1,10 @@
 extends Area2D
 
 var caring_body
+var body_distance
 
 
 func _physics_process(delta):
-	var last_global_position = global_position
-	
 	if caring_body!= null:
 		for i in caring_body.get_contact_count():
 			var collision_angle = caring_body.get_contact_local_normal(i).angle()
@@ -18,7 +17,8 @@ func _physics_process(delta):
 					caring_body = body
 					body.beeing_caried = true
 					body.freeze = true
-					body.global_position = Vector2(body.global_position+Vector2(0,2))
+					body.global_position = $"../Marker2D".global_position
+					body_distance = Vector2(body.global_position-get_parent().global_position)
 					body.linear_velocity = Vector2(0, 0)
 				break
 		else:
@@ -27,6 +27,7 @@ func _physics_process(delta):
 			caring_body = null
 	
 	if caring_body!=null:
-		caring_body.global_position = Vector2(caring_body.global_position+Vector2(global_position-last_global_position))
+		caring_body.global_position = Vector2(body_distance+get_parent().global_position)
+		caring_body.linear_velocity = Vector2(0, 0)
 	
 	
