@@ -1,8 +1,9 @@
 [gd_scene load_steps=8 format=3 uid="uid://cuc2s7ps2gito"]
 
-[ext_resource type="Script" path="res://Scenes/rope_anim.gd" id="1_ftqj1"]
+[ext_resource type="Script" path="res://Scripts/rope_anim.gd" id="1_ftqj1"]
 [ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="1_i8th8"]
 [ext_resource type="Script" path="res://Scripts/rope_seg.gd" id="2_1pjnl"]
+
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jcuh4"]
 
