@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_al34a"]
 [ext_resource type="PackedScene" uid="uid://bg51vvmjh7q47" path="res://Scenes/animal_unlocker.tscn" id="2_xtnmb"]
 [ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="3_grbnt"]
-[ext_resource type="PackedScene" uid="uid://nxvwagfcu5vx" path="res://Scenes/camera.tscn" id="4_gn43y"]
+[ext_resource type="PackedScene" uid="uid://07jcs0g13172" path="res://Scenes/camera.tscn" id="4_gn43y"]
 [ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="5_404fl"]
 
 [node name="UnlockAnimalsTest" type="Node2D"]
