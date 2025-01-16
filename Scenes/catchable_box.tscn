@@ -1,12 +1,42 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgv05ltagsndi"]
+[gd_scene load_steps=5 format=3 uid="uid://dgv05ltagsndi"]
 
 [ext_resource type="Script" path="res://Scripts/Objects/box.gd" id="1_vmbhu"]
 [ext_resource type="Texture2D" uid="uid://drt4uywqo11kb" path="res://addons/Box.png" id="3_sejqr"]
+
+[sub_resource type="GDScript" id="GDScript_k22re"]
+script/source = "extends Area2D
+
+var speed_modifier
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+'''
+func get_speed_modifier() -> float:
+	speed_modifier=0
+	for body in get_overlapping_bodies():
+		print(body)
+		body.velocity_y
+		if body.get_class()==\"StaticBody2D\":
+			speed_modifier+=body.mass*100
+		elif body.is_in_group(\"Player\"):
+			var velocity_y = body.velocity.y
+			if velocity_y>0:
+				speed_modifier+=velocity_y*100
+	return speed_modifier
+'''
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2adko"]
 size = Vector2(131, 132)
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Catchable"]]
+mass = 0.5
 script = ExtResource("1_vmbhu")
 
 [node name="Box" type="Sprite2D" parent="."]
@@ -18,6 +48,7 @@ polygon = PackedVector2Array(-26, -32, -30, -30, -32, -26, -32, 26, -30, 30, -26
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)
+script = SubResource("GDScript_k22re")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -3.05176e-05)

@@ -1,11 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnf4qrmqjokm8"]
+[gd_scene load_steps=4 format=3 uid="uid://cnf4qrmqjokm8"]
 
 [ext_resource type="Script" path="res://Scripts/World/platform.gd" id="1_fyr2b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ofgil"]
 size = Vector2(56, 6)
 
-[node name="Node2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psrsv"]
+size = Vector2(56, 1)
+
+[node name="Node2D" type="RigidBody2D"]
 script = ExtResource("1_fyr2b")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
@@ -14,3 +17,12 @@ polygon = PackedVector2Array(-28, -3, -28, 3, 28, 3, 28, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ofgil")
+
+[node name="Area2D" type="Area2D" parent="."]
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_psrsv")
