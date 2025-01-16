@@ -11,51 +11,138 @@
 [ext_resource type="PackedScene" uid="uid://dgv05ltagsndi" path="res://Scenes/catchable_box.tscn" id="9_a07hv"]
 
 [node name="Level1" type="Node2D"]
+position = Vector2(580, 520)
 
-[node name="Lever" parent="." node_paths=PackedStringArray("platform") instance=ExtResource("1_3weaj")]
-position = Vector2(1476, -19)
+[node name="PlayerNode" parent="." instance=ExtResource("5_ijplr")]
+position = Vector2(-449, -78)
+
+[node name="Camera" type="Node" parent="."]
+
+[node name="upleft" type="Marker2D" parent="Camera"]
+
+[node name="downright" type="Marker2D" parent="Camera"]
+position = Vector2(6039, 860)
+
+[node name="Camera" parent="Camera" node_paths=PackedStringArray("follower", "up_left_marker", "down_right_marker") instance=ExtResource("4_ufjvt")]
+position = Vector2(3967, 325)
+follower = NodePath("../../PlayerNode")
+up_left_marker = NodePath("../upleft")
+down_right_marker = NodePath("../downright")
+
+[node name="Level1" type="Node" parent="."]
+
+[node name="LeverDoor" parent="Level1" instance=ExtResource("3_4vivk")]
+position = Vector2(1141, 413)
+scale = Vector2(1, 1.5)
+openHeight = -100.0
+
+[node name="Button" parent="Level1" node_paths=PackedStringArray("door") instance=ExtResource("2_v7isc")]
+z_index = 1
+position = Vector2(991, 522)
+door = NodePath("../LeverDoor")
+
+[node name="Level2" type="Node" parent="."]
+
+[node name="RigidBody2D2" parent="Level2" instance=ExtResource("9_a07hv")]
+position = Vector2(1530, 478)
+
+[node name="Button2" parent="Level2" node_paths=PackedStringArray("door") instance=ExtResource("2_v7isc")]
+position = Vector2(1759, 587)
+door = NodePath("../LeverDoor2")
+
+[node name="LeverDoor2" parent="Level2" instance=ExtResource("3_4vivk")]
+position = Vector2(2274, 413)
+scale = Vector2(1, 1.5)
+openHeight = -100.0
+
+[node name="Level3" type="Node" parent="."]
+
+[node name="Platform" parent="Level3" node_paths=PackedStringArray("final_position_marker") instance=ExtResource("3_50stn")]
+position = Vector2(2718, 328)
+scale = Vector2(1.355, 1)
+final_position_marker = NodePath("../PlatformFinalPosition")
+
+[node name="PlatformFinalPosition" type="Marker2D" parent="Level3"]
+position = Vector2(2718, 528)
+scale = Vector2(2.325, 1)
+
+[node name="Lever" parent="Level3" node_paths=PackedStringArray("platform") instance=ExtResource("1_3weaj")]
+position = Vector2(3148, 506)
 rotation = 1.5708
 script = ExtResource("2_ekehq")
 platform = NodePath("../Platform")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD+/wAAAAABAAAAAAD9/wAAAAAAAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAAFAAEAAAAAAAEAAAAFAAAAAAAAAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAADAAIAAAABAAAAAAAEAAIAAAABAAAAAAACAAIAAAABAAEAAAAFAAIAAAABAAEAAAAQAAAAAAABAAAAAAARAAAAAAABAAAAAAASAAAAAAABAAAAAAATAAAAAAABAAAAAAAUAAAAAAABAAAAAAAVAAAAAAABAAAAAAAWAAAAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAZAAAAAAABAAAAAAA=")
-tile_set = ExtResource("1_bvtl3")
+[node name="RigidBody2D" parent="Level3" instance=ExtResource("9_a07hv")]
+position = Vector2(2553, 480)
 
-[node name="Button" parent="." node_paths=PackedStringArray("door") instance=ExtResource("2_v7isc")]
-position = Vector2(254, 93)
-scale = Vector2(1.5, 1.5)
-door = NodePath("../LeverDoor")
-
-[node name="LeverDoor" parent="." instance=ExtResource("3_4vivk")]
-position = Vector2(610, -84)
+[node name="LeverDoor" parent="Level3" instance=ExtResource("3_4vivk")]
+position = Vector2(3403, 413)
+scale = Vector2(1, 1.5)
 openHeight = -100.0
 
-[node name="upleft" type="Marker2D" parent="."]
-position = Vector2(-202, -320)
+[node name="Node2D" parent="Level3" node_paths=PackedStringArray("door") instance=ExtResource("2_v7isc")]
+position = Vector2(2911, 587)
+door = NodePath("../LeverDoor")
 
-[node name="downright" type="Marker2D" parent="."]
-position = Vector2(1750, 253)
+[node name="Level6" type="Node" parent="."]
 
-[node name="Camera" parent="." node_paths=PackedStringArray("follower", "up_left_marker", "down_right_marker") instance=ExtResource("4_ufjvt")]
-follower = NodePath("../PlayerNode")
-up_left_marker = NodePath("../upleft")
-down_right_marker = NodePath("../downright")
+[node name="Lever" parent="Level6" node_paths=PackedStringArray("door") instance=ExtResource("1_3weaj")]
+position = Vector2(3780, 505)
+rotation = 1.5708
+door = NodePath("../LeverDoor1")
 
-[node name="PlayerNode" parent="." instance=ExtResource("5_ijplr")]
-position = Vector2(809, -108)
+[node name="Lever2" parent="Level6" node_paths=PackedStringArray("door") instance=ExtResource("1_3weaj")]
+position = Vector2(3930, 505)
+rotation = 1.5708
+door = NodePath("../LeverDoor2")
 
-[node name="PlatformFinalPosition" type="Marker2D" parent="."]
-position = Vector2(1337, -5)
-scale = Vector2(2.325, 1)
+[node name="Lever3" parent="Level6" node_paths=PackedStringArray("door") instance=ExtResource("1_3weaj")]
+position = Vector2(4080, 505)
+rotation = 1.5708
+door = NodePath("../LeverDoor3")
 
-[node name="Platform" parent="." node_paths=PackedStringArray("final_position_marker") instance=ExtResource("3_50stn")]
-position = Vector2(1337, -250)
-scale = Vector2(2.325, 1)
-final_position_marker = NodePath("../PlatformFinalPosition")
+[node name="Lever4" parent="Level6" node_paths=PackedStringArray("door") instance=ExtResource("1_3weaj")]
+position = Vector2(4230, 505)
+rotation = 1.5708
+door = NodePath("../LeverDoor4")
 
-[node name="RigidBody2D" parent="." instance=ExtResource("9_a07hv")]
-position = Vector2(1333, -338)
+[node name="Lever5" parent="Level6" node_paths=PackedStringArray("door") instance=ExtResource("1_3weaj")]
+position = Vector2(4380, 505)
+rotation = 1.5708
+door = NodePath("../LeverDoor5")
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("9_a07hv")]
-position = Vector2(133, -42)
+[node name="LeverDoor1" parent="Level6" node_paths=PackedStringArray("lever") instance=ExtResource("3_4vivk")]
+position = Vector2(5246, 413)
+scale = Vector2(0.6, 1.5)
+openHeight = 222.0
+lever = NodePath("../Lever")
+
+[node name="LeverDoor2" parent="Level6" node_paths=PackedStringArray("lever") instance=ExtResource("3_4vivk")]
+position = Vector2(5118, 413)
+scale = Vector2(0.6, 1.5)
+openHeight = 222.0
+lever = NodePath("../Lever2")
+
+[node name="LeverDoor3" parent="Level6" node_paths=PackedStringArray("lever") instance=ExtResource("3_4vivk")]
+position = Vector2(5182, 635)
+scale = Vector2(0.6, 1.5)
+openHeight = -222.0
+lever = NodePath("../Lever3")
+
+[node name="LeverDoor4" parent="Level6" node_paths=PackedStringArray("lever") instance=ExtResource("3_4vivk")]
+position = Vector2(4990, 413)
+scale = Vector2(0.6, 1.5)
+openHeight = 222.0
+lever = NodePath("../Lever4")
+
+[node name="LeverDoor5" parent="Level6" node_paths=PackedStringArray("lever") instance=ExtResource("3_4vivk")]
+position = Vector2(5054, 635)
+scale = Vector2(0.6, 1.5)
+openHeight = -222.0
+lever = NodePath("../Lever5")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+z_index = 1
+position = Vector2(-5, 0)
+tile_map_data = PackedByteArray("AAD+/wAAAAABAAAAAAD9/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAARAAAAAAACAAAAAAAUAAAAAAABAAAAAAAVAAAAAAABAAAAAAAWAAAAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAZAAAAAAABAAAAAAD8/wAAAAABAAAAAAD6/wAAAAABAAAAAAD5/wAAAAABAAAAAAD3/wAAAAABAAAAAAD4/wAAAAABAAAAAAD2/wAAAAABAAEAAAD7/wAAAAABAAAAAAD2//v/AAABAAEAAAD2//z/AAABAAEAAAD2//3/AAABAAEAAAD2//7/AAABAAEAAAD2////AAABAAEAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAaAAAAAAABAAAAAAAbAAAAAAABAAAAAAAcAAAAAAABAAAAAAAdAAAAAAABAAAAAAAeAAAAAAABAAAAAAAfAAAAAAABAAAAAAAjAAAAAAACAAAAAAAmAAAAAAABAAAAAAAnAAAAAAABAAAAAAAoAAAAAAABAAAAAAApAAAAAAABAAAAAAAqAAAAAAABAAAAAAArAAAAAAABAAAAAAAsAAAAAAABAAAAAAAtAAAAAAABAAAAAAAuAAAAAAABAAAAAAAvAAAAAAABAAAAAAAwAAAAAAABAAAAAAAxAAAAAAABAAAAAAAyAAAAAAABAAAAAAAzAAAAAAABAAAAAAA0AAAAAAABAAAAAAA1AAAAAAABAAAAAAA2AAAAAAABAAAAAAA3AAAAAAABAAAAAAA4AAAAAAABAAAAAAA5AAAAAAABAAAAAAA6AAAAAAABAAAAAAAGAAAAAAABAAAAAAAOAAAAAAABAAAAAAATAAAAAAAAAAAAAAASAAEAAAABAAAAAAARAAEAAAABAAEAAAATAAEAAAABAAEAAAAgAAAAAAACAAAAAAAiAAAAAAAAAAAAAAAlAAAAAAAAAAAAAAAhAAEAAAABAAAAAAAkAAEAAAABAAAAAAAgAAEAAAABAAEAAAAiAAEAAAABAAEAAAAjAAEAAAABAAEAAAAlAAEAAAABAAEAAAA7AAAAAAABAAAAAAA8AAAAAAABAAAAAAA9AAAAAAABAAAAAAA+AAAAAAABAAAAAAA/AAAAAAABAAAAAABAAAAAAAABAAAAAABBAAAAAAABAAAAAABCAAAAAAABAAAAAABDAAAAAAABAAAAAABFAAAAAAADAAAAAABGAAAAAAADAAAAAABHAAAAAAADAAAAAABIAAAAAAADAAAAAABJAAAAAAAAAAAAAABKAAAAAAABAAAAAABMAAAAAAABAAAAAABNAAAAAAABAAAAAABOAAAAAAABAAAAAABPAAAAAAABAAAAAABLAAAAAAABAAAAAABEAAAAAAACAAAAAAA=")
+tile_set = ExtResource("1_bvtl3")
