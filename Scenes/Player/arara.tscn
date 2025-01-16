@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://cwp0m55m46aki"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Macaw.cs" id="1_yvdub"]
-[ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="2_wa2r6"]
+[ext_resource type="Texture2D" uid="uid://bdcpfp4no2pye" path="res://addons/Animals/Arara.png" id="2_2dft7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rhegh"]
-size = Vector2(128, 127)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxwi3"]
+radius = 10.0
+height = 68.0
 
 [node name="Arara" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.5, 0.5)
@@ -12,11 +13,11 @@ motion_mode = 1
 script = ExtResource("1_yvdub")
 flySpeed = 500.0
 
-[node name="Icon" type="Sprite2D" parent="."]
-self_modulate = Color(0.12, 1, 0.985333, 1)
-position = Vector2(1, 2)
-texture = ExtResource("2_wa2r6")
+[node name="Arara" type="Sprite2D" parent="."]
+texture = ExtResource("2_2dft7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1.5)
-shape = SubResource("RectangleShape2D_rhegh")
+visible = false
+position = Vector2(14, 10)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_gxwi3")
