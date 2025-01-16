@@ -28,7 +28,8 @@ public partial class LeverScript : Area2D
 		{
 			if (body.GetGroups().Contains("Player") && ((int)GameManager.Get("current_animal") == (int)GameManager.Get("MACAW") ||
 				(int)GameManager.Get("current_animal") == (int)GameManager.Get("CREATURE") ||
-				(int)GameManager.Get("current_animal") == (int)GameManager.Get("MONKEY")))
+				(int)GameManager.Get("current_animal") == (int)GameManager.Get("MONKEY")) ||
+				(int)GameManager.Get("current_animal") == (int)GameManager.Get("TURTLE"))
 			{
 				if (Input.IsActionJustPressed("interact"))
 				{
