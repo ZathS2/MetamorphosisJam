@@ -55,7 +55,7 @@ scale = Vector2(2.325, 1)
 final_position_marker = NodePath("../PlatformFinalPosition")
 
 [node name="RigidBody2D" parent="." instance=ExtResource("9_a07hv")]
-position = Vector2(1150, -317)
+position = Vector2(1333, -338)
 
 [node name="RigidBody2D2" parent="." instance=ExtResource("9_a07hv")]
 position = Vector2(133, -42)

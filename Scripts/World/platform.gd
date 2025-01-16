@@ -1,4 +1,4 @@
-extends RigidBody2D
+extends CharacterBody2D
 
 @export var final_position_marker: Marker2D
 @export var speed: float = 100
@@ -11,7 +11,7 @@ var is_button_pressed = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	freeze_mode=1
+	motion_mode=1
 	if final_position_marker:
 		final_position = final_position_marker.global_position
 	if final_position == null:
@@ -26,26 +26,23 @@ func _ready():
 func _process(delta):
 	if is_button_pressed:
 		if global_position!=final_position:
-			if freeze:
-				freeze=false
-			apply_central_impulse(speed * (final_position - global_position).normalized())
-			for body in $Area2D.get_overlapping_bodies():
-				if body!=self:
-					body.global_position+=Vector2(0,5)
-		elif !freeze:
-			freeze=true
+			velocity = (speed * (final_position - global_position).normalized())
+			adjust_velocity()
+			move_and_slide()
+		elif velocity!=Vector2(0,0):
+			velocity = Vector2(0,0)
 	else:
 		if global_position!=inicial_position:
-			if freeze:
-				freeze=false
-			apply_central_impulse(speed * (inicial_position - global_position).normalized())
-			for body in $Area2D.get_overlapping_bodies():
-				if body!=self:
-					body.global_position+=Vector2(0,5)
-		elif !freeze:
-			freeze=true
+			velocity = (speed * (inicial_position - global_position).normalized())
+			adjust_velocity()
+			move_and_slide()
+		elif velocity!=Vector2(0,0):
+			velocity = Vector2(0,0)
 	pass
-'''
-func _move_plataform_lever():
-	is_button_pressed = !is_button_pressed
-'''
+	
+func adjust_velocity():
+	for body in $Area2D.get_overlapping_bodies():
+			if body.get_class()=="RigidBody2D":
+				if body.is_sleeping():
+					body.global_position+=Vector2(0,5)
+					body.apply_impulse(Vector2(0,0))
