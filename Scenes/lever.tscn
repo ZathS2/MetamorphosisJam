@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://ds67bn1h0rho3"]
+[gd_scene load_steps=9 format=3 uid="uid://ds67bn1h0rho3"]
 
+[ext_resource type="Script" path="res://Scripts/Objects/lever.gd" id="1_4sm0t"]
 [ext_resource type="Texture2D" uid="uid://dvjwossdjawar" path="res://addons/leverhandle.png" id="1_xgyvs"]
 [ext_resource type="Texture2D" uid="uid://sof7youfic6t" path="res://addons/leverbase.png" id="2_alsei"]
 [ext_resource type="Script" path="res://Scripts/Objects/LeverScript.cs" id="3_38kav"]
@@ -45,6 +46,7 @@ _data = {
 size = Vector2(79, 71)
 
 [node name="Lever" type="Node2D"]
+script = ExtResource("1_4sm0t")
 
 [node name="HandleHolder" type="Node2D" parent="."]
 position = Vector2(8.855, 2)

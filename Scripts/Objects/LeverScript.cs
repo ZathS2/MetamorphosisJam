@@ -4,6 +4,7 @@ using System;
 public partial class LeverScript : Area2D
 {
 	AnimationPlayer anim;
+	CharacterBody2D platform;
 
 	[Signal]
 	public delegate void PushedLeverEventHandler();
@@ -14,6 +15,7 @@ public partial class LeverScript : Area2D
 	public override void _Ready()
 	{
 		anim = (AnimationPlayer)GetParent().FindChild("AnimationPlayer");
+		platform = (CharacterBody2D)GetParent().Get("platform");
 
 	}
 
@@ -31,6 +33,9 @@ public partial class LeverScript : Area2D
 				if (Input.IsActionJustPressed("interact"))
 				{
 					isLeverDown = !isLeverDown;
+					if (platform!=null){
+						platform.Set("is_button_pressed", isLeverDown);
+					}
 
 					EmitSignal(SignalName.PushedLever);
 

@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://ds67bn1h0rho3" path="res://Scenes/lever.tscn" id="1_3weaj"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_bvtl3"]
-[ext_resource type="Script" path="res://Scenes/get_platform.gd" id="2_ekehq"]
+[ext_resource type="Script" path="res://Scripts/Objects/get_platform.gd" id="2_ekehq"]
 [ext_resource type="PackedScene" uid="uid://d38k0sx0m8gt8" path="res://Scenes/button.tscn" id="2_v7isc"]
 [ext_resource type="PackedScene" uid="uid://ctp30vv8sl2ym" path="res://Scenes/lever_door.tscn" id="3_4vivk"]
 [ext_resource type="PackedScene" uid="uid://cnf4qrmqjokm8" path="res://Scenes/platform.tscn" id="3_50stn"]
 [ext_resource type="PackedScene" uid="uid://nxvwagfcu5vx" path="res://Scenes/camera.tscn" id="4_ufjvt"]
 [ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="5_ijplr"]
-[ext_resource type="PackedScene" uid="uid://cg1ncyqgkc8d3" path="res://Scenes/box.tscn" id="6_umois"]
+[ext_resource type="PackedScene" uid="uid://dgv05ltagsndi" path="res://Scenes/catchable_box.tscn" id="9_a07hv"]
 
 [node name="Level1" type="Node2D"]
 
@@ -16,13 +16,13 @@
 position = Vector2(1476, -19)
 rotation = 1.5708
 script = ExtResource("2_ekehq")
-platform = NodePath("../Node2D2")
+platform = NodePath("../Platform")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAD+/wAAAAABAAAAAAD9/wAAAAAAAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAEAAAACAAEAAAAFAAEAAAAAAAEAAAAFAAAAAAAAAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAADAAIAAAABAAAAAAAEAAIAAAABAAAAAAACAAIAAAABAAEAAAAFAAIAAAABAAEAAAAQAAAAAAABAAAAAAARAAAAAAABAAAAAAASAAAAAAABAAAAAAATAAAAAAABAAAAAAAUAAAAAAABAAAAAAAVAAAAAAABAAAAAAAWAAAAAAABAAAAAAAXAAAAAAABAAAAAAAYAAAAAAABAAAAAAAZAAAAAAABAAAAAAA=")
 tile_set = ExtResource("1_bvtl3")
 
-[node name="Node2D" parent="." node_paths=PackedStringArray("door") instance=ExtResource("2_v7isc")]
+[node name="Button" parent="." node_paths=PackedStringArray("door") instance=ExtResource("2_v7isc")]
 position = Vector2(254, 93)
 scale = Vector2(1.5, 1.5)
 door = NodePath("../LeverDoor")
@@ -45,15 +45,17 @@ down_right_marker = NodePath("../downright")
 [node name="PlayerNode" parent="." instance=ExtResource("5_ijplr")]
 position = Vector2(809, -108)
 
-[node name="RigidBody2D" parent="." instance=ExtResource("6_umois")]
-position = Vector2(82, -78)
-scaleObject = Vector2(0.65, 0.65)
+[node name="PlatformFinalPosition" type="Marker2D" parent="."]
+position = Vector2(1329, 0)
+scale = Vector2(2.325, 1)
 
-[node name="RigidBody2D2" parent="." instance=ExtResource("6_umois")]
-position = Vector2(1139, -347)
-scaleObject = Vector2(1, 1)
-
-[node name="Node2D2" parent="." instance=ExtResource("3_50stn")]
+[node name="Platform" parent="." node_paths=PackedStringArray("final_position_marker") instance=ExtResource("3_50stn")]
 position = Vector2(1154, -258)
 scale = Vector2(2.325, 1)
-final_position = Vector2(1154, 0)
+final_position_marker = NodePath("../PlatformFinalPosition")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("9_a07hv")]
+position = Vector2(1157, -47)
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("9_a07hv")]
+position = Vector2(133, -42)
