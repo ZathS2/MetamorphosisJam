@@ -8,7 +8,7 @@ public partial class Creature : CharacterBody2D
 	public float Speed = 300.0f;
 
 	[Export]
-	float jumpVelocity = -600.0f;
+	float jumpVelocity = -800.0f;
 	public override void _PhysicsProcess(double delta)
 	{
 		Movement(delta);

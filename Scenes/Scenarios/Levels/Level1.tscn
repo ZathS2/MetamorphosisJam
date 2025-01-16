@@ -46,7 +46,7 @@ down_right_marker = NodePath("../downright")
 position = Vector2(809, -108)
 
 [node name="PlatformFinalPosition" type="Marker2D" parent="."]
-position = Vector2(1337, -4)
+position = Vector2(1337, -5)
 scale = Vector2(2.325, 1)
 
 [node name="Platform" parent="." node_paths=PackedStringArray("final_position_marker") instance=ExtResource("3_50stn")]

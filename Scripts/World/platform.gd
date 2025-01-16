@@ -24,25 +24,54 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if is_button_pressed:
-		if global_position!=final_position:
-			velocity = (speed * (final_position - global_position).normalized())
-			adjust_velocity()
-			move_and_slide()
-		elif velocity!=Vector2(0,0):
-			velocity = Vector2(0,0)
-	else:
-		if global_position!=inicial_position:
-			velocity = (speed * (inicial_position - global_position).normalized())
-			adjust_velocity()
-			move_and_slide()
-		elif velocity!=Vector2(0,0):
-			velocity = Vector2(0,0)
-	pass
+	if !stop():
+		if is_button_pressed:
+			if !approx_vector2(global_position, final_position):
+				velocity = (speed * (final_position - global_position).normalized())
+				adjust_velocity()
+				move_and_slide()
+			elif velocity!=Vector2(0,0):
+				velocity = Vector2(0,0)
+		else:
+			if !approx_vector2(global_position, inicial_position):
+				velocity = (speed * (inicial_position - global_position).normalized())
+				adjust_velocity()
+				move_and_slide()
+			elif velocity!=Vector2(0,0):
+				velocity = Vector2(0,0)
+		pass
 	
 func adjust_velocity():
 	for body in $Area2D.get_overlapping_bodies():
 			if body.get_class()=="RigidBody2D":
 				if body.is_sleeping():
-					body.global_position+=Vector2(0,5)
+					#body.global_position+=Vector2(0,1)
 					body.apply_impulse(Vector2(0,0))
+			if body.get_class()=="TileMap" or body.get_class()=="TileMapLayer":
+				velocity = Vector2(0,0)
+				move_and_slide()
+
+func stop() -> bool:
+	print(global_position, final_position, inicial_position)
+	print(approx_vector2(global_position, final_position))
+	print(approx_vector2(global_position, inicial_position))
+	if is_button_pressed and approx_vector2(global_position, final_position):
+		velocity = Vector2(0,0)
+		move_and_slide()
+		return true
+	elif !is_button_pressed and approx_vector2(global_position, inicial_position):
+		velocity = Vector2(0,0)
+		move_and_slide()
+		return true
+	else:
+		return false
+
+func approx_vector2(position1: Vector2, position2: Vector2) -> bool:
+	'''
+	if is_equal_approx(position1.x, position2.x):
+		if is_equal_approx(position1.y, position2.y):
+			return true'''
+	if round(position1.x)==round(position2.x):
+		if round(position1.y)==round(position2.y):
+			return true
+	return false
