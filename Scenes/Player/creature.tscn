@@ -3,9 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/Player/Creature.cs" id="1_6iigq"]
 [ext_resource type="Texture2D" uid="uid://by7o73hs7oh1k" path="res://addons/Player/playermetamorfoseidle.png" id="1_dm57x"]
 
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2sqp4"]
-size = Vector2(22, 26)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5fjv0"]
+radius = 12.0
+height = 31.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4lxld"]
 atlas = ExtResource("1_dm57x")
@@ -67,9 +67,10 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_6iigq")
+jumpVelocity = -300.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_2sqp4")
+shape = SubResource("CapsuleShape2D_5fjv0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -3)

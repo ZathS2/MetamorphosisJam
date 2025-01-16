@@ -2,6 +2,7 @@ extends Area2D
 
 @onready var animatio_player = $"../AnimationPlayer"
 @onready var platform = get_parent().platform
+@onready var door = get_parent().door
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -19,6 +20,9 @@ func _on_body_entered(body):
 		animatio_player.play("button_pressed")
 		if platform!=null:
 			platform.is_button_pressed = true
+		if door != null:
+			door.isDoorClosed = false
+			door.t = 0
 		
 	pass # Replace with function body.
 
@@ -28,4 +32,7 @@ func _on_body_exited(body):
 		animatio_player.play("button_released")
 		if platform!=null:
 			platform.is_button_pressed = false
+		if door != null:
+			door.isDoorClosed = true
+			door.t = 0
 	pass # Replace with function body.

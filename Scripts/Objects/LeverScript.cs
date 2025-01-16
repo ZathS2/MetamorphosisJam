@@ -4,6 +4,7 @@ using System;
 public partial class LeverScript : Area2D
 {
 	AnimationPlayer anim;
+	CharacterBody2D platform;
 
 	[Signal]
 	public delegate void PushedLeverEventHandler();
@@ -14,6 +15,8 @@ public partial class LeverScript : Area2D
 	public override void _Ready()
 	{
 		anim = (AnimationPlayer)GetParent().FindChild("AnimationPlayer");
+		platform = (CharacterBody2D)GetParent().Get("platform");
+
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,11 +26,16 @@ public partial class LeverScript : Area2D
 
 		foreach (Node2D body in GetOverlappingBodies())
 		{
-			if (body.GetGroups().Contains("Player") && (int)GameManager.Get("current_animal") == (int)GameManager.Get("MACAW"))
+			if (body.GetGroups().Contains("Player") && ((int)GameManager.Get("current_animal") == (int)GameManager.Get("MACAW") ||
+				(int)GameManager.Get("current_animal") == (int)GameManager.Get("CREATURE") ||
+				(int)GameManager.Get("current_animal") == (int)GameManager.Get("MONKEY")))
 			{
 				if (Input.IsActionJustPressed("interact"))
 				{
 					isLeverDown = !isLeverDown;
+					if (platform!=null){
+						platform.Set("is_button_pressed", isLeverDown);
+					}
 
 					EmitSignal(SignalName.PushedLever);
 
@@ -42,8 +50,6 @@ public partial class LeverScript : Area2D
 				}
 			}
 		}
-
-
 	}
 
 

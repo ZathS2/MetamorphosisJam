@@ -16,9 +16,12 @@ public partial class LeverDoor : CharacterBody2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		LeverScript leverScript = (LeverScript)lever.FindChild("Area2D");
-		leverScript.PushedLever += OnLeverPulled;
-
+		if (lever != null)
+		{
+			LeverScript leverScript = (LeverScript)lever.FindChild("Area2D");
+			leverScript.PushedLever += OnLeverPulled;
+		}
+		
 		lowPosition = GlobalPosition;
 		highPosition = GlobalPosition + new Vector2(0, openHeight);
 	}

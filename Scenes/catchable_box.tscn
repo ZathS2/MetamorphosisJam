@@ -7,6 +7,7 @@
 size = Vector2(131, 132)
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Catchable"]]
+mass = 0.5
 script = ExtResource("1_vmbhu")
 
 [node name="Box" type="Sprite2D" parent="."]
