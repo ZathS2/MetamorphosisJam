@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2adko"]
 size = Vector2(132, 132)
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["Catchable"]]
+[node name="RigidBody2D" type="RigidBody2D" groups=["Boxes", "Catchable"]]
 mass = 0.5
 script = ExtResource("1_vmbhu")
 

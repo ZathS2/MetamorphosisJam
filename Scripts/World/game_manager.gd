@@ -31,6 +31,9 @@ var unlockers_save = []
 #
 var leversValue = {}
 
+#
+var boxValues = {}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#player_entered_water.connect(func(): is_player_in_water=true; print("Player in water"))
@@ -49,7 +52,11 @@ func saveData():
 		
 	animal_status_save = animal_status
 	unlockers_save = collected_unlockers.duplicate()
-	print("Salvo")
+	
+	var boxes = get_tree().get_nodes_in_group("Boxes")
+	for box in boxes:
+		boxValues[box] = box.global_position
+		
 	
 func respawn():
 	print("respawnando")
@@ -59,14 +66,13 @@ func respawn():
 	animal_status = animal_status_save
 	for unlocker in collected_unlockers:
 		if (!unlockers_save.has(unlocker)):
-			print("FOI")
 			unlocker.show()
 	
 	collected_unlockers = unlockers_save
 	
 	playerNode.get_child(0).global_position = last_checkpoint_pos
 	
-	print(get_tree().get_nodes_in_group("Lever")[0].find_child("Area2D").isLeverDown)
+	#print(get_tree().get_nodes_in_group("Lever")[0].find_child("Area2D").isLeverDown)
 	
 	for lever in leversValue:
 		
@@ -75,7 +81,9 @@ func respawn():
 			lever.find_child("Area2D").MoveLever(value)
 		lever.find_child("Area2D").isLeverDown = value
 		print(lever.find_child("Area2D").isLeverDown)
+		
+	for box in boxValues:
+		box.global_position = boxValues[box]
 	
 func collectUnlocker(unlocker : Node2D):
-	print("COLETO")
 	collected_unlockers.append(unlocker)

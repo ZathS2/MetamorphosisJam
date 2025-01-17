@@ -57,6 +57,6 @@ public partial class Creature : CharacterBody2D
 	{
 		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
 
-		GlobalPosition = (Vector2)GameManager.Get("last_checkpoint_pos");
+		GameManager.Call("respawn");
 	}
 }
