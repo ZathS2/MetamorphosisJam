@@ -52,9 +52,6 @@ func adjust_velocity():
 				move_and_slide()
 
 func stop() -> bool:
-	print(global_position, final_position, inicial_position)
-	print(approx_vector2(global_position, final_position))
-	print(approx_vector2(global_position, inicial_position))
 	if is_button_pressed and approx_vector2(global_position, final_position):
 		velocity = Vector2(0,0)
 		move_and_slide()
@@ -67,10 +64,6 @@ func stop() -> bool:
 		return false
 
 func approx_vector2(position1: Vector2, position2: Vector2) -> bool:
-	'''
-	if is_equal_approx(position1.x, position2.x):
-		if is_equal_approx(position1.y, position2.y):
-			return true'''
 	if round(position1.x)==round(position2.x):
 		if round(position1.y)==round(position2.y):
 			return true
