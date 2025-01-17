@@ -15,9 +15,10 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	print(body)
-	if body.get_class()!="StaticBody2D":
+	if body.get_class()!="StaticBody2D" and body.get_class()!="TileMapLayer" and body.get_class()!="TileMap":
 		animatio_player.play("button_pressed")
+		if door!=null:
+			door.isDoorClosed=false
 		if platform!=null:
 			platform.is_button_pressed = true
 		if door != null:
@@ -28,8 +29,10 @@ func _on_body_entered(body):
 
 
 func _on_body_exited(body):
-	if body.get_class()!="StaticBody2D":
+	if body.get_class()!="StaticBody2D" and body.get_class()!="TileMapLayer" and body.get_class()!="TileMap":
 		animatio_player.play("button_released")
+		if door!=null:
+			door.isDoorClosed=true
 		if platform!=null:
 			platform.is_button_pressed = false
 		if door != null:
