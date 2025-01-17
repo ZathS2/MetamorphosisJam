@@ -24,6 +24,10 @@ var current_animal = CREATURE
 # salva os animais desbloquados em um int, vulgo byte
 var animal_status: int = 0
 
+var animal_status_save: int = 0
+
+var collected_unlockers = []
+var unlockers_save = []
 #
 var leversValue = {}
 
@@ -43,15 +47,24 @@ func saveData():
 		leversValue[lever] = lever.find_child("Area2D").isLeverDown
 		break
 		
-	
-	
+	animal_status_save = animal_status
+	unlockers_save = collected_unlockers.duplicate()
+	print("Salvo")
 	
 func respawn():
 	print("respawnando")
 	var playerNode = get_tree().get_nodes_in_group("Player")[0] as Node2D
+	current_animal = CREATURE
+	
+	animal_status = animal_status_save
+	for unlocker in collected_unlockers:
+		if (!unlockers_save.has(unlocker)):
+			print("FOI")
+			unlocker.show()
+	
+	collected_unlockers = unlockers_save
 	
 	playerNode.get_child(0).global_position = last_checkpoint_pos
-	
 	
 	print(get_tree().get_nodes_in_group("Lever")[0].find_child("Area2D").isLeverDown)
 	
@@ -63,6 +76,6 @@ func respawn():
 		lever.find_child("Area2D").isLeverDown = value
 		print(lever.find_child("Area2D").isLeverDown)
 	
-		
-	
-	
+func collectUnlocker(unlocker : Node2D):
+	print("COLETO")
+	collected_unlockers.append(unlocker)

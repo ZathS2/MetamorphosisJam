@@ -69,7 +69,7 @@ position = Vector2(310.805, -2)
 shape = SubResource("RectangleShape2D_q303r")
 
 [node name="Checkpoint" parent="." instance=ExtResource("6_6swk0")]
-position = Vector2(474, -68)
+position = Vector2(673, -60)
 scale = Vector2(3, 3)
 
 [node name="downRight" type="Marker2D" parent="."]

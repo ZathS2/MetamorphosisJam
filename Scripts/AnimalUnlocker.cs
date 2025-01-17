@@ -49,16 +49,20 @@ public partial class AnimalUnlocker : Node2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		foreach (Node2D body in Area.GetOverlappingBodies())
+		if (Visible)
 		{
-			if (body.IsInGroup("Player"))
+			foreach (Node2D body in Area.GetOverlappingBodies())
 			{
-				GD.Print("desbloqueou animal");
-				var AnimalBlocker = (HandleAnimalBlock)GetNode<Node>("/root/HandleAnimalBlock");
-
-				AnimalBlocker.UnlockAnimal(animalIndex);
-
-				QueueFree();
+				if (body.IsInGroup("Player"))
+				{
+					GD.Print("desbloqueou animal");
+					var AnimalBlocker = (HandleAnimalBlock)GetNode<Node>("/root/HandleAnimalBlock");
+					var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
+					
+					AnimalBlocker.UnlockAnimal(animalIndex);
+					GameManager.Call("collectUnlocker", this);
+					Hide();
+				}
 			}
 		}
 	}
