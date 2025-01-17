@@ -63,6 +63,8 @@ public partial class Turtle : CharacterBody2D
 
 		if (currentBreathTime <= 0)
 		{
+			canStartTimer = true;
+			currentBreathTime = maxBreathTime;
 			goToCheckPoint();
 		}
 
@@ -72,7 +74,7 @@ public partial class Turtle : CharacterBody2D
 	public override void _PhysicsProcess(double delta)
 	{
 		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
-		
+
 		if ((bool)GameManager.Get("is_player_in_water"))
 		{
 			setFloating();
@@ -91,8 +93,6 @@ public partial class Turtle : CharacterBody2D
 			}
 			else
 			{
-
-
 				if (canStartTimer)
 				{
 					GD.Print("Começou a segurar");
@@ -236,8 +236,8 @@ public partial class Turtle : CharacterBody2D
 	{
 		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
 
-		GlobalPosition = (Vector2)GameManager.Get("last_checkpoint_pos");
+		GD.Print("VOLTO CHECKPOIJT C#");
 
-		currentBreathTime = maxBreathTime;
+		GameManager.Call("respawn");
 	}
 }

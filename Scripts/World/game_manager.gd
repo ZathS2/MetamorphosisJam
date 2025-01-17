@@ -8,6 +8,8 @@ var jumped_out_of_rope = false
 var rope_seg_area = null
 var last_checkpoint_pos = null
 
+var check_point_scene : PackedScene = null
+
 
 const CREATURE: int = 0
 const TURTLE: int = 1
@@ -22,6 +24,9 @@ var current_animal = CREATURE
 # salva os animais desbloquados em um int, vulgo byte
 var animal_status: int = 0
 
+#
+var leversValue = {}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#player_entered_water.connect(func(): is_player_in_water=true; print("Player in water"))
@@ -31,4 +36,33 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func saveData():
+	var levers = get_tree().get_nodes_in_group("Lever")
+	for lever in levers:
+		leversValue[lever] = lever.find_child("Area2D").isLeverDown
+		break
+		
+	
+	
+	
+func respawn():
+	print("respawnando")
+	var playerNode = get_tree().get_nodes_in_group("Player")[0] as Node2D
+	
+	playerNode.get_child(0).global_position = last_checkpoint_pos
+	
+	
+	print(get_tree().get_nodes_in_group("Lever")[0].find_child("Area2D").isLeverDown)
+	
+	for lever in leversValue:
+		
+		var value = leversValue[lever]
+		if (value != lever.find_child("Area2D").isLeverDown):
+			lever.find_child("Area2D").MoveLever(value)
+		lever.find_child("Area2D").isLeverDown = value
+		print(lever.find_child("Area2D").isLeverDown)
+	
+		
+	
 	

@@ -28,6 +28,10 @@ project/assembly_name="MetamorfoseJam"
 
 Player=""
 Catchable=""
+Porta=""
+Plataforma=""
+"Botão"=""
+Lever=""
 
 [input]
 

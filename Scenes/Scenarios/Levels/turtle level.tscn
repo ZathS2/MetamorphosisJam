@@ -19,7 +19,7 @@ size = Vector2(1112, 466)
 size = Vector2(199, 195)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0tyt"]
-size = Vector2(129, 112)
+size = Vector2(190.5, 112)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q303r"]
 size = Vector2(154, 131)
@@ -42,11 +42,10 @@ shape = SubResource("RectangleShape2D_0d50a")
 position = Vector2(1064.5, 318.81)
 shape = SubResource("RectangleShape2D_physr")
 
-[node name="Lever" parent="." node_paths=PackedStringArray("door") instance=ExtResource("2_65xfo")]
+[node name="Lever" parent="." instance=ExtResource("2_65xfo")]
 position = Vector2(-105, 240)
 rotation = 3.14159
 scale = Vector2(1, -1)
-door = NodePath("../LeverDoor")
 
 [node name="LeverDoor" parent="." node_paths=PackedStringArray("lever") instance=ExtResource("3_7big8")]
 position = Vector2(1394, 123)
@@ -62,7 +61,7 @@ position = Vector2(260.195, 0)
 script = ExtResource("5_mqn7q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BreathArea"]
-position = Vector2(827.805, 136)
+position = Vector2(858.555, 136)
 shape = SubResource("RectangleShape2D_k0tyt")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="BreathArea"]
