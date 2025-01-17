@@ -9,7 +9,7 @@ public partial class LeverScript : Area2D
 	[Signal]
 	public delegate void PushedLeverEventHandler();
 
-	bool isLeverDown = false;
+	bool isLeverDown;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -28,12 +28,15 @@ public partial class LeverScript : Area2D
 		{
 			if (body.GetGroups().Contains("Player") && ((int)GameManager.Get("current_animal") == (int)GameManager.Get("MACAW") ||
 				(int)GameManager.Get("current_animal") == (int)GameManager.Get("CREATURE") ||
-				(int)GameManager.Get("current_animal") == (int)GameManager.Get("MONKEY")))
+				(int)GameManager.Get("current_animal") == (int)GameManager.Get("MONKEY")) ||
+				(int)GameManager.Get("current_animal") == (int)GameManager.Get("TURTLE"))
 			{
 				if (Input.IsActionJustPressed("interact"))
 				{
 					isLeverDown = !isLeverDown;
-					if (platform!=null){
+					GD.Print("isLeverDown " + isLeverDown);
+					if (platform != null)
+					{
 						platform.Set("is_button_pressed", isLeverDown);
 					}
 
@@ -52,6 +55,19 @@ public partial class LeverScript : Area2D
 		}
 	}
 
+	void MoveLever(bool LeverDown)
+	{
+		EmitSignal(SignalName.PushedLever);
+
+		if (LeverDown)
+		{
+			anim.Play("push_lever_anim");
+		}
+		else
+		{
+			anim.PlayBackwards("push_lever_anim");
+		}
+	}
 
 
 }

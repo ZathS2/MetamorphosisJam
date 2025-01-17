@@ -45,7 +45,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msaaq"]
 size = Vector2(79, 71)
 
-[node name="Lever" type="Node2D"]
+[node name="Lever" type="Node2D" groups=["Lever"]]
 script = ExtResource("1_4sm0t")
 
 [node name="HandleHolder" type="Node2D" parent="."]

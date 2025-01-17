@@ -6,10 +6,10 @@ public partial class Turtle : CharacterBody2D
 	[Export] float groundSpeed = 100.0f;
 	[Export] float waterSpeed = 300.0f;
 
-	float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity"); 
+	float gravity = (float)ProjectSettings.GetSetting("physics/2d/default_gravity");
 
 	float currentBreathTime;
-	
+
 	[Export] private float maxBreathTime;
 
 	Timer holdTimer;
@@ -18,7 +18,7 @@ public partial class Turtle : CharacterBody2D
 	Polygon2D breathBar;
 
 	float maxHealthBarWidth;
-	
+
 	bool canStartTimer = false;
 
 	Vector2 getInput()
@@ -40,7 +40,7 @@ public partial class Turtle : CharacterBody2D
 
 		currentBreathTime = maxBreathTime;
 
-		breathBar = (Polygon2D) FindChild("BreathBar");
+		breathBar = (Polygon2D)FindChild("BreathBar");
 
 		var vertices = breathBar.GetPolygon();
 
@@ -49,20 +49,22 @@ public partial class Turtle : CharacterBody2D
 		{
 			if (vertices[i].X == x0Vertice.X)
 				continue;
-			
+
 			maxHealthBarWidth = vertices[i].X - x0Vertice.X;
 			break;
 		}
-		
+
 	}
-	
+
 	public override void _Process(double delta)
 	{
-		
+
 		//GD.Print("breath: " + currentBreathTime);
 
 		if (currentBreathTime <= 0)
 		{
+			canStartTimer = true;
+			currentBreathTime = maxBreathTime;
 			goToCheckPoint();
 		}
 
@@ -73,7 +75,6 @@ public partial class Turtle : CharacterBody2D
 	{
 		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
 
-		
 		if ((bool)GameManager.Get("is_player_in_water"))
 		{
 			setFloating();
@@ -88,10 +89,10 @@ public partial class Turtle : CharacterBody2D
 					canStartTimer = true;
 				}
 				currentBreathTime = (float)maxBreathTime - (float)recoverTimer.TimeLeft;
-				
-			} else {
 
-
+			}
+			else
+			{
 				if (canStartTimer)
 				{
 					GD.Print("Começou a segurar");
@@ -102,7 +103,9 @@ public partial class Turtle : CharacterBody2D
 
 			}
 
-		}else{
+		}
+		else
+		{
 			setGrounded();
 			if (canStartTimer == false)
 			{
@@ -119,19 +122,19 @@ public partial class Turtle : CharacterBody2D
 			case MotionModeEnum.Grounded:
 				groundMovement(delta);
 				break;
-			
+
 			case MotionModeEnum.Floating:
 				waterMovement();
 				break;
 		}
-		
+
 	}
 
 	Vector2 addGravity(Vector2 velocity, double delta)
 	{
 		if (!IsOnFloor())
 			velocity.Y += gravity * (float)delta;
-		
+
 		return velocity;
 	}
 
@@ -147,7 +150,9 @@ public partial class Turtle : CharacterBody2D
 		if (input != Vector2.Zero)
 		{
 			velocity.X = input.X * groundSpeed;
-		} else {
+		}
+		else
+		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, groundSpeed);
 		}
 
@@ -165,11 +170,13 @@ public partial class Turtle : CharacterBody2D
 		{
 			velocity.X = input.X * waterSpeed;
 			velocity.Y = input.Y * waterSpeed;
-		} else {
+		}
+		else
+		{
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, waterSpeed);
 			velocity.Y = Mathf.MoveToward(Velocity.Y, 0, waterSpeed);
 		}
-		
+
 		Velocity = velocity;
 		MoveAndSlide();
 	}
@@ -205,14 +212,14 @@ public partial class Turtle : CharacterBody2D
 
 		double healthBarWidth = maxHealthBarWidth * ratio;
 
-		Vector2 leftDownVertice = vertices[0]; 
+		Vector2 leftDownVertice = vertices[0];
 		Vector2 leftUpVertice = vertices[1];
 
-		Vector2 rightUpVertice = leftUpVertice + new Vector2((float)healthBarWidth,0);
-		Vector2 rightDownVertice = leftDownVertice + new Vector2((float)healthBarWidth,0);
+		Vector2 rightUpVertice = leftUpVertice + new Vector2((float)healthBarWidth, 0);
+		Vector2 rightDownVertice = leftDownVertice + new Vector2((float)healthBarWidth, 0);
 
-		breathBar.SetPolygon(new Vector2[]{leftDownVertice, leftUpVertice, rightUpVertice, rightDownVertice});
-		
+		breathBar.SetPolygon(new Vector2[] { leftDownVertice, leftUpVertice, rightUpVertice, rightDownVertice });
+
 	}
 
 	void setGrounded()
@@ -229,8 +236,8 @@ public partial class Turtle : CharacterBody2D
 	{
 		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
 
-		GlobalPosition = (Vector2)GameManager.Get("last_checkpoint_pos");
+		GD.Print("VOLTO CHECKPOIJT C#");
 
-		currentBreathTime = maxBreathTime;
+		GameManager.Call("respawn");
 	}
 }
