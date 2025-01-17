@@ -5,8 +5,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ieq8b"]
 size = Vector2(20, 46)
 
-[node name="Area2D" type="Area2D"]
+[node name="CheckPoint" type="Area2D"]
 script = ExtResource("1_r4sbj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_ieq8b")
+debug_color = Color(0, 0.6, 0, 0.419608)
