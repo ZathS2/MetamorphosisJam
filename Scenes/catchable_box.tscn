@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://drt4uywqo11kb" path="res://addons/Box.png" id="3_sejqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2adko"]
-size = Vector2(131, 132)
+size = Vector2(132, 132)
 
-[node name="RigidBody2D" type="RigidBody2D" groups=["Catchable"]]
+[node name="RigidBody2D" type="RigidBody2D" groups=["Boxes", "Catchable"]]
 mass = 0.5
 script = ExtResource("1_vmbhu")
 
@@ -15,7 +15,8 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_sejqr")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-26, -32, -30, -30, -32, -26, -32, 26, -30, 30, -26, 32, 24, 32, 30, 30, 32, 26, 32, -26, 30, -30, 26, -32)
+position = Vector2(24, -24)
+polygon = PackedVector2Array(-53.6506, -5.65064, -52, -6.92188, -50, -7.72656, -47.9375, -8, 0.0157967, -8, 2, -7.71875, 4, -6.92188, 5.66016, -5.66016, 7, -4, 7.74219, -2, 8, -0.0480804, 8, 48.1172, 7.73438, 50, 6.92969, 52, 5.66016, 53.6602, 4, 54.9375, 2, 55.7344, 0.125, 56, -48.0229, 56, -50, 55.6719, -52, 55, -53.668, 53.668, -55, 52, -55.7344, 50.0008, -56, 48.1719, -56, -0.0625, -55.7266, -2, -54.9453, -4)
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)
@@ -23,3 +24,11 @@ scale = Vector2(0.5, 0.5)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -3.05176e-05)
 shape = SubResource("RectangleShape2D_2adko")
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+scale = Vector2(0.5, 0.5)
+target_position = Vector2(0, 66)
+
+[node name="RayCastDown2" type="RayCast2D" parent="."]
+scale = Vector2(0.25, 0.25)
+target_position = Vector2(0, 136)

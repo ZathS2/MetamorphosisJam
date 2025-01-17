@@ -1,0 +1,160 @@
+[gd_scene load_steps=20 format=4 uid="uid://b81wkehv7dkki"]
+
+[ext_resource type="PackedScene" uid="uid://ctp30vv8sl2ym" path="res://Scenes/lever_door.tscn" id="1_pbequ"]
+[ext_resource type="PackedScene" uid="uid://d38k0sx0m8gt8" path="res://Scenes/button.tscn" id="2_pyygc"]
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="3_7nngj"]
+[ext_resource type="PackedScene" uid="uid://bg51vvmjh7q47" path="res://Scenes/animal_unlocker.tscn" id="3_waj13"]
+[ext_resource type="PackedScene" uid="uid://07jcs0g13172" path="res://Scenes/camera.tscn" id="4_e15ty"]
+[ext_resource type="TileSet" uid="uid://c8ct6ghgrf0qs" path="res://TileSets/water.tres" id="4_g3jq2"]
+[ext_resource type="Script" path="res://Scripts/World/water.gd" id="4_w0qup"]
+[ext_resource type="Script" path="res://Scripts/World/breath_area.gd" id="5_81iyy"]
+[ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="5_vynw7"]
+[ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="8_bba57"]
+[ext_resource type="PackedScene" uid="uid://ds67bn1h0rho3" path="res://Scenes/lever.tscn" id="11_ru32t"]
+[ext_resource type="PackedScene" uid="uid://cbdrl7rq1ftbh" path="res://Scenes/CheckPoint.tscn" id="12_ilyq3"]
+[ext_resource type="PackedScene" uid="uid://dgv05ltagsndi" path="res://Scenes/catchable_box.tscn" id="13_7juy6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mmbg"]
+size = Vector2(711, 520)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_026vo"]
+size = Vector2(387, 199)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8tj6n"]
+size = Vector2(771, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7s27w"]
+size = Vector2(259, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5qghi"]
+size = Vector2(139, 74)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvj4n"]
+size = Vector2(210, 73)
+
+[node name="Level2" type="Node2D"]
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="Node2D" parent="Buttons" node_paths=PackedStringArray("door") instance=ExtResource("2_pyygc")]
+z_index = 0
+position = Vector2(331, -2)
+door = NodePath("../../Doors/LeverDoor")
+
+[node name="Node2D2" parent="Buttons" node_paths=PackedStringArray("door") instance=ExtResource("2_pyygc")]
+position = Vector2(1502, 115)
+door = NodePath("../../Doors/LeverDoor3")
+
+[node name="Areas" type="Node" parent="."]
+
+[node name="WaterArea" type="Area2D" parent="Areas"]
+script = ExtResource("4_w0qup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/WaterArea"]
+position = Vector2(864.5, 323)
+shape = SubResource("RectangleShape2D_6mmbg")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Areas/WaterArea"]
+position = Vector2(316.5, 418.5)
+shape = SubResource("RectangleShape2D_026vo")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Areas/WaterArea"]
+position = Vector2(1601.5, 451)
+shape = SubResource("RectangleShape2D_8tj6n")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Areas/WaterArea"]
+position = Vector2(1856.5, 319)
+shape = SubResource("RectangleShape2D_7s27w")
+
+[node name="BreathingArea" type="Area2D" parent="Areas"]
+script = ExtResource("5_81iyy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Areas/BreathingArea"]
+position = Vector2(833.5, 27)
+shape = SubResource("RectangleShape2D_5qghi")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Areas/BreathingArea"]
+position = Vector2(1441, 345.5)
+shape = SubResource("RectangleShape2D_dvj4n")
+
+[node name="Water" type="TileMapLayer" parent="."]
+z_index = -2
+tile_map_data = PackedByteArray("AAAIAAgAAQAAAAMAAAAJAAgAAQAAAAMAAAAKAAgAAQAAAAMAAAALAAgAAQAAAAMAAAAMAAgAAQAAAAMAAAANAAgAAQAAAAMAAAAOAAgAAQAAAAMAAAAPAAgAAQAAAAMAAAAQAAgAAQAAAAMAAAARAAgAAQAAAAMAAAASAAgAAQAAAAMAAAACAAcAAQABAAIAAAADAAcAAQABAAIAAAAEAAcAAQAAAAIAAAAFAAcAAQABAAIAAAAGAAcAAQABAAIAAAAHAAcAAQABAAIAAAAIAAcAAQABAAIAAAAJAAcAAQABAAIAAAAKAAcAAQABAAIAAAALAAcAAQAAAAIAAAAMAAcAAQABAAIAAAANAAcAAQABAAIAAAAOAAcAAQABAAIAAAAPAAcAAQABAAIAAAAQAAcAAQAAAAIAAAARAAcAAQABAAIAAAASAAcAAQABAAIAAAATAAcAAQABAAIAAAAUAAcAAQABAAIAAAAVAAcAAQABAAIAAAAWAAcAAQAAAAIAAAAXAAcAAQABAAIAAAAYAAcAAQABAAIAAAAZAAcAAQABAAIAAAAaAAcAAQABAAIAAAAbAAcAAQABAAIAAAAcAAcAAQAAAAIAAAAdAAcAAQABAAIAAAAeAAcAAQABAAIAAAACAAYAAQAAAAEAAAADAAYAAQAAAAEAAAAEAAYAAQAAAAEAAAAFAAYAAQAAAAEAAAAGAAYAAQAAAAEAAAAHAAYAAQAAAAEAAAAIAAYAAQABAAEAAAAJAAYAAQAAAAEAAAAKAAYAAQAAAAEAAAALAAYAAQAAAAEAAAAMAAYAAQAAAAEAAAANAAYAAQAAAAEAAAAOAAYAAQAAAAEAAAAPAAYAAQAAAAEAAAAQAAYAAQAAAAEAAAARAAYAAQAAAAEAAAASAAYAAQAAAAEAAAATAAYAAQAAAAEAAAAUAAYAAQAAAAEAAAAVAAYAAQAAAAAAAAAWAAYAAQAAAAAAAAAXAAYAAQAAAAAAAAAYAAYAAQAAAAEAAAAZAAYAAQAAAAEAAAAaAAYAAQAAAAEAAAAbAAYAAQAAAAEAAAAcAAYAAQAAAAEAAAAdAAYAAQAAAAEAAAAeAAYAAQABAAEAAAAeAAUAAQAAAAEAAAAdAAUAAQAAAAEAAAAdAAQAAQAAAAEAAAAcAAQAAQABAAEAAAAcAAUAAQAAAAEAAAAbAAUAAQAAAAEAAAAbAAQAAQAAAAEAAAAeAAQAAQAAAAEAAAASAAUAAQAAAAEAAAARAAUAAQAAAAEAAAAQAAUAAQAAAAEAAAAPAAUAAQABAAEAAAAOAAUAAQAAAAEAAAANAAUAAQAAAAEAAAAMAAUAAQAAAAEAAAALAAUAAQABAAEAAAAJAAUAAQABAAEAAAAIAAUAAQAAAAEAAAAHAAUAAQAAAAEAAAAGAAUAAQAAAAEAAAAFAAUAAQAAAAEAAAAEAAUAAQAAAAEAAAADAAUAAQABAAEAAAACAAUAAQAAAAEAAAAKAAQAAQAAAAEAAAAJAAQAAQAAAAEAAAAIAAQAAQAAAAEAAAALAAQAAQAAAAEAAAAMAAQAAQAAAAEAAAANAAQAAQAAAAEAAAAOAAQAAQAAAAEAAAAPAAQAAQAAAAEAAAAQAAQAAQAAAAEAAAARAAQAAQAAAAEAAAASAAQAAQAAAAEAAAASAAMAAQABAAEAAAASAAIAAQAAAAEAAAARAAIAAQAAAAEAAAAQAAIAAQAAAAEAAAAPAAIAAQABAAEAAAAOAAIAAQAAAAEAAAANAAIAAQAAAAEAAAANAAMAAQAAAAEAAAAOAAMAAQAAAAEAAAAPAAMAAQAAAAEAAAAQAAMAAQAAAAEAAAARAAMAAQAAAAEAAAAMAAMAAQAAAAEAAAALAAMAAQAAAAEAAAAKAAMAAQABAAEAAAAJAAMAAQAAAAEAAAAIAAMAAQAAAAEAAAAJAAIAAQAAAAEAAAAIAAIAAQAAAAEAAAAKAAIAAQAAAAEAAAALAAIAAQAAAAEAAAAMAAIAAQAAAAEAAAAMAAEAAQAAAAAAAAALAAEAAQAAAAEAAAAKAAEAAQAAAAEAAAAJAAEAAQAAAAEAAAAIAAEAAQAAAAEAAAANAAEAAQABAAAAAAAOAAEAAQAAAAEAAAAPAAEAAQAAAAEAAAAQAAEAAQAAAAEAAAARAAEAAQAAAAEAAAASAAEAAQAAAAEAAAAKAAUAAQAAAAEAAAA=")
+tile_set = ExtResource("4_g3jq2")
+
+[node name="Markers" type="Node" parent="."]
+
+[node name="UpLelft" type="Marker2D" parent="Markers"]
+position = Vector2(-622, -614)
+
+[node name="DownRight" type="Marker2D" parent="Markers"]
+position = Vector2(2616, 597)
+gizmo_extents = 0.0
+
+[node name="Ground" type="TileMapLayer" parent="."]
+z_index = 1
+tile_map_data = PackedByteArray("AAD4/wAAAAAAAAAAAAD5/wAAAAABAAAAAAD6/wAAAAABAAAAAAD7/wAAAAABAAAAAAD8/wAAAAABAAAAAAD9/wAAAAABAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAACAAAAAAAHAAEAAAACAAEAAAAHAAIAAAACAAEAAAAHAAMAAAACAAEAAAAOAAAAAAAAAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAARAAAAAAABAAAAAAASAAAAAAABAAAAAAATAAAAAAABAAAAAAATAAEAAAAAAAEAAAATAAIAAAAAAAEAAAATAAMAAAAAAAEAAAATAAQAAAAAAAEAAAATAAUAAAAAAAIAAAAUAAUAAAACAAIAAAAYAAUAAAAAAAIAAAAUAAQAAAABAAEAAAAVAAQAAAABAAIAAAAWAAQAAAABAAIAAAAXAAQAAAABAAIAAAAYAAQAAAABAAEAAAAHAAgAAAACAAAAAAAIAAkAAAABAAAAAAAJAAkAAAABAAAAAAAKAAkAAAABAAAAAAALAAkAAAABAAAAAAAMAAkAAAABAAAAAAANAAkAAAABAAAAAAAOAAkAAAABAAAAAAAPAAkAAAABAAAAAAAQAAkAAAABAAAAAAARAAkAAAABAAAAAAASAAkAAAABAAAAAAATAAgAAAAAAAAAAAAUAAgAAAABAAAAAAAVAAgAAAABAAAAAAAWAAgAAAABAAAAAAAXAAgAAAABAAAAAAAYAAgAAAABAAAAAAAZAAgAAAABAAAAAAAHAAkAAAABAAEAAAATAAkAAAABAAEAAAAUAAkAAAABAAEAAAAVAAkAAAABAAEAAAAWAAkAAAABAAEAAAAXAAkAAAABAAEAAAAYAAkAAAABAAEAAAAZAAkAAAABAAEAAAAHAAQAAAACAAIAAAAGAAgAAAABAAAAAAAFAAgAAAABAAAAAAAEAAgAAAABAAAAAAADAAgAAAABAAAAAAAGAAQAAAABAAIAAAAFAAQAAAABAAIAAAAEAAQAAAABAAIAAAADAAQAAAABAAIAAAACAAQAAAABAAIAAAACAAgAAAABAAAAAAABAAUAAAACAAEAAAABAAYAAAACAAEAAAABAAcAAAACAAEAAAAZAAUAAAABAAIAAAAaAAUAAAACAAIAAAAaAAgAAAABAAAAAAAbAAgAAAABAAAAAAAcAAgAAAABAAAAAAAdAAgAAAABAAAAAAAeAAgAAAABAAAAAAAfAAgAAAABAAAAAAAfAAcAAAAAAAEAAAAfAAYAAAAAAAEAAAAfAAUAAAAAAAEAAAAfAAQAAAAAAAEAAAAaAAQAAAACAAEAAAAbAAMAAAABAAIAAAAcAAMAAAABAAIAAAAdAAMAAAABAAIAAAAeAAMAAAABAAIAAAAUAAAAAAABAAAAAAAVAAAAAAABAAAAAAAWAAAAAAACAAAAAAAZAAQAAAABAAEAAAAZAAMAAAABAAEAAAAYAAMAAAABAAEAAAAXAAMAAAABAAEAAAAWAAMAAAABAAEAAAAVAAMAAAABAAEAAAAUAAMAAAABAAEAAAAUAAIAAAABAAEAAAAUAAEAAAABAAEAAAAVAAEAAAABAAEAAAAWAAEAAAACAAEAAAAWAAIAAAABAAEAAAAVAAIAAAABAAEAAAAXAAIAAAABAAAAAAAYAAIAAAABAAEAAAAZAAIAAAABAAEAAAAaAAIAAAABAAEAAAAaAAMAAAABAAEAAAAbAAIAAAABAAEAAAAcAAIAAAABAAEAAAAdAAIAAAABAAEAAAAeAAIAAAABAAEAAAAfAAIAAAABAAEAAAAfAAMAAAABAAEAAAAfAAEAAAABAAAAAAAeAAEAAAABAAAAAAAdAAEAAAABAAAAAAAcAAEAAAABAAAAAAAbAAEAAAABAAAAAAAaAAEAAAABAAAAAAAaAPP/AAAAAAAAAAAbAPP/AAABAAMAAAAcAPP/AAABAAMAAAAdAPP/AAABAAMAAAAeAPP/AAABAAMAAAAfAAAAAAAAAAEAAAAfAP//AAAAAAEAAAAfAP7/AAAAAAEAAAAfAP3/AAAAAAEAAAAfAPz/AAAAAAEAAAAfAPv/AAAAAAEAAAAfAPr/AAAAAAEAAAAfAPn/AAAAAAEAAAAfAPj/AAAAAAAAAAAgAPj/AAABAAMAAAAhAPj/AAABAAMAAAAiAPj/AAABAAMAAAAjAPj/AAABAAMAAAAfAPP/AAABAAMAAAAgAPP/AAABAAMAAAAhAPP/AAABAAMAAAAiAPP/AAABAAMAAAAjAPP/AAABAAMAAAAkAPP/AAABAAMAAAAlAPP/AAABAAMAAAAmAPP/AAABAAMAAAAnAPP/AAABAAMAAAAoAPP/AAACAAAAAAAoAPT/AAADAAEAAAAoAPX/AAADAAEAAAAoAPb/AAADAAEAAAAoAPf/AAADAAEAAAAlAPj/AAABAAMAAAAkAPj/AAABAAMAAAAmAPj/AAABAAMAAAAnAPj/AAABAAMAAAAoAPj/AAABAAEAAAAaAP7/AAADAAEAAAAaAP3/AAADAAEAAAAaAPz/AAADAAEAAAAaAPv/AAADAAEAAAAaAPr/AAADAAEAAAAaAPn/AAADAAEAAAAaAPj/AAADAAEAAAAaAPf/AAADAAEAAAAaAPb/AAADAAEAAAAaAPX/AAADAAEAAAAaAPT/AAADAAEAAAAYAAEAAAAAAAAAAAAZAAEAAAABAAAAAAA=")
+tile_set = ExtResource("3_7nngj")
+
+[node name="Camera" parent="." node_paths=PackedStringArray("follower", "up_left_marker", "down_right_marker") instance=ExtResource("4_e15ty")]
+position = Vector2(21, -127)
+follower = NodePath("../PlayerNode")
+up_left_marker = NodePath("../Markers/UpLelft")
+down_right_marker = NodePath("../Markers/DownRight")
+
+[node name="PlayerNode" parent="." instance=ExtResource("5_vynw7")]
+position = Vector2(-367, -73)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("8_bba57")]
+visible = false
+
+[node name="Levers" type="Node" parent="."]
+
+[node name="Lever" parent="Levers" instance=ExtResource("11_ru32t")]
+z_index = -1
+position = Vector2(146, 422)
+rotation = -3.14159
+scale = Vector2(1, -1)
+
+[node name="Doors" type="Node" parent="."]
+
+[node name="LeverDoor" parent="Doors" instance=ExtResource("1_pbequ")]
+z_index = -1
+position = Vector2(458, -71)
+openHeight = -250.0
+
+[node name="LeverDoor2" parent="Doors" node_paths=PackedStringArray("lever") instance=ExtResource("1_pbequ")]
+position = Vector2(1254, 446)
+openHeight = -200.0
+lever = NodePath("../../Levers/Lever")
+
+[node name="LeverDoor3" parent="Doors" instance=ExtResource("1_pbequ")]
+position = Vector2(1691, 12)
+openHeight = -200.0
+
+[node name="Unlockers" type="Node" parent="."]
+
+[node name="CheckPoints" type="Node" parent="."]
+
+[node name="Area2D" parent="CheckPoints" instance=ExtResource("12_ilyq3")]
+position = Vector2(738, -44)
+scale = Vector2(2, 2)
+
+[node name="AnimalUnlocker2" parent="." instance=ExtResource("3_waj13")]
+position = Vector2(599, -21)
+animalIndex = 1
+
+[node name="AnimalUnlocker" parent="." instance=ExtResource("3_waj13")]
+position = Vector2(1857, 313)
+animalIndex = 3
+
+[node name="Boxes" type="Node" parent="."]
+
+[node name="RigidBody2D" parent="Boxes" instance=ExtResource("13_7juy6")]
+position = Vector2(1399, -34)
+
+[node name="Area2D" parent="." instance=ExtResource("12_ilyq3")]
+position = Vector2(922, -45)
+scale = Vector2(2, 2)

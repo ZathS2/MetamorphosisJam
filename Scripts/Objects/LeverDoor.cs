@@ -21,7 +21,7 @@ public partial class LeverDoor : CharacterBody2D
 			LeverScript leverScript = (LeverScript)lever.FindChild("Area2D");
 			leverScript.PushedLever += OnLeverPulled;
 		}
-		
+
 		lowPosition = GlobalPosition;
 		highPosition = GlobalPosition + new Vector2(0, openHeight);
 	}
@@ -53,4 +53,5 @@ public partial class LeverDoor : CharacterBody2D
 		isDoorClosed = !isDoorClosed;
 		t = 0;
 	}
+
 }

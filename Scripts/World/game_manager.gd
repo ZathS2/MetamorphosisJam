@@ -8,6 +8,8 @@ var jumped_out_of_rope = false
 var rope_seg_area = null
 var last_checkpoint_pos = null
 
+var check_point_scene : PackedScene = null
+
 
 const CREATURE: int = 0
 const TURTLE: int = 1
@@ -22,6 +24,16 @@ var current_animal = CREATURE
 # salva os animais desbloquados em um int, vulgo byte
 var animal_status: int = 0
 
+var animal_status_save: int = 0
+
+var collected_unlockers = []
+var unlockers_save = []
+#
+var leversValue = {}
+
+#
+var boxValues = {}
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	#player_entered_water.connect(func(): is_player_in_water=true; print("Player in water"))
@@ -32,3 +44,46 @@ func _ready():
 func _process(delta):
 	pass
 	
+func saveData():
+	var levers = get_tree().get_nodes_in_group("Lever")
+	for lever in levers:
+		leversValue[lever] = lever.find_child("Area2D").isLeverDown
+		break
+		
+	animal_status_save = animal_status
+	unlockers_save = collected_unlockers.duplicate()
+	
+	var boxes = get_tree().get_nodes_in_group("Boxes")
+	for box in boxes:
+		boxValues[box] = box.global_position
+		
+	
+func respawn():
+	print("respawnando")
+	var playerNode = get_tree().get_nodes_in_group("Player")[0] as Node2D
+	current_animal = CREATURE
+	
+	animal_status = animal_status_save
+	for unlocker in collected_unlockers:
+		if (!unlockers_save.has(unlocker)):
+			unlocker.show()
+	
+	collected_unlockers = unlockers_save
+	
+	playerNode.get_child(0).global_position = last_checkpoint_pos
+	
+	#print(get_tree().get_nodes_in_group("Lever")[0].find_child("Area2D").isLeverDown)
+	
+	for lever in leversValue:
+		
+		var value = leversValue[lever]
+		if (value != lever.find_child("Area2D").isLeverDown):
+			lever.find_child("Area2D").MoveLever(value)
+		lever.find_child("Area2D").isLeverDown = value
+		print(lever.find_child("Area2D").isLeverDown)
+		
+	for box in boxValues:
+		box.global_position = boxValues[box]
+	
+func collectUnlocker(unlocker : Node2D):
+	collected_unlockers.append(unlocker)
