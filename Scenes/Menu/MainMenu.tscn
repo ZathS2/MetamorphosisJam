@@ -1,14 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://ty3s7c0tp5w2"]
+[gd_scene load_steps=16 format=3 uid="uid://ty3s7c0tp5w2"]
 
 [ext_resource type="Texture2D" uid="uid://cyehekhgbcix7" path="res://addons/Menu/Play/playNormal.png" id="1_6x254"]
 [ext_resource type="Script" path="res://Scripts/Menu/ButtonHandler.cs" id="1_mx62i"]
 [ext_resource type="Texture2D" uid="uid://ckni11cctl7jb" path="res://addons/Menu/Play/playPressed.png" id="2_fymo4"]
+[ext_resource type="PackedScene" uid="uid://dvgpvn3dvlgag" path="res://Scenes/Scenarios/Levels/Level1.tscn" id="2_y4as3"]
 [ext_resource type="Texture2D" uid="uid://4oo1qqgq7l8t" path="res://addons/Menu/Options/OptionsNormal.png" id="3_dl3ur"]
 [ext_resource type="Texture2D" uid="uid://cihcmtdqkbo7e" path="res://addons/Menu/Options/OptionsPressedl.png" id="4_g1aow"]
 [ext_resource type="Texture2D" uid="uid://cmwlqvlcghb6n" path="res://addons/Menu/Quit/QuitNormal.png" id="5_tviol"]
 [ext_resource type="Texture2D" uid="uid://bl4xr276d3y4o" path="res://addons/Menu/Quit/QuitPressed.png" id="6_tb6d3"]
 [ext_resource type="AudioStream" uid="uid://csysh2r0en2u4" path="res://addons/Music/metamorfose2MenuStart.wav" id="7_crxwf"]
-[ext_resource type="Script" path="res://Scenes/Menu/MenuMusicManager.cs" id="8_7nlfn"]
+[ext_resource type="Script" path="res://Scripts/Menu/MenuMusicManager.cs" id="8_7nlfn"]
 [ext_resource type="Texture2D" uid="uid://dqw655ncp3ho6" path="res://addons/Background/Background - Layer 7.png" id="8_ni6p7"]
 [ext_resource type="Texture2D" uid="uid://8e62ggjv7nf3" path="res://addons/Background/Background - Layer 6.png" id="9_eyeju"]
 [ext_resource type="AudioStream" uid="uid://jt2vs8n12fsg" path="res://addons/Music/metamorfose2LeadFull.wav" id="9_kox0a"]
@@ -27,6 +28,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mx62i")
+initialScene = ExtResource("2_y4as3")
 
 [node name="Layer4" type="TextureRect" parent="Control"]
 z_index = -1
