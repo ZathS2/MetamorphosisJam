@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="1_i8th8"]
 [ext_resource type="Script" path="res://Scripts/rope_seg.gd" id="2_1pjnl"]
 
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_jcuh4"]
 
 [sub_resource type="Animation" id="Animation_suymy"]

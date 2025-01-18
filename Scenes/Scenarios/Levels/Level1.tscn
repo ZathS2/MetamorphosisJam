@@ -86,32 +86,25 @@ door = NodePath("../LeverDoor")
 
 [node name="Level6" type="Node" parent="."]
 
-
-[node name="Lever" parent="Level6" node_paths=PackedStringArray("door") instance=ExtResource("1_3weaj")]
+[node name="Lever" parent="Level6" instance=ExtResource("1_3weaj")]
 position = Vector2(3780, 505)
 rotation = 1.5708
-door = NodePath("../LeverDoor1")
 
-[node name="Lever2" parent="Level6" node_paths=PackedStringArray("door") instance=ExtResource("1_3weaj")]
+[node name="Lever2" parent="Level6" instance=ExtResource("1_3weaj")]
 position = Vector2(3930, 505)
 rotation = 1.5708
-door = NodePath("../LeverDoor2")
 
-[node name="Lever3" parent="Level6" node_paths=PackedStringArray("door") instance=ExtResource("1_3weaj")]
+[node name="Lever3" parent="Level6" instance=ExtResource("1_3weaj")]
 position = Vector2(4080, 505)
 rotation = 1.5708
-door = NodePath("../LeverDoor3")
 
-[node name="Lever4" parent="Level6" node_paths=PackedStringArray("door") instance=ExtResource("1_3weaj")]
+[node name="Lever4" parent="Level6" instance=ExtResource("1_3weaj")]
 position = Vector2(4230, 505)
 rotation = 1.5708
-door = NodePath("../LeverDoor4")
 
-[node name="Lever5" parent="Level6" node_paths=PackedStringArray("door") instance=ExtResource("1_3weaj")]
+[node name="Lever5" parent="Level6" instance=ExtResource("1_3weaj")]
 position = Vector2(4380, 505)
 rotation = 1.5708
-door = NodePath("../LeverDoor5")
-
 
 [node name="LeverDoor1" parent="Level6" node_paths=PackedStringArray("lever") instance=ExtResource("3_4vivk")]
 position = Vector2(5246, 413)
