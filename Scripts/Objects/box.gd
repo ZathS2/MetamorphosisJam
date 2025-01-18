@@ -67,7 +67,6 @@ func _process(delta):
 								pushingDir = -1
 	
 	if being_pushed==false:
-		#print("falso")
 		if !is_zero_approx(linear_velocity.x): 
 			apply_central_impulse((-linear_velocity.x / 2 * mass) * Vector2.RIGHT)
 	
