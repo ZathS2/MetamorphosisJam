@@ -27,6 +27,7 @@ size = Vector2(771, 136)
 size = Vector2(259, 128)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eh2nr"]
+size = Vector2(144, 63)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qghi"]
 size = Vector2(145, 52)
@@ -72,6 +73,7 @@ position = Vector2(1856.5, 319)
 shape = SubResource("RectangleShape2D_7s27w")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Areas/WaterArea"]
+position = Vector2(830, 30.5)
 shape = SubResource("RectangleShape2D_eh2nr")
 
 [node name="BreathingArea" type="Area2D" parent="Areas"]

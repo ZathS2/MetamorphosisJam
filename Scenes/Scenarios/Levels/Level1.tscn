@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dvgpvn3dvlgag"]
+[gd_scene load_steps=14 format=4 uid="uid://dvgpvn3dvlgag"]
 
 [ext_resource type="PackedScene" uid="uid://ds67bn1h0rho3" path="res://Scenes/lever.tscn" id="1_3weaj"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_bvtl3"]
@@ -11,12 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://dgv05ltagsndi" path="res://Scenes/catchable_box.tscn" id="9_a07hv"]
 [ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="10_cvr8m"]
 [ext_resource type="PackedScene" uid="uid://bg51vvmjh7q47" path="res://Scenes/animal_unlocker.tscn" id="11_3gfjr"]
+[ext_resource type="PackedScene" uid="uid://7s0yc7s703bk" path="res://Scenes/ScenesHandler/SceneArea.tscn" id="12_yudqu"]
+[ext_resource type="PackedScene" uid="uid://b81wkehv7dkki" path="res://Scenes/Scenarios/Levels/Level 2A.tscn" id="13_ucsgp"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(580, 520)
 
 [node name="PlayerNode" parent="." instance=ExtResource("5_ijplr")]
-position = Vector2(-449, -78)
+position = Vector2(4764, -154)
 
 [node name="Camera" type="Node" parent="."]
 
@@ -152,3 +154,8 @@ visible = false
 [node name="AnimalUnlocker" parent="." instance=ExtResource("11_3gfjr")]
 position = Vector2(5028, -81)
 animalIndex = 1
+
+[node name="SceneArea" parent="." instance=ExtResource("12_yudqu")]
+position = Vector2(5257, -199)
+scale = Vector2(3.575, 6.425)
+nextScene = ExtResource("13_ucsgp")
