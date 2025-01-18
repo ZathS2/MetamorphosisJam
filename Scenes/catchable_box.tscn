@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drt4uywqo11kb" path="res://addons/Box.png" id="3_sejqr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2adko"]
-size = Vector2(132, 116)
+size = Vector2(144, 116)
 
 [node name="RigidBody2D" type="RigidBody2D" groups=["Boxes", "Catchable"]]
 mass = 0.5

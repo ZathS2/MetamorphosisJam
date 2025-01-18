@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://cekbfgvkh3phw"]
+[gd_scene load_steps=8 format=4 uid="uid://cekbfgvkh3phw"]
 
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_joepu"]
 [ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="2_vdh7y"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://07jcs0g13172" path="res://Scenes/camera.tscn" id="5_ndydh"]
 [ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="6_wnef3"]
 [ext_resource type="PackedScene" uid="uid://dgv05ltagsndi" path="res://Scenes/catchable_box.tscn" id="7_lyn8c"]
-[ext_resource type="PackedScene" uid="uid://cg1ncyqgkc8d3" path="res://Scenes/box.tscn" id="7_ykb8h"]
 
 [node name="OncaTeste" type="Node2D"]
 
@@ -42,6 +41,3 @@ visible = false
 
 [node name="RigidBody2D" parent="." instance=ExtResource("7_lyn8c")]
 position = Vector2(69, -59)
-
-[node name="RigidBody2D2" parent="." instance=ExtResource("7_ykb8h")]
-position = Vector2(790, -97)

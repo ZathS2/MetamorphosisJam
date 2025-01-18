@@ -21,19 +21,17 @@ func _process(delta):
 			if get_groups().has("Catchable"):
 				if body.is_in_group("Player"):
 					var speed = 150
-					if body.is_in_group("Onça"):
-						speed = 250
 					
 					being_pushed = true
 					var player_position = body.global_position
 					if Vector2(global_position-player_position).y<60:
 						if Vector2(global_position-player_position).x>0:
 							if linear_velocity.length()<speed:
-								apply_central_impulse(Vector2(25, 0))
+								apply_central_impulse(Vector2(50, 0))
 								pushingDir = 1
 						elif Vector2(global_position-player_position).x<0:
 							if linear_velocity.length()<speed:
-								apply_central_impulse(Vector2(-25, 0))
+								apply_central_impulse(Vector2(-50, 0))
 								pushingDir = -1
 			else:
 				if body.is_in_group("Onça"):
@@ -42,14 +40,15 @@ func _process(delta):
 					if Vector2(global_position-player_position).y<90:
 						if Vector2(global_position-player_position).x>0:
 							if linear_velocity.length()<200:
-								apply_central_impulse(Vector2(25, 0))
+								apply_central_impulse(Vector2(50, 0))
 								pushingDir = 1
 						elif Vector2(global_position-player_position).x<0:
 							if linear_velocity.length()<200:
-								apply_central_impulse(Vector2(-25, 0))
+								apply_central_impulse(Vector2(-50, 0))
 								pushingDir = -1
 	
 	if being_pushed==false:
+		print("falso")
 		if !is_zero_approx(linear_velocity.x): 
 			apply_central_impulse((-linear_velocity.x / 2 * mass) * Vector2.RIGHT)
 			 
