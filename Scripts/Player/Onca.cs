@@ -1,24 +1,24 @@
 using Godot;
 using System;
 
-public partial class Creature : CharacterBody2D
+public partial class Onca : CharacterBody2D
 {
 
 	[Export]
-	public float Speed = 300.0f;
+	public float Speed = 500.0f;
 
 	[Export]
-	float jumpVelocity = -300.0f;
-	public override void _PhysicsProcess(double delta)
+	float jumpVelocity = -500.0f;
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
 	{
 		Movement(delta);
-
-		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
-
-		if ((bool)GameManager.Get("is_player_in_water"))
-		{
-			goToCheckPoint();
-		}
 	}
 
 	void Movement(double delta)
@@ -51,12 +51,5 @@ public partial class Creature : CharacterBody2D
 
 		Velocity = velocity;
 		MoveAndSlide();
-	}
-
-	void goToCheckPoint()
-	{
-		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
-
-		GameManager.Call("respawn");
 	}
 }

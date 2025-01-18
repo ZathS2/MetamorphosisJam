@@ -11,5 +11,6 @@ func _process(delta: float) -> void:
 	for body in get_overlapping_bodies():
 		if body.is_in_group("Player"):
 			GameManager.last_checkpoint_pos = global_position
+			GameManager.saveData()
 			break
 	

@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=4 uid="uid://rb26ix5ee5ds"]
+
+[ext_resource type="Script" path="res://Scripts/World/water.gd" id="1_y8284"]
+[ext_resource type="TileSet" uid="uid://c8ct6ghgrf0qs" path="res://TileSets/water.tres" id="2_8icl5"]
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="3_4yend"]
+[ext_resource type="PackedScene" uid="uid://dgv05ltagsndi" path="res://Scenes/catchable_box.tscn" id="4_cscfu"]
+[ext_resource type="PackedScene" uid="uid://cbdrl7rq1ftbh" path="res://Scenes/CheckPoint.tscn" id="5_eek1b"]
+[ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="6_uaxff"]
+[ext_resource type="PackedScene" uid="uid://07jcs0g13172" path="res://Scenes/camera.tscn" id="7_l1kvl"]
+[ext_resource type="PackedScene" uid="uid://d38k0sx0m8gt8" path="res://Scenes/button.tscn" id="8_j168a"]
+[ext_resource type="PackedScene" uid="uid://cnf4qrmqjokm8" path="res://Scenes/platform.tscn" id="9_ekuvu"]
+[ext_resource type="PackedScene" uid="uid://ctp30vv8sl2ym" path="res://Scenes/lever_door.tscn" id="10_hskmp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayjtb"]
+size = Vector2(190, 59)
+
+[node name="BoxCheckPointTest" type="Node2D"]
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("1_y8284")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1119, 30.5)
+shape = SubResource("RectangleShape2D_ayjtb")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAQAAAAAQABAAAAAAARAAAAAQABAAAAAAASAAAAAQABAAAAAAA=")
+tile_set = ExtResource("2_8icl5")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD9/wAAAAAAAAAAAAD+/wAAAAABAAAAAAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAADAP3/AAADAAMAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAACAAAAAAD9/wEAAAAAAAEAAAD8/wIAAAABAAAAAAD7/wEAAAACAAEAAAD7/wAAAAACAAEAAAA=")
+tile_set = ExtResource("3_4yend")
+
+[node name="RigidBody2D2" parent="." instance=ExtResource("4_cscfu")]
+position = Vector2(-65, -34)
+
+[node name="RigidBody2D" parent="." instance=ExtResource("4_cscfu")]
+position = Vector2(443, -36)
+
+[node name="Area2D" parent="." instance=ExtResource("5_eek1b")]
+position = Vector2(224, -66)
+scale = Vector2(3, 3)
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(1210, 78)
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-532, -404)
+
+[node name="PlayerNode" parent="." instance=ExtResource("6_uaxff")]
+position = Vector2(38, -55)
+
+[node name="Camera" parent="." node_paths=PackedStringArray("follower", "up_left_marker", "down_right_marker") instance=ExtResource("7_l1kvl")]
+position = Vector2(305, -69)
+follower = NodePath("../PlayerNode")
+up_left_marker = NodePath("../Marker2D")
+down_right_marker = NodePath("../Marker2D2")
+
+[node name="Node2D" parent="." node_paths=PackedStringArray("platform", "door") instance=ExtResource("8_j168a")]
+position = Vector2(-224, 101)
+platform = NodePath("../Node2D2")
+door = NodePath("../LeverDoor")
+
+[node name="Node2D2" parent="." node_paths=PackedStringArray("final_position_marker") instance=ExtResource("9_ekuvu")]
+position = Vector2(-388, -4)
+final_position_marker = NodePath("../Marker2D3")
+
+[node name="Marker2D3" type="Marker2D" parent="."]
+position = Vector2(-389, -179)
+
+[node name="LeverDoor" parent="." instance=ExtResource("10_hskmp")]
+position = Vector2(-293, -86)
+openHeight = -200.0

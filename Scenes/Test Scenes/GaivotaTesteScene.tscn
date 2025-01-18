@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_3ppwi"]
 [ext_resource type="PackedScene" uid="uid://cx3ib3io0q6lw" path="res://Scenes/Player/Gaivota.tscn" id="2_bnamq"]
 [ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="3_1jqg5"]
-[ext_resource type="PackedScene" uid="uid://nxvwagfcu5vx" path="res://Scenes/camera.tscn" id="4_qbb7q"]
+[ext_resource type="PackedScene" uid="uid://07jcs0g13172" path="res://Scenes/camera.tscn" id="4_qbb7q"]
 
 [node name="GaivotaTesteScene" type="Node2D"]
 

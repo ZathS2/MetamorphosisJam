@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kesgj"]
 size = Vector2(116.667, 86.6667)
 
-[node name="AnimalUnlocker" type="Node2D" node_paths=PackedStringArray("Area")]
+[node name="AnimalUnlocker" type="Node2D" node_paths=PackedStringArray("Area") groups=["AnimalUnlocker"]]
 scale = Vector2(0.3, 0.3)
 script = ExtResource("2_tlfn3")
 Area = NodePath("Area2D")
