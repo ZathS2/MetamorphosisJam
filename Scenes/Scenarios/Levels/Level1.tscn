@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=14 format=4 uid="uid://dvgpvn3dvlgag"]
-
+[gd_scene load_steps=18 format=4 uid="uid://dvgpvn3dvlgag"]
 
 [ext_resource type="PackedScene" uid="uid://ds67bn1h0rho3" path="res://Scenes/lever.tscn" id="1_3weaj"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_bvtl3"]
@@ -13,10 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://dgv05ltagsndi" path="res://Scenes/catchable_box.tscn" id="9_a07hv"]
 [ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="10_cvr8m"]
 [ext_resource type="PackedScene" uid="uid://bg51vvmjh7q47" path="res://Scenes/animal_unlocker.tscn" id="11_3gfjr"]
-
-[ext_resource type="PackedScene" uid="uid://7s0yc7s703bk" path="res://Scenes/ScenesHandler/SceneArea.tscn" id="12_yudqu"]
-[ext_resource type="PackedScene" uid="uid://b81wkehv7dkki" path="res://Scenes/Scenarios/Levels/Level 2A.tscn" id="13_ucsgp"]
-
 [ext_resource type="Texture2D" uid="uid://d3ya0cr6rj16o" path="res://addons/Signs/Sign GGJ.png" id="12_ih47x"]
 [ext_resource type="Texture2D" uid="uid://qko0rg4hrk1u" path="res://addons/Signs/Sign stick part.png" id="13_5swux"]
 [ext_resource type="Texture2D" uid="uid://cciuira1aty7x" path="res://addons/Signs/Sign zathS2.png" id="14_1w6mm"]
@@ -149,7 +143,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_5swux")
 
 [node name="PlayerNode" parent="." instance=ExtResource("5_ijplr")]
-position = Vector2(-328, -172)
+position = Vector2(-449, -78)
 
 [node name="Camera" type="Node" parent="."]
 
@@ -285,8 +279,3 @@ visible = false
 [node name="AnimalUnlocker" parent="." instance=ExtResource("11_3gfjr")]
 position = Vector2(5028, -81)
 animalIndex = 1
-
-[node name="SceneArea" parent="." instance=ExtResource("12_yudqu")]
-position = Vector2(5257, -199)
-scale = Vector2(3.575, 6.425)
-nextScene = ExtResource("13_ucsgp")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwp0m55m46aki"]
+[gd_scene load_steps=5 format=3 uid="uid://cwp0m55m46aki"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Macaw.cs" id="1_yvdub"]
 [ext_resource type="Texture2D" uid="uid://bdcpfp4no2pye" path="res://addons/Animals/Arara.png" id="2_2dft7"]
+[ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_5w0ah"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxwi3"]
 height = 68.0
@@ -14,11 +15,13 @@ motion_mode = 1
 script = ExtResource("1_yvdub")
 flySpeed = 500.0
 
-[node name="Arara" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -50)
 texture = ExtResource("2_2dft7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(14, 10)
+position = Vector2(12, -42)
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_gxwi3")
+
+[node name="FlipH" parent="." instance=ExtResource("3_5w0ah")]

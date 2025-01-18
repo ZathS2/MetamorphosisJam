@@ -1,19 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dcamwxo51muer"]
+[gd_scene load_steps=5 format=3 uid="uid://dcamwxo51muer"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Mico.cs" id="1_gdm6f"]
-[ext_resource type="Texture2D" uid="uid://cv7vnqfid3i6" path="res://icon.svg" id="2_cw563"]
+[ext_resource type="Texture2D" uid="uid://dmpbclex2un4y" path="res://addons/Animals/Mico.png" id="2_tlj6a"]
+[ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_24685"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vvh3f"]
-size = Vector2(128, 128)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pgu2f"]
+radius = 42.0
+height = 115.966
 
 [node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_gdm6f")
 jumpOutOfRopeVel = 300.0
 
-[node name="Icon" type="Sprite2D" parent="."]
-self_modulate = Color(1, 0.3175, 0.09, 1)
-texture = ExtResource("2_cw563")
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-52, -52)
+texture = ExtResource("2_tlj6a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_vvh3f")
+position = Vector2(-12, -54)
+rotation = 0.785397
+shape = SubResource("CapsuleShape2D_pgu2f")
+
+[node name="FlipH" parent="." instance=ExtResource("3_24685")]

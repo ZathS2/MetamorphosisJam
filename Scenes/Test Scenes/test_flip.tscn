@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=4 uid="uid://bxqp573lydwjy"]
+
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_141db"]
+[ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="2_fq5vq"]
+[ext_resource type="PackedScene" uid="uid://bg51vvmjh7q47" path="res://Scenes/animal_unlocker.tscn" id="3_iuu28"]
+[ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="4_p8vk1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAgAAAABAAEAAAAAAAkAAAABAAEAAAABAAgAAAABAAEAAAABAAkAAAABAAEAAAACAAgAAAABAAEAAAACAAkAAAABAAEAAAADAAgAAAABAAEAAAADAAkAAAABAAEAAAAEAAgAAAABAAEAAAAEAAkAAAABAAEAAAAFAAgAAAABAAEAAAAFAAkAAAABAAEAAAAGAAgAAAABAAEAAAAGAAkAAAABAAEAAAAHAAgAAAABAAEAAAAHAAkAAAABAAEAAAAIAAgAAAABAAEAAAAIAAkAAAABAAEAAAAJAAgAAAABAAEAAAAJAAkAAAABAAEAAAAKAAgAAAABAAEAAAAKAAkAAAABAAEAAAALAAgAAAABAAEAAAALAAkAAAABAAEAAAAMAAgAAAABAAEAAAAMAAkAAAABAAEAAAANAAgAAAABAAEAAAANAAkAAAABAAEAAAAOAAgAAAABAAEAAAAOAAkAAAABAAEAAAAPAAgAAAABAAEAAAAPAAkAAAABAAEAAAAQAAgAAAABAAEAAAAQAAkAAAABAAEAAAARAAgAAAABAAEAAAARAAkAAAABAAEAAAA=")
+tile_set = ExtResource("1_141db")
+
+[node name="PlayerNode" parent="." instance=ExtResource("2_fq5vq")]
+position = Vector2(558, 433)
+
+[node name="AnimalUnlocker" parent="." instance=ExtResource("3_iuu28")]
+position = Vector2(553, 424)
+animalIndex = 1
+
+[node name="AnimalUnlocker2" parent="." instance=ExtResource("3_iuu28")]
+position = Vector2(584, 427)
+animalIndex = 2
+
+[node name="AnimalUnlocker3" parent="." instance=ExtResource("3_iuu28")]
+position = Vector2(476, 404)
+animalIndex = 3
+
+[node name="AnimalUnlocker4" parent="." instance=ExtResource("3_iuu28")]
+position = Vector2(567, 413)
+animalIndex = 4
+
+[node name="AnimalUnlocker5" parent="." instance=ExtResource("3_iuu28")]
+position = Vector2(536, 416)
+animalIndex = 5
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("4_p8vk1")]
+visible = false
