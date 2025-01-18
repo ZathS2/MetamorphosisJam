@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pq5ey"]
 size = Vector2(492, 292)
 
-[node name="Onca" type="CharacterBody2D" groups=["Onça"]]
+[node name="Onca" type="CharacterBody2D" groups=["Onça", "Player"]]
 position = Vector2(0, -46.25)
 scale = Vector2(-0.25, 0.25)
 script = ExtResource("1_32jbs")
