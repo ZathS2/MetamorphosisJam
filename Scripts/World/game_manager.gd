@@ -10,6 +10,8 @@ var last_checkpoint_pos = null
 
 var check_point_scene : PackedScene = null
 
+var water:Area2D = null
+
 
 const CREATURE: int = 0
 const TURTLE: int = 1
