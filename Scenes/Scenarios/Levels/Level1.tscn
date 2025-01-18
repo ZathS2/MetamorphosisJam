@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=14 format=4 uid="uid://dvgpvn3dvlgag"]
+
 
 [ext_resource type="PackedScene" uid="uid://ds67bn1h0rho3" path="res://Scenes/lever.tscn" id="1_3weaj"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_bvtl3"]
@@ -11,11 +13,140 @@
 [ext_resource type="PackedScene" uid="uid://dgv05ltagsndi" path="res://Scenes/catchable_box.tscn" id="9_a07hv"]
 [ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="10_cvr8m"]
 [ext_resource type="PackedScene" uid="uid://bg51vvmjh7q47" path="res://Scenes/animal_unlocker.tscn" id="11_3gfjr"]
+
 [ext_resource type="PackedScene" uid="uid://7s0yc7s703bk" path="res://Scenes/ScenesHandler/SceneArea.tscn" id="12_yudqu"]
 [ext_resource type="PackedScene" uid="uid://b81wkehv7dkki" path="res://Scenes/Scenarios/Levels/Level 2A.tscn" id="13_ucsgp"]
 
+[ext_resource type="Texture2D" uid="uid://d3ya0cr6rj16o" path="res://addons/Signs/Sign GGJ.png" id="12_ih47x"]
+[ext_resource type="Texture2D" uid="uid://qko0rg4hrk1u" path="res://addons/Signs/Sign stick part.png" id="13_5swux"]
+[ext_resource type="Texture2D" uid="uid://cciuira1aty7x" path="res://addons/Signs/Sign zathS2.png" id="14_1w6mm"]
+[ext_resource type="Texture2D" uid="uid://3qob7q1rapbk" path="res://addons/Signs/Sign godot.png" id="15_umxny"]
+[ext_resource type="Texture2D" uid="uid://boo10vc05frq" path="res://addons/Signs/Sign RS.png" id="16_f6m6g"]
+[ext_resource type="Texture2D" uid="uid://dspq4qitaxmx0" path="res://addons/Signs/Sign itchio.png" id="17_8c24r"]
+
 [node name="Level1" type="Node2D"]
 position = Vector2(580, 520)
+
+[node name="Signs" type="Node2D" parent="."]
+position = Vector2(-580, -520)
+
+[node name="Ggj" type="Node2D" parent="Signs"]
+position = Vector2(3780, 474)
+
+[node name="SignGgj" type="Sprite2D" parent="Signs/Ggj"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_ih47x")
+
+[node name="SignStickPart" type="Sprite2D" parent="Signs/Ggj"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_5swux")
+
+[node name="Zath" type="Node2D" parent="Signs"]
+position = Vector2(3930, 474)
+
+[node name="SignZathS2" type="Sprite2D" parent="Signs/Zath"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("14_1w6mm")
+
+[node name="SignStickPart" type="Sprite2D" parent="Signs/Zath"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_5swux")
+
+[node name="Godot" type="Node2D" parent="Signs"]
+position = Vector2(4080, 474)
+
+[node name="SignGodot" type="Sprite2D" parent="Signs/Godot"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("15_umxny")
+
+[node name="SignStickPart" type="Sprite2D" parent="Signs/Godot"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_5swux")
+
+[node name="RS" type="Node2D" parent="Signs"]
+position = Vector2(4230, 474)
+
+[node name="SignRs" type="Sprite2D" parent="Signs/RS"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("16_f6m6g")
+
+[node name="SignStickPart" type="Sprite2D" parent="Signs/RS"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_5swux")
+
+[node name="Itchio" type="Node2D" parent="Signs"]
+position = Vector2(4380, 474)
+
+[node name="SignItchio" type="Sprite2D" parent="Signs/Itchio"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_8c24r")
+
+[node name="SignStickPart" type="Sprite2D" parent="Signs/Itchio"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_5swux")
+
+[node name="Signs2" type="Node2D" parent="."]
+position = Vector2(-580, -520)
+
+[node name="RS" type="Node2D" parent="Signs2"]
+position = Vector2(4990, 274)
+
+[node name="SignRs" type="Sprite2D" parent="Signs2/RS"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("16_f6m6g")
+
+[node name="SignStickPart" type="Sprite2D" parent="Signs2/RS"]
+visible = false
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_5swux")
+
+[node name="Itchio" type="Node2D" parent="Signs2"]
+position = Vector2(5054, 274)
+
+[node name="SignItchio" type="Sprite2D" parent="Signs2/Itchio"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("17_8c24r")
+
+[node name="SignStickPart" type="Sprite2D" parent="Signs2/Itchio"]
+visible = false
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_5swux")
+
+[node name="Zath" type="Node2D" parent="Signs2"]
+position = Vector2(5118, 274)
+
+[node name="SignZathS2" type="Sprite2D" parent="Signs2/Zath"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("14_1w6mm")
+
+[node name="SignStickPart" type="Sprite2D" parent="Signs2/Zath"]
+visible = false
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_5swux")
+
+[node name="Godot" type="Node2D" parent="Signs2"]
+position = Vector2(5182, 274)
+
+[node name="SignGodot" type="Sprite2D" parent="Signs2/Godot"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("15_umxny")
+
+[node name="SignStickPart" type="Sprite2D" parent="Signs2/Godot"]
+visible = false
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_5swux")
+
+[node name="Ggj" type="Node2D" parent="Signs2"]
+position = Vector2(5246, 274)
+
+[node name="SignGgj" type="Sprite2D" parent="Signs2/Ggj"]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("12_ih47x")
+
+[node name="SignStickPart" type="Sprite2D" parent="Signs2/Ggj"]
+visible = false
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("13_5swux")
 
 [node name="PlayerNode" parent="." instance=ExtResource("5_ijplr")]
 position = Vector2(-328, -172)
