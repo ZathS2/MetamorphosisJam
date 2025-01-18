@@ -22,7 +22,7 @@ func _process(delta):
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_psrsv"]
 size = Vector2(56, 1)
 
-[node name="Node2D" type="CharacterBody2D"]
+[node name="Platform" type="CharacterBody2D"]
 collision_mask = 0
 platform_floor_layers = 4294967040
 safe_margin = 5.0
