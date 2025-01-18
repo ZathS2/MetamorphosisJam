@@ -18,7 +18,7 @@
 position = Vector2(580, 520)
 
 [node name="PlayerNode" parent="." instance=ExtResource("5_ijplr")]
-position = Vector2(4764, -154)
+position = Vector2(-328, -172)
 
 [node name="Camera" type="Node" parent="."]
 
