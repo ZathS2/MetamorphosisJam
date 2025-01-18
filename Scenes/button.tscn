@@ -105,7 +105,7 @@ _data = {
 radius = 11.0
 height = 58.0
 
-[node name="Node2D" type="StaticBody2D"]
+[node name="Node2D" type="StaticBody2D" groups=["Botão"]]
 z_index = 2
 script = ExtResource("1_2cb4v")
 
