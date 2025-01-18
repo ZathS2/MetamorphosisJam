@@ -19,3 +19,9 @@ polygon = PackedVector2Array(-60, -60, -52, -64, 52, -64, 60, -60, 64, -52, 64, 
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_2adko")
+
+[node name="RayCastDown" type="RayCast2D" parent="."]
+target_position = Vector2(0, 68)
+
+[node name="RayCastDown2" type="RayCast2D" parent="."]
+target_position = Vector2(0, 70)

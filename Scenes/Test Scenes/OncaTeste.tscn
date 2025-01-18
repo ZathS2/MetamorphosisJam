@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=4 uid="uid://cekbfgvkh3phw"]
+
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_joepu"]
+[ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="2_vdh7y"]
+[ext_resource type="PackedScene" uid="uid://crcqge5cop8nd" path="res://Scenes/Player/onca.tscn" id="3_5rwxb"]
+[ext_resource type="PackedScene" uid="uid://bg51vvmjh7q47" path="res://Scenes/animal_unlocker.tscn" id="4_ow0k8"]
+[ext_resource type="PackedScene" uid="uid://07jcs0g13172" path="res://Scenes/camera.tscn" id="5_ndydh"]
+[ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="6_wnef3"]
+[ext_resource type="PackedScene" uid="uid://cg1ncyqgkc8d3" path="res://Scenes/box.tscn" id="7_ykb8h"]
+
+[node name="OncaTeste" type="Node2D"]
+
+[node name="Ground" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAD//wAAAAABAAAAAAAAAAAAAAABAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAABAAAAAAAPAAAAAAABAAAAAAAQAAAAAAABAAAAAAA=")
+tile_set = ExtResource("1_joepu")
+
+[node name="PlayerNode" parent="." instance=ExtResource("2_vdh7y")]
+position = Vector2(64, -116)
+oncaScene = ExtResource("3_5rwxb")
+
+[node name="AnimalUnlocker" parent="." instance=ExtResource("4_ow0k8")]
+position = Vector2(342, -66)
+animalIndex = 5
+
+[node name="Camera" parent="." node_paths=PackedStringArray("follower", "up_left_marker", "down_right_marker") instance=ExtResource("5_ndydh")]
+position = Vector2(476, -340)
+follower = NodePath("../PlayerNode")
+up_left_marker = NodePath("Marker2D")
+down_right_marker = NodePath("Marker2D2")
+
+[node name="Marker2D" type="Marker2D" parent="Camera"]
+position = Vector2(-709, -408)
+
+[node name="Marker2D2" type="Marker2D" parent="Camera"]
+position = Vector2(890, 421)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("6_wnef3")]
+visible = false
+
+[node name="RigidBody2D" parent="." instance=ExtResource("7_ykb8h")]
+position = Vector2(726, -76)
