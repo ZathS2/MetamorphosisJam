@@ -25,6 +25,17 @@ public partial class AnimalWheel : Control
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
+		if (Input.IsActionJustPressed("toggle_wheel"))
+		{
+			toggleMenu();
+		}
+
+		if (Input.IsActionJustPressed("select_animal") && opened)
+		{
+			SelectAnimal();
+			toggleMenu();
+		}
+
 		if (opened)
 		{
 			var angleToCenter = (GetViewport().GetMousePosition() - (GetViewport().GetVisibleRect().Size / 2)).Angle();
@@ -145,30 +156,5 @@ public partial class AnimalWheel : Control
 			GameManager.Set("current_animal", GameManager.Get("GAROUPA"));
 			GD.Print("no gamemanager: " + GameManager.Get("current_animal"));
 		}
-	}
-
-	public override void _Input(InputEvent @event)
-	{
-
-		if (@event is InputEventKey keyEvent)
-		{
-			if (keyEvent.Keycode == Key.E && keyEvent.Pressed)
-			{
-				toggleMenu();
-			}
-		}
-
-		if (@event is InputEventMouseButton mouseEvent && opened == true)
-		{
-			if (mouseEvent.ButtonIndex == MouseButton.Left && mouseEvent.Pressed)
-			{
-				//GD.Print("index: " + Mathf.Floor((Mathf.RadToDeg(Rotation) + 60) / 60.0));
-				//GD.Print("creature: " + Mathf.Floor((creatureAngle) / 60.0));
-				SelectAnimal();
-				toggleMenu();
-			}
-		}
-
-		base._Input(@event);
 	}
 }

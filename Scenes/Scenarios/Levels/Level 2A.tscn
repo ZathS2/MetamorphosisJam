@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b81wkehv7dkki"]
+[gd_scene load_steps=22 format=4 uid="uid://b81wkehv7dkki"]
 
 [ext_resource type="PackedScene" uid="uid://d38k0sx0m8gt8" path="res://Scenes/button.tscn" id="1_7tifj"]
 [ext_resource type="Script" path="res://Scripts/World/water.gd" id="2_2e7a3"]
@@ -25,6 +25,8 @@ size = Vector2(771, 136)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7s27w"]
 size = Vector2(259, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eh2nr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5qghi"]
 size = Vector2(145, 52)
@@ -68,6 +70,9 @@ shape = SubResource("RectangleShape2D_8tj6n")
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Areas/WaterArea"]
 position = Vector2(1856.5, 319)
 shape = SubResource("RectangleShape2D_7s27w")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Areas/WaterArea"]
+shape = SubResource("RectangleShape2D_eh2nr")
 
 [node name="BreathingArea" type="Area2D" parent="Areas"]
 script = ExtResource("3_rr16d")

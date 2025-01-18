@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://crcqge5cop8nd"]
+
+[ext_resource type="Texture2D" uid="uid://btjya38warprf" path="res://addons/Animals/Onça.png" id="1_4kalr"]
+[ext_resource type="Script" path="res://Scripts/Player/Onca.cs" id="1_32jbs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq5ey"]
+size = Vector2(492, 292)
+
+[node name="Onca" type="CharacterBody2D" groups=["Onça", "Player"]]
+position = Vector2(0, -46.25)
+scale = Vector2(-0.25, 0.25)
+script = ExtResource("1_32jbs")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_4kalr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, 38)
+shape = SubResource("RectangleShape2D_pq5ey")

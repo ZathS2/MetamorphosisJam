@@ -65,7 +65,6 @@ position = Vector2(2367, -465)
 scale = Vector2(2.075, 0.852)
 up_direction = Vector2(-0.0299865, -0.99955)
 final_position_marker = NodePath("../Marker2D")
-leverscript = NodePath("")
 
 [node name="Marker2D" type="Marker2D" parent="Plataforma"]
 position = Vector2(2360, -331)
@@ -82,7 +81,7 @@ openHeight = 200.0
 
 [node name="Lever" parent="Alavanca" node_paths=PackedStringArray("platform") instance=ExtResource("10_nju5q")]
 z_index = -1
-position = Vector2(1878, -524)
+position = Vector2(596, -517)
 rotation = -3.14159
 scale = Vector2(1, -1)
 platform = NodePath("../../Plataforma/Node2D")
@@ -93,5 +92,5 @@ platform = NodePath("../../Plataforma/Node2D")
 visible = false
 
 [node name="AnimalUnlocker" parent="." instance=ExtResource("6_erfgy")]
-position = Vector2(651, -511)
+position = Vector2(678, -157)
 animalIndex = 3
