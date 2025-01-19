@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://3ld5a6c53dqk"]
+[gd_scene load_steps=22 format=4 uid="uid://3ld5a6c53dqk"]
 
 [ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="1_k5xhb"]
 [ext_resource type="PackedScene" uid="uid://d38k0sx0m8gt8" path="res://Scenes/button.tscn" id="2_owevb"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://8e62ggjv7nf3" path="res://addons/Background/Background - Layer 6.png" id="17_tyswv"]
 [ext_resource type="Texture2D" uid="uid://booibokt52oly" path="res://addons/Background/BackgroundLoop - Layer 7.png" id="18_8wda7"]
 [ext_resource type="PackedScene" uid="uid://7s0yc7s703bk" path="res://Scenes/ScenesHandler/SceneArea.tscn" id="19_cv08i"]
+[ext_resource type="Texture2D" uid="uid://c15ssjay8ae4i" path="res://addons/Background/subsolometamorfose.png" id="19_lrs3a"]
 [ext_resource type="PackedScene" uid="uid://cxbbnoycubkxe" path="res://Scenes/Scenarios/Levels/Level3.tscn" id="20_6hqre"]
 
 [node name="Level3" type="Node2D"]
@@ -177,6 +178,15 @@ repeat_size = Vector2(320, 192)
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer7"]
 texture = ExtResource("18_8wda7")
 centered = false
+
+[node name="Subsolometamorfose" type="Polygon2D" parent="BG"]
+z_index = -59
+texture_repeat = 2
+position = Vector2(21, 95)
+texture = ExtResource("19_lrs3a")
+polygon = PackedVector2Array(-157, 1211, -160, -98, 5932, -97, 5931, 1195)
+uv = PackedVector2Array(-375.452, 425.965, -375.452, -229.965, 695.452, -229.965, 695.452, 425.965)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
 
 [node name="SceneArea" parent="." instance=ExtResource("19_cv08i")]
 position = Vector2(2645, -680)

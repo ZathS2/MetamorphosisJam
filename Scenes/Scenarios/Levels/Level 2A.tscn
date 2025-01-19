@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=4 uid="uid://b81wkehv7dkki"]
+[gd_scene load_steps=32 format=4 uid="uid://b81wkehv7dkki"]
 
 [ext_resource type="PackedScene" uid="uid://d38k0sx0m8gt8" path="res://Scenes/button.tscn" id="1_7tifj"]
 [ext_resource type="Script" path="res://Scripts/World/water.gd" id="2_2e7a3"]
@@ -7,6 +7,7 @@
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="5_815sp"]
 [ext_resource type="PackedScene" uid="uid://07jcs0g13172" path="res://Scenes/camera.tscn" id="6_gao04"]
 [ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="7_57duy"]
+[ext_resource type="Texture2D" uid="uid://c15ssjay8ae4i" path="res://addons/Background/subsolometamorfose.png" id="8_bxxv8"]
 [ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="8_uim2w"]
 [ext_resource type="PackedScene" uid="uid://ds67bn1h0rho3" path="res://Scenes/lever.tscn" id="9_gd0at"]
 [ext_resource type="PackedScene" uid="uid://ctp30vv8sl2ym" path="res://Scenes/lever_door.tscn" id="10_b44fb"]
@@ -60,7 +61,7 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer1"]
 texture = ExtResource("14_2v6bk")
 centered = false
-offset = Vector2(0, -190)
+offset = Vector2(0, -156)
 
 [node name="Layer2" type="Parallax2D" parent="BG"]
 z_index = -20
@@ -71,7 +72,7 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer2"]
 texture = ExtResource("15_qjoq0")
 centered = false
-offset = Vector2(0, -190)
+offset = Vector2(0, -156)
 
 [node name="Layer3" type="Parallax2D" parent="BG"]
 z_index = -30
@@ -83,7 +84,7 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer3"]
 texture = ExtResource("16_vo1h3")
 centered = false
-offset = Vector2(0, -190)
+offset = Vector2(0, -156)
 
 [node name="Layer4" type="Parallax2D" parent="BG"]
 z_index = -40
@@ -94,7 +95,7 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer4"]
 texture = ExtResource("17_sal8o")
 centered = false
-offset = Vector2(0, -190)
+offset = Vector2(0, -156)
 
 [node name="Layer5" type="Parallax2D" parent="BG"]
 z_index = -50
@@ -105,7 +106,7 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer5"]
 texture = ExtResource("18_sr6bi")
 centered = false
-offset = Vector2(0, -190)
+offset = Vector2(0, -156)
 
 [node name="Layer6" type="Parallax2D" parent="BG"]
 z_index = -60
@@ -116,7 +117,7 @@ repeat_times = 3
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer6"]
 texture = ExtResource("19_rbcqh")
 centered = false
-offset = Vector2(0, -190)
+offset = Vector2(0, -156)
 
 [node name="Layer7" type="Parallax2D" parent="BG"]
 z_index = -70
@@ -126,6 +127,15 @@ repeat_size = Vector2(320, 192)
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer7"]
 texture = ExtResource("20_ojkjc")
 centered = false
+
+[node name="Subsolometamorfose" type="Polygon2D" parent="BG"]
+z_index = -59
+texture_repeat = 2
+position = Vector2(-367, 159)
+texture = ExtResource("8_bxxv8")
+polygon = PackedVector2Array(-157, 1211, -160, -98, 5932, -97, 5931, 1195)
+uv = PackedVector2Array(-375.452, 425.965, -375.452, -229.965, 695.452, -229.965, 695.452, 425.965)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
 
 [node name="Buttons" type="Node" parent="."]
 
