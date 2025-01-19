@@ -1,13 +1,140 @@
-[gd_scene load_steps=4 format=3 uid="uid://d1lxrov08wusk"]
+[gd_scene load_steps=23 format=3 uid="uid://d1lxrov08wusk"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Turtle.cs" id="1_5j14m"]
-[ext_resource type="Texture2D" uid="uid://4ws8rvw3pp54" path="res://addons/Animals/Turtle .png" id="2_bk8jp"]
+[ext_resource type="Texture2D" uid="uid://dy5y6lgbrmcfr" path="res://addons/Sprite sheet/Turtle.png" id="2_dsd3q"]
+[ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_mttsf"]
+[ext_resource type="Script" path="res://Scenes/Player/animated_sprite_2d.gd" id="3_ym5ud"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1imw5"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rreoq"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(0, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s2wup"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(96, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7t0o8"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(192, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uady5"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn3q5"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(0, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yrvhu"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(96, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fsbmx"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(192, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdp2f"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(288, 96, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jq8wg"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(0, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6i1uu"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(96, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mh8db"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(192, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c10au"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(288, 192, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kyqec"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(0, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d57cu"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(96, 288, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8dao"]
+atlas = ExtResource("2_dsd3q")
+region = Rect2(192, 288, 96, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m8v1d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1imw5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rreoq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s2wup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7t0o8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uady5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn3q5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yrvhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fsbmx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdp2f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jq8wg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6i1uu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mh8db")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c10au")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kyqec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d57cu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8dao")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ds4h"]
 radius = 26.0
 height = 156.0
 
-[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player"]]
+[node name="CharacterBody2D" type="CharacterBody2D" groups=["Player", "Turtle"]]
 scale = Vector2(0.5, 0.5)
 collision_layer = 9
 collision_mask = 9
@@ -18,11 +145,19 @@ maxBreathTime = 15.0
 [node name="BreathBar" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-60, -80, -60, -90, 60, -90, 60, -80)
 
-[node name="Sprite" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -38)
-texture = ExtResource("2_bk8jp")
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_m8v1d")
+animation = &"run"
+autoplay = "idle"
+frame_progress = 0.226534
+speed_scale = 2.0
+script = ExtResource("3_ym5ud")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -46)
 rotation = -1.57079
 shape = SubResource("CapsuleShape2D_7ds4h")
+
+[node name="FlipH" parent="." instance=ExtResource("3_mttsf")]

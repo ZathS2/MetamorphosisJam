@@ -10,12 +10,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if parent.velocity.x<0 and !$"../Sprite".flip_h:
+	if parent.velocity.x<0 and !$"../AnimatedSprite2D".flip_h:
 		flip_h()
-	elif parent.velocity.x>0 and $"../Sprite".flip_h:
+	elif parent.velocity.x>0 and $"../AnimatedSprite2D".flip_h:
 		flip_h()
 	pass
 
 func flip_h():
-		$"../Sprite".flip_h = !$"../Sprite".flip_h
+		$"../AnimatedSprite2D".flip_h = !$"../AnimatedSprite2D".flip_h
 		$"../CollisionShape2D".position = Vector2($"../CollisionShape2D".position*Vector2(-1, 1))
