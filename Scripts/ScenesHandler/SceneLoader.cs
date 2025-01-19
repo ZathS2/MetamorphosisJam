@@ -10,6 +10,8 @@ public partial class SceneLoader : Node2D
 
 	[Export] PackedScene mainMenuScene;
 
+	[Export] AudioStreamPlayer backgroundPlayer;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -30,6 +32,7 @@ public partial class SceneLoader : Node2D
 		{
 			UpdateScene();
 		}
+
 	}
 
 	void UpdateScene()
@@ -41,5 +44,17 @@ public partial class SceneLoader : Node2D
 		currentInstantiatedScene = currentScene.Instantiate();
 
 		AddChild(currentInstantiatedScene);
+
+		if (currentScene == mainMenuScene)
+		{
+			backgroundPlayer.Stop();
+		}
+		else
+		{
+			if (backgroundPlayer.Playing == false)
+			{
+				backgroundPlayer.Play();
+			}
+		}
 	}
 }

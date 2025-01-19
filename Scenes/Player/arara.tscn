@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Player/Macaw.cs" id="1_yvdub"]
 [ext_resource type="Texture2D" uid="uid://bdcpfp4no2pye" path="res://addons/Animals/Arara.png" id="2_2dft7"]
-[ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_5w0ah"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/FlipH.tscn" id="3_5w0ah"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxwi3"]
 height = 68.0
