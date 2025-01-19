@@ -1,10 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://dnwlb52r5aidn"]
+[gd_scene load_steps=7 format=4 uid="uid://dd5m7stlcg0ew"]
 
 [ext_resource type="PackedScene" uid="uid://d38k0sx0m8gt8" path="res://Scenes/button.tscn" id="1_gsnae"]
 [ext_resource type="TileSet" uid="uid://c8ct6ghgrf0qs" path="res://TileSets/water.tres" id="2_44svu"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="3_7qadq"]
 [ext_resource type="PackedScene" uid="uid://bo0tresprte28" path="res://Scenes/Player/Garoupa.tscn" id="4_apfio"]
-[ext_resource type="PackedScene" uid="uid://b3yb0ekyop8b2" path="res://Scenes/light.tscn" id="5_bxrj2"]
+[ext_resource type="PackedScene" path="res://Scenes/light.tscn" id="5_bxrj2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bwayx"]
 size = Vector2(1185, 596)

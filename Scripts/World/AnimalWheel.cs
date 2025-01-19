@@ -76,6 +76,12 @@ public partial class AnimalWheel : Control
 		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
 		var AnimalBlock = (HandleAnimalBlock)GetNode<Node>("/root/HandleAnimalBlock");
 
+		if ((int)GameManager.Get("current_animal") == (int)GameManager.Get("TURTLE"))
+		{
+			GameManager.Set("current_breath", 10f);
+			GameManager.Set("just_changed_to_turtle", true);
+		}
+
 		if ((GetViewport().GetMousePosition() - (GetViewport().GetVisibleRect().Size / 2)).Length() < 60)
 		{
 			GameManager.Set("current_animal", GameManager.Get("CREATURE"));
@@ -150,6 +156,12 @@ public partial class AnimalWheel : Control
 			if (!AnimalBlock.isAnimalUnlocked((int)GameManager.Get("GAROUPA")))
 			{
 				GD.Print("ta travado GAROUPA");
+				return;
+			}
+
+			if (!(bool)GameManager.Get("is_player_in_water"))
+			{
+				GD.Print("Não ta na agua");
 				return;
 			}
 

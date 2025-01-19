@@ -25,7 +25,6 @@ func _process(delta):
 	if water!=null:
 		water.is_box_in_water(self)
 	if in_water:
-		print("in_water")
 		Area = $InWaterArea
 		gravity_value = 0.5
 		lock_rotation = false

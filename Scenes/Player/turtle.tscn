@@ -13,7 +13,7 @@ collision_layer = 9
 collision_mask = 9
 script = ExtResource("1_5j14m")
 groundSpeed = 200.0
-maxBreathTime = 10.0
+maxBreathTime = 15.0
 
 [node name="BreathBar" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-60, -80, -60, -90, 60, -90, 60, -80)

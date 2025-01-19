@@ -12,6 +12,9 @@ var check_point_scene : PackedScene = null
 
 var water:Area2D = null
 
+var current_breath : float
+var just_changed_to_turtle : bool
+
 
 const CREATURE: int = 0
 const TURTLE: int = 1

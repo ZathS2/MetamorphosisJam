@@ -38,7 +38,6 @@ public partial class Turtle : CharacterBody2D
 		AddChild(holdTimer);
 		AddChild(recoverTimer);
 
-		currentBreathTime = maxBreathTime;
 
 		breathBar = (Polygon2D)FindChild("BreathBar");
 
@@ -54,6 +53,7 @@ public partial class Turtle : CharacterBody2D
 			break;
 		}
 
+		currentBreathTime = maxBreathTime;
 	}
 
 	public override void _Process(double delta)
@@ -61,6 +61,13 @@ public partial class Turtle : CharacterBody2D
 
 		//GD.Print("breath: " + currentBreathTime);
 
+		var GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
+
+		if ((bool)GameManager.Get("just_changed_to_turtle") == true)
+		{
+			currentBreathTime = (float)GameManager.Get("current_breath");
+			GameManager.Set("just_changed_to_turtle", false);
+		}
 		if (currentBreathTime <= 0)
 		{
 			canStartTimer = true;

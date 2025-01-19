@@ -106,7 +106,6 @@ centered = false
 offset = Vector2(0, 2.45)
 
 [node name="Layer7" type="Parallax2D" parent="BG"]
-visible = false
 z_index = -70
 scale = Vector2(5, 5)
 repeat_size = Vector2(320, 192)
@@ -170,6 +169,7 @@ position = Vector2(1379, 385)
 scale = Vector2(3.5, 0.6)
 motion_mode = 1
 final_position_marker = NodePath("../Marker2D")
+speed = 500.0
 
 [node name="Platform2" parent="Level2" node_paths=PackedStringArray("final_position_marker") instance=ExtResource("9_bcfsy")]
 position = Vector2(2201, 513)
