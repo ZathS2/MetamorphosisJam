@@ -34,6 +34,11 @@ public partial class PlayerScript : Node2D
 	{
 		scenePos = ((Node2D)GetChild(0)).GlobalPosition;
 		updateAnimal();
+
+		if (Input.IsActionJustPressed("reset"))
+		{
+			GameManager.Call("respawn");
+		}
 	}
 
 	void updateAnimal()

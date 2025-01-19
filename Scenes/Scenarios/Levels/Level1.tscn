@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://dvgpvn3dvlgag"]
+[gd_scene load_steps=28 format=4 uid="uid://dvgpvn3dvlgag"]
 
 [ext_resource type="PackedScene" uid="uid://ds67bn1h0rho3" path="res://Scenes/lever.tscn" id="1_3weaj"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_bvtl3"]
@@ -26,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://co0onf1a8wopw" path="res://addons/Background/Background - Layer 5.png" id="24_8dcfg"]
 [ext_resource type="Texture2D" uid="uid://8e62ggjv7nf3" path="res://addons/Background/Background - Layer 6.png" id="25_wxwpf"]
 [ext_resource type="Texture2D" uid="uid://booibokt52oly" path="res://addons/Background/BackgroundLoop - Layer 7.png" id="26_28io7"]
+[ext_resource type="PackedScene" uid="uid://cbdrl7rq1ftbh" path="res://Scenes/CheckPoint.tscn" id="27_a8bke"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(580, 520)
@@ -371,3 +372,7 @@ repeat_size = Vector2(320, 192)
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer7"]
 texture = ExtResource("26_28io7")
 centered = false
+
+[node name="CheckPoint" parent="." instance=ExtResource("27_a8bke")]
+position = Vector2(1774, -67)
+scale = Vector2(3, 3)
