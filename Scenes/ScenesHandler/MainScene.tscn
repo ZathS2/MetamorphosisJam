@@ -7,7 +7,8 @@
 [node name="MainScene" type="Node2D" node_paths=PackedStringArray("backgroundPlayer")]
 script = ExtResource("1_1pbtu")
 mainMenuScene = ExtResource("2_0myi3")
-backgroundPlayer = NodePath("AudioStreamPlayer")
+backgroundPlayer = NodePath("BackGroundMusic")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BackGroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hb4v0")
+volume_db = -80.0
