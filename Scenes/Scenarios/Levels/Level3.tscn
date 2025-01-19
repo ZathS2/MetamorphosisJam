@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://cxbbnoycubkxe"]
+[gd_scene load_steps=28 format=4 uid="uid://cxbbnoycubkxe"]
 
 [ext_resource type="TileSet" uid="uid://c8ct6ghgrf0qs" path="res://TileSets/water.tres" id="1_7wgh1"]
 [ext_resource type="PackedScene" uid="uid://07jcs0g13172" path="res://Scenes/camera.tscn" id="1_pvqcc"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://7s0yc7s703bk" path="res://Scenes/ScenesHandler/SceneArea.tscn" id="20_4bg70"]
 [ext_resource type="Texture2D" uid="uid://8e62ggjv7nf3" path="res://addons/Background/Background - Layer 6.png" id="20_8kprw"]
 [ext_resource type="Texture2D" uid="uid://booibokt52oly" path="res://addons/Background/BackgroundLoop - Layer 7.png" id="21_8jb3p"]
+[ext_resource type="PackedScene" uid="uid://b7tpnfjvfb2e1" path="res://Scenes/Scenarios/Levels/Level5.tscn" id="21_x2b6k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_eqsck"]
 size = Vector2(4735, 1080)
@@ -167,7 +168,7 @@ position = Vector2(1700, 340)
 platform = NodePath("../Platform2")
 
 [node name="Marker2D" type="Marker2D" parent="Level2"]
-position = Vector2(1185, 385)
+position = Vector2(1185, 399.295)
 scale = Vector2(3.5, 1)
 
 [node name="Marker2D2" type="Marker2D" parent="Level2"]
@@ -175,7 +176,7 @@ position = Vector2(1996, 513)
 scale = Vector2(12.25, 1)
 
 [node name="Platform" parent="Level2" node_paths=PackedStringArray("final_position_marker") instance=ExtResource("9_bcfsy")]
-position = Vector2(1379, 385)
+position = Vector2(1371.28, 397)
 scale = Vector2(3.5, 0.6)
 motion_mode = 1
 final_position_marker = NodePath("../Marker2D")
@@ -241,6 +242,11 @@ shape = SubResource("RectangleShape2D_iys17")
 position = Vector2(490.5, 667)
 shape = SubResource("RectangleShape2D_g7vpa")
 
+[node name="SceneArea" parent="." instance=ExtResource("20_4bg70")]
+position = Vector2(3447, 251)
+scale = Vector2(10, 3)
+nextScene = ExtResource("21_x2b6k")
+
 [node name="CheckPoints" type="Node" parent="."]
 
 [node name="Area2D" parent="CheckPoints" instance=ExtResource("4_vvdkl")]
@@ -266,10 +272,6 @@ scale = Vector2(3, 3)
 [node name="Area2D7" parent="CheckPoints" instance=ExtResource("4_vvdkl")]
 position = Vector2(2339, 314)
 scale = Vector2(3, 3)
-
-[node name="SceneArea" parent="CheckPoints" instance=ExtResource("20_4bg70")]
-position = Vector2(3437, 264)
-scale = Vector2(10, 3)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

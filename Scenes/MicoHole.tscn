@@ -1,17 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bnar2jgj7fgdd"]
+[gd_scene load_steps=4 format=3 uid="uid://bnar2jgj7fgdd"]
 
 [ext_resource type="Script" path="res://Scripts/Objects/MicoHole.cs" id="1_x83qc"]
+[ext_resource type="Texture2D" uid="uid://cl3spv3ubq1fi" path="res://addons/Animals/HoleMonkey.png" id="2_uaky0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gmgri"]
 size = Vector2(34, 24)
 
 [node name="MicoHole" type="Node2D"]
 script = ExtResource("1_x83qc")
-
-[node name="Polygon2D" type="Polygon2D" parent="."]
-position = Vector2(0, 2)
-color = Color(0.31, 0.170965, 0.0961, 1)
-polygon = PackedVector2Array(-20, -10, 20, -10, 20, 6, -20, 6)
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2(-36, 0)
@@ -20,3 +16,7 @@ position = Vector2(-36, 0)
 position = Vector2(-1, -4)
 shape = SubResource("RectangleShape2D_gmgri")
 debug_color = Color(0.906642, 0.000127065, 0.742668, 0.42)
+
+[node name="HoleMonkey" type="Sprite2D" parent="."]
+position = Vector2(-12, -13)
+texture = ExtResource("2_uaky0")

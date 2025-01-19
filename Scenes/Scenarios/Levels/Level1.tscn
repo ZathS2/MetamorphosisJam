@@ -288,7 +288,7 @@ tile_set = ExtResource("1_bvtl3")
 visible = false
 
 [node name="AnimalUnlocker" parent="." instance=ExtResource("11_3gfjr")]
-position = Vector2(5028, -81)
+position = Vector2(5015, -32)
 animalIndex = 1
 
 [node name="SceneArea" parent="." instance=ExtResource("12_yudqu")]
