@@ -1,17 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://7s0yc7s703bk"]
+[gd_scene load_steps=4 format=3 uid="uid://7s0yc7s703bk"]
 
 [ext_resource type="Script" path="res://Scripts/ScenesHandler/SceneArea.cs" id="1_i8har"]
+[ext_resource type="AudioStream" uid="uid://cdohoes0hmobv" path="res://addons/Sounds/Cuica1.wav" id="2_tbnft"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yins4"]
 size = Vector2(20, 88)
 
-[node name="SceneArea" type="Node2D"]
+[node name="SceneArea" type="Node2D" node_paths=PackedStringArray("audio")]
 script = ExtResource("1_i8har")
+audio = NodePath("AudioStreamPlayer")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-2, -2)
 shape = SubResource("RectangleShape2D_yins4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_tbnft")
+volume_db = 12.0
 
 [connection signal="body_entered" from="Area2D" to="." method="GoToNextScene"]

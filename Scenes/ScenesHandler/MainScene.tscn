@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://depxc6kdu5fth"]
+[gd_scene load_steps=4 format=3 uid="uid://depxc6kdu5fth"]
 
 [ext_resource type="Script" path="res://Scripts/ScenesHandler/SceneLoader.cs" id="1_1pbtu"]
 [ext_resource type="PackedScene" uid="uid://ty3s7c0tp5w2" path="res://Scenes/Menu/MainMenu.tscn" id="2_0myi3"]
+[ext_resource type="AudioStream" uid="uid://bpy0ni2c4ovjl" path="res://addons/Music/metamorfose2NoLead.wav" id="3_hb4v0"]
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Node2D" node_paths=PackedStringArray("backgroundPlayer")]
 script = ExtResource("1_1pbtu")
 mainMenuScene = ExtResource("2_0myi3")
+backgroundPlayer = NodePath("BackGroundMusic")
+
+[node name="BackGroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hb4v0")
+volume_db = -80.0
