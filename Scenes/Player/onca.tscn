@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://crcqge5cop8nd"]
+[gd_scene load_steps=14 format=3 uid="uid://crcqge5cop8nd"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Onca.cs" id="1_32jbs"]
 [ext_resource type="Texture2D" uid="uid://cjyewctf0dyo1" path="res://addons/Sprite sheet/Onça.png" id="2_6jd46"]
 [ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_2cddb"]
+[ext_resource type="Script" path="res://Scenes/Player/animated_sprite_2d.gd" id="3_xmpd1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p4557"]
 atlas = ExtResource("2_6jd46")
@@ -81,6 +82,7 @@ scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_sw60a")
 animation = &"idle"
 autoplay = "idle"
+script = ExtResource("3_xmpd1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -51.5)

@@ -1,7 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://bo0tresprte28"]
+[gd_scene load_steps=23 format=3 uid="uid://bo0tresprte28"]
 
 [ext_resource type="Script" path="res://Scripts/Player/garoupa.gd" id="1_trlra"]
 [ext_resource type="Texture2D" uid="uid://cn3huokfok1ti" path="res://addons/Sprite sheet/Garoupa.png" id="2_ermm3"]
+[ext_resource type="Script" path="res://Scenes/Player/animated_sprite_2d.gd" id="3_q5y44"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1lwr6"]
 atlas = ExtResource("2_ermm3")
@@ -147,7 +148,8 @@ script = ExtResource("1_trlra")
 sprite_frames = SubResource("SpriteFrames_n6qg7")
 animation = &"run"
 autoplay = "idle"
-frame_progress = 0.0217436
+frame_progress = 0.987876
+script = ExtResource("3_q5y44")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 2)

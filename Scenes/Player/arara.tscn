@@ -1,7 +1,8 @@
-[gd_scene load_steps=18 format=3 uid="uid://cwp0m55m46aki"]
+[gd_scene load_steps=19 format=3 uid="uid://cwp0m55m46aki"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Macaw.cs" id="1_yvdub"]
 [ext_resource type="Texture2D" uid="uid://3lcr8amsbjyw" path="res://addons/Sprite sheet/Arara.png" id="2_008pa"]
+[ext_resource type="Script" path="res://Scenes/Player/animated_sprite_2d.gd" id="3_2nmtu"]
 [ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_5w0ah"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0cl65"]
@@ -99,7 +100,7 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gxwi3"]
 height = 68.0
 
-[node name="Arara" type="CharacterBody2D" groups=["Player"]]
+[node name="Arara" type="CharacterBody2D" groups=["Arara", "Player"]]
 collision_layer = 3
 collision_mask = 3
 motion_mode = 1
@@ -111,8 +112,9 @@ position = Vector2(0, -50)
 sprite_frames = SubResource("SpriteFrames_gwr4r")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.018487
+frame_progress = 0.631019
 speed_scale = 2.0
+script = ExtResource("3_2nmtu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(12, -42)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://dcamwxo51muer"]
+[gd_scene load_steps=12 format=3 uid="uid://dcamwxo51muer"]
 
 [ext_resource type="Script" path="res://Scripts/Player/Mico.cs" id="1_gdm6f"]
 [ext_resource type="Texture2D" uid="uid://xtrcmpsoeam" path="res://addons/Sprite sheet/Mico.png" id="2_vnjpp"]
 [ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_24685"]
+[ext_resource type="Script" path="res://Scenes/Player/animated_sprite_2d.gd" id="3_lsmav"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhsa3"]
 atlas = ExtResource("2_vnjpp")
@@ -66,6 +67,7 @@ position = Vector2(0, -50)
 sprite_frames = SubResource("SpriteFrames_sb7ir")
 animation = &"idle"
 autoplay = "idle"
+script = ExtResource("3_lsmav")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(14, -54)
