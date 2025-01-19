@@ -16,10 +16,10 @@ func _physics_process(delta):
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	if direction_x:
 		velocity.x = direction_x * SPEED
-		if direction_x==-1 and !$Sprite.flip_h:
-			$Sprite.flip_h = true
-		elif direction_x==1 and $Sprite.flip_h:
-			$Sprite.flip_h = false
+		if direction_x==-1 and !$AnimatedSprite2D.flip_h:
+			$AnimatedSprite2D.flip_h = true
+		elif direction_x==1 and $AnimatedSprite2D.flip_h:
+			$AnimatedSprite2D.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 

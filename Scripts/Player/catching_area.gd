@@ -1,26 +1,20 @@
 extends Area2D
 
-@onready var animation_player = $"../AnimationPlayer"
-
 var caring_body
 var body_distance
-var last_played = "landed"
 
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	var direction_x = Input.get_axis("ui_left", "ui_right")
 	if direction_x:
-		if direction_x==-1 and !$"../Sprite".flip_h:
-			print($"../Sprite".flip_h)
+		if direction_x==-1 and !$"../AnimatedSprite2D".flip_h:
+			print($"../AnimatedSprite2D".flip_h)
 			flip_h()
-		elif direction_x==1 and $"../Sprite".flip_h:
-			print($"../Sprite".flip_h)
+		elif direction_x==1 and $"../AnimatedSprite2D".flip_h:
+			print($"../AnimatedSprite2D".flip_h)
 			flip_h()
 	
 	if get_parent().isFlying==true:
-		if last_played!="flying":
-			animation_player.play("flying")
-			last_played = "flying"
 		if Input.is_action_just_pressed("interact"):
 			if caring_body==null:
 				for body in get_overlapping_bodies():
@@ -43,9 +37,6 @@ func _physics_process(delta):
 		if caring_body!=null:
 			caring_body.global_position = $"../Marker2D".global_position
 	else:
-		if last_played=="flying":
-			animation_player.play("landed")
-			last_played = "landed"
 		if caring_body:
 			caring_body.rotation = 0
 			caring_body.freeze = false
@@ -54,7 +45,7 @@ func _physics_process(delta):
 			caring_body = null
 	
 func flip_h():
-		$"../Sprite".flip_h = !$"../Sprite".flip_h
+		$"../AnimatedSprite2D".flip_h = !$"../AnimatedSprite2D".flip_h
 		$"../Marker2D".position = Vector2($"../Marker2D".position*Vector2(-1, 1))
 		$"../CollisionShape2D".position = Vector2($"../CollisionShape2D".position*Vector2(-1, 1))
 		$CollisionShape2D.position = Vector2($CollisionShape2D.position*Vector2(-1, 1))

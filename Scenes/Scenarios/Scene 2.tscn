@@ -5,7 +5,6 @@
 [ext_resource type="Script" path="res://Scripts/World/water.gd" id="3_n8ig5"]
 [ext_resource type="PackedScene" uid="uid://d1lxrov08wusk" path="res://Scenes/Player/turtle.tscn" id="4_4falp"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lhjox"]
 size = Vector2(842, 250)
 
