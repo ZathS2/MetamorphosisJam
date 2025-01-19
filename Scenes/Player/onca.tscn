@@ -2,15 +2,15 @@
 
 [ext_resource type="Texture2D" uid="uid://c5tvbilgen1lp" path="res://addons/Animals/Onça.png" id="1_4kalr"]
 [ext_resource type="Script" path="res://Scripts/Player/Onca.cs" id="1_32jbs"]
-[ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_2cddb"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/FlipH.tscn" id="3_2cddb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8wprv"]
 radius = 144.0
 height = 496.0
 
 [node name="Onca" type="CharacterBody2D" groups=["Onça", "Player"]]
-position = Vector2(0, -46.25)
-scale = Vector2(0.5, 0.5)
+position = Vector2(0, -24.23)
+scale = Vector2(0.25, 0.25)
 script = ExtResource("1_32jbs")
 
 [node name="Sprite" type="Sprite2D" parent="."]

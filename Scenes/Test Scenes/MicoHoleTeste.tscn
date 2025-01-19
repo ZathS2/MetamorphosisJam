@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=4 uid="uid://br25hemj2b8ox"]
+
+[ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_fbf8t"]
+[ext_resource type="PackedScene" uid="uid://bnar2jgj7fgdd" path="res://Scenes/MicoHole.tscn" id="2_37u37"]
+[ext_resource type="PackedScene" uid="uid://07jcs0g13172" path="res://Scenes/camera.tscn" id="4_3fsue"]
+[ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="4_7s46q"]
+[ext_resource type="PackedScene" uid="uid://bg51vvmjh7q47" path="res://Scenes/animal_unlocker.tscn" id="5_erts8"]
+[ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="6_qgy34"]
+
+[node name="MicoHoleTeste" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAABAAAAAAADAAAAAAABAAAAAAAEAAAAAAABAAAAAAAFAAAAAAABAAAAAAAGAAAAAAABAAAAAAAHAAAAAAABAAAAAAAIAAAAAAABAAAAAAAJAAAAAAABAAAAAAAKAAAAAAABAAAAAAALAAAAAAABAAAAAAAMAAAAAAABAAAAAAANAAAAAAABAAAAAAAOAAAAAAACAAAAAAA=")
+tile_set = ExtResource("1_fbf8t")
+
+[node name="MicoHole" parent="." node_paths=PackedStringArray("exitHole") instance=ExtResource("2_37u37")]
+position = Vector2(395, -22)
+scale = Vector2(2, 2)
+exitHole = NodePath("../MicoHole2")
+
+[node name="MicoHole2" parent="." node_paths=PackedStringArray("exitHole") instance=ExtResource("2_37u37")]
+position = Vector2(655, -19)
+scale = Vector2(-2, 2)
+exitHole = NodePath("../MicoHole")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(-301, -412)
+
+[node name="Camera" parent="." node_paths=PackedStringArray("follower", "up_left_marker", "down_right_marker") instance=ExtResource("4_3fsue")]
+position = Vector2(330, -65)
+follower = NodePath("../PlayerNode")
+up_left_marker = NodePath("../Marker2D")
+down_right_marker = NodePath("../Marker2D2")
+
+[node name="Marker2D2" type="Marker2D" parent="."]
+position = Vector2(1056, 132)
+
+[node name="PlayerNode" parent="." instance=ExtResource("4_7s46q")]
+position = Vector2(82, -93)
+
+[node name="AnimalUnlocker" parent="." instance=ExtResource("5_erts8")]
+position = Vector2(174, -51)
+animalIndex = 4
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" parent="CanvasLayer" instance=ExtResource("6_qgy34")]
+visible = false
