@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Player/Turtle.cs" id="1_5j14m"]
 [ext_resource type="Texture2D" uid="uid://dy5y6lgbrmcfr" path="res://addons/Sprite sheet/Turtle.png" id="2_dsd3q"]
-[ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_mttsf"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/FlipH.tscn" id="3_mttsf"]
 [ext_resource type="Script" path="res://Scenes/Player/animated_sprite_2d.gd" id="3_ym5ud"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1imw5"]

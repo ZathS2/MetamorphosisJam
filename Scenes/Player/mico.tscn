@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scripts/Player/Mico.cs" id="1_gdm6f"]
 [ext_resource type="Texture2D" uid="uid://xtrcmpsoeam" path="res://addons/Sprite sheet/Mico.png" id="2_vnjpp"]
-[ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_24685"]
+[ext_resource type="PackedScene" path="res://Scenes/Player/FlipH.tscn" id="3_24685"]
 [ext_resource type="Script" path="res://Scenes/Player/animated_sprite_2d.gd" id="3_lsmav"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nhsa3"]

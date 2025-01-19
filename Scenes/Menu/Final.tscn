@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://dbta43mk5gmnb"]
+
+[ext_resource type="Script" path="res://Scripts/Menu/ButtonHandler.cs" id="1_rh0vl"]
+[ext_resource type="PackedScene" uid="uid://dvgpvn3dvlgag" path="res://Scenes/Scenarios/Levels/Level1.tscn" id="2_kow4b"]
+[ext_resource type="Texture2D" uid="uid://dqw655ncp3ho6" path="res://addons/Background/Background - Layer 7.png" id="3_t4k26"]
+[ext_resource type="Texture2D" uid="uid://8e62ggjv7nf3" path="res://addons/Background/Background - Layer 6.png" id="4_woe7w"]
+[ext_resource type="Texture2D" uid="uid://co0onf1a8wopw" path="res://addons/Background/Background - Layer 5.png" id="5_axbjo"]
+[ext_resource type="Texture2D" uid="uid://cycayjgh8xybh" path="res://addons/Background/Background - Layer 4.png" id="6_qww73"]
+
+[node name="Final" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rh0vl")
+initialScene = ExtResource("2_kow4b")
+
+[node name="Layer4" type="TextureRect" parent="Control"]
+z_index = -1
+layout_mode = 2
+offset_left = -576.0
+offset_top = -342.0
+offset_right = 591.0
+offset_bottom = 358.0
+texture = ExtResource("3_t4k26")
+
+[node name="Layer3" type="TextureRect" parent="Control"]
+z_index = -1
+layout_mode = 2
+offset_left = -580.0
+offset_top = -343.0
+offset_right = 587.0
+offset_bottom = 357.0
+texture = ExtResource("4_woe7w")
+
+[node name="Layer2" type="TextureRect" parent="Control"]
+z_index = -1
+layout_mode = 2
+offset_left = -580.0
+offset_top = -343.0
+offset_right = 587.0
+offset_bottom = 357.0
+texture = ExtResource("5_axbjo")
+
+[node name="Layer1" type="TextureRect" parent="Control"]
+z_index = -1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -580.0
+offset_top = -343.0
+offset_right = 587.0
+offset_bottom = 357.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_qww73")
+
+[node name="TextEdit" type="TextEdit" parent="Control"]
+layout_mode = 0
+offset_left = -294.0
+offset_top = -49.0
+offset_right = 315.0
+offset_bottom = 33.0
+theme_override_font_sizes/font_size = 50
+text = "THANKS FOR PLAYING!!
+"
