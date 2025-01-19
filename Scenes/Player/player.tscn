@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cgw2b7lqyp3of"]
+[gd_scene load_steps=9 format=3 uid="uid://cgw2b7lqyp3of"]
 
 [ext_resource type="Script" path="res://Scripts/Player/PlayerScript.cs" id="1_1xw2t"]
 [ext_resource type="PackedScene" uid="uid://d1lxrov08wusk" path="res://Scenes/Player/turtle.tscn" id="2_j41gg"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cx3ib3io0q6lw" path="res://Scenes/Player/Gaivota.tscn" id="4_drr8p"]
 [ext_resource type="PackedScene" uid="uid://dcamwxo51muer" path="res://Scenes/Player/mico.tscn" id="6_hxakb"]
 [ext_resource type="PackedScene" uid="uid://bo0tresprte28" path="res://Scenes/Player/Garoupa.tscn" id="7_4c1vy"]
+[ext_resource type="PackedScene" uid="uid://crcqge5cop8nd" path="res://Scenes/Player/onca.tscn" id="7_rkvk2"]
 
 [node name="PlayerNode" type="Node2D" groups=["Player"]]
 script = ExtResource("1_1xw2t")
@@ -15,4 +16,5 @@ turtleScene = ExtResource("2_j41gg")
 heronScene = ExtResource("4_drr8p")
 macawScene = ExtResource("4_1ca0r")
 monkeyScene = ExtResource("6_hxakb")
+oncaScene = ExtResource("7_rkvk2")
 garoupaScene = ExtResource("7_4c1vy")

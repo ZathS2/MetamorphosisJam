@@ -1,0 +1,125 @@
+[gd_scene load_steps=7 format=3 uid="uid://b3yb0ekyop8b2"]
+
+[ext_resource type="Script" path="res://Scripts/Objects/light.gd" id="1_j5k46"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g5ulw"]
+radius = 33.0
+
+[sub_resource type="Animation" id="Animation_sn3o5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.124689, 0.109922, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D3:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.224568, 0.222948, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_bo8fu"]
+resource_name = "off"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D2:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 0.952941, 0.560784, 1), Color(0.124689, 0.109922, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D3:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 0.360784, 1), Color(0.224568, 0.222948, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_y7tkm"]
+resource_name = "on"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Polygon2D2:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.124689, 0.109922, 0, 1), Color(1, 0.952941, 0.560784, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Polygon2D3:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.224568, 0.222948, 0, 1), Color(1, 1, 0.360784, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2w18a"]
+_data = {
+"RESET": SubResource("Animation_sn3o5"),
+"off": SubResource("Animation_bo8fu"),
+"on": SubResource("Animation_y7tkm")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_j5k46")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.529067, 0.529067, 0.529067, 1)
+polygon = PackedVector2Array(0, -3, 0, 3, 9, 3, 9, -3)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+position = Vector2(19, 0)
+color = Color(0.124689, 0.109922, 0, 1)
+polygon = PackedVector2Array(-9, -3, -9, -4, -7, -4, -7, -5, -6, -5, -6, -6, -4, -6, -4, -7, 4, -7, 4, -6, 5, -6, 5, -5, 6, -5, 6, -4, 7, -4, 7, 4, 6, 4, 6, 5, 5, 5, 5, 6, 4, 6, 4, 7, 4, 7, -4, 7, -4, 7, -4, 6, -6, 6, -6, 5, -7, 5, -7, 4, -9, 4, -9, 3, -11, 3, -11, -3)
+
+[node name="Polygon2D3" type="Polygon2D" parent="."]
+position = Vector2(19, 0)
+color = Color(0.224568, 0.222948, 0, 1)
+polygon = PackedVector2Array(-8, -2, -8, -3, -6, -3, -6, -4, -5, -4, -5, -5, -3, -5, -3, -6, 3, -6, 3, -5, 4, -5, 4, -4, 5, -4, 5, -3, 6, -3, 6, 3, 5, 3, 5, 4, 4, 4, 4, 5, 3, 5, 3, 6, -3, 6, -3, 5, -5, 5, -5, 4, -6, 4, -6, 3, -8, 3, -8, 2, -10, 2, -10, -2)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(17, 0)
+shape = SubResource("CircleShape2D_g5ulw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_2w18a")
+}
+autoplay = "RESET"

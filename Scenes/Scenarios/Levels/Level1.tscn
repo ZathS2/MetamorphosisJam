@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=27 format=4 uid="uid://dvgpvn3dvlgag"]
+
 
 [ext_resource type="PackedScene" uid="uid://ds67bn1h0rho3" path="res://Scenes/lever.tscn" id="1_3weaj"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_bvtl3"]
@@ -152,7 +154,7 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("13_5swux")
 
 [node name="PlayerNode" parent="." instance=ExtResource("5_ijplr")]
-position = Vector2(-328, -172)
+position = Vector2(-449, -78)
 
 [node name="Camera" type="Node" parent="."]
 
@@ -289,6 +291,7 @@ visible = false
 position = Vector2(5028, -81)
 animalIndex = 1
 
+
 [node name="SceneArea" parent="." instance=ExtResource("12_yudqu")]
 position = Vector2(5257, -199)
 scale = Vector2(3.575, 6.425)
@@ -371,3 +374,4 @@ repeat_size = Vector2(320, 192)
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer7"]
 texture = ExtResource("26_28io7")
 centered = false
+

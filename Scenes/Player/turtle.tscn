@@ -18,7 +18,7 @@ maxBreathTime = 10.0
 [node name="BreathBar" type="Polygon2D" parent="."]
 polygon = PackedVector2Array(-60, -80, -60, -90, 60, -90, 60, -80)
 
-[node name="Turtle" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
 position = Vector2(0, -38)
 texture = ExtResource("2_bk8jp")
 

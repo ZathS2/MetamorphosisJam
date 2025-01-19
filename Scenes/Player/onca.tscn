@@ -1,19 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://crcqge5cop8nd"]
+[gd_scene load_steps=5 format=3 uid="uid://crcqge5cop8nd"]
 
-[ext_resource type="Texture2D" uid="uid://btjya38warprf" path="res://addons/Animals/Onça.png" id="1_4kalr"]
+[ext_resource type="Texture2D" uid="uid://c5tvbilgen1lp" path="res://addons/Animals/Onça.png" id="1_4kalr"]
 [ext_resource type="Script" path="res://Scripts/Player/Onca.cs" id="1_32jbs"]
+[ext_resource type="PackedScene" uid="uid://by1x4hxptvhwt" path="res://Scenes/Player/FlipH.tscn" id="3_2cddb"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pq5ey"]
-size = Vector2(492, 292)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8wprv"]
+radius = 144.0
+height = 496.0
 
 [node name="Onca" type="CharacterBody2D" groups=["Onça", "Player"]]
 position = Vector2(0, -46.25)
-scale = Vector2(-0.25, 0.25)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_32jbs")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -91.5)
 texture = ExtResource("1_4kalr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, 38)
-shape = SubResource("RectangleShape2D_pq5ey")
+position = Vector2(0, -51.5)
+rotation = -1.57079
+shape = SubResource("CapsuleShape2D_8wprv")
+
+[node name="FlipH" parent="." instance=ExtResource("3_2cddb")]
