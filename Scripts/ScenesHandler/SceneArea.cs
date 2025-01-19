@@ -26,7 +26,6 @@ public partial class SceneArea : Node
 		if (audio.Playing == false)
 			audio.Play();
 
-		GD.Print("VAI TOMA NO CU " + audio.Playing);
 
 		await ToSignal(audio, "finished");
 
