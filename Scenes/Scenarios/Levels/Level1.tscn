@@ -1,4 +1,6 @@
-[gd_scene load_steps=18 format=4 uid="uid://dvgpvn3dvlgag"]
+
+[gd_scene load_steps=27 format=4 uid="uid://dvgpvn3dvlgag"]
+
 
 [ext_resource type="PackedScene" uid="uid://ds67bn1h0rho3" path="res://Scenes/lever.tscn" id="1_3weaj"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_bvtl3"]
@@ -12,11 +14,20 @@
 [ext_resource type="PackedScene" uid="uid://b04hx67bporj" path="res://Scenes/AnimalWheel.tscn" id="10_cvr8m"]
 [ext_resource type="PackedScene" uid="uid://bg51vvmjh7q47" path="res://Scenes/animal_unlocker.tscn" id="11_3gfjr"]
 [ext_resource type="Texture2D" uid="uid://d3ya0cr6rj16o" path="res://addons/Signs/Sign GGJ.png" id="12_ih47x"]
+[ext_resource type="PackedScene" uid="uid://7s0yc7s703bk" path="res://Scenes/ScenesHandler/SceneArea.tscn" id="12_yudqu"]
 [ext_resource type="Texture2D" uid="uid://qko0rg4hrk1u" path="res://addons/Signs/Sign stick part.png" id="13_5swux"]
+[ext_resource type="PackedScene" uid="uid://b81wkehv7dkki" path="res://Scenes/Scenarios/Levels/Level 2A.tscn" id="13_ucsgp"]
 [ext_resource type="Texture2D" uid="uid://cciuira1aty7x" path="res://addons/Signs/Sign zathS2.png" id="14_1w6mm"]
 [ext_resource type="Texture2D" uid="uid://3qob7q1rapbk" path="res://addons/Signs/Sign godot.png" id="15_umxny"]
 [ext_resource type="Texture2D" uid="uid://boo10vc05frq" path="res://addons/Signs/Sign RS.png" id="16_f6m6g"]
 [ext_resource type="Texture2D" uid="uid://dspq4qitaxmx0" path="res://addons/Signs/Sign itchio.png" id="17_8c24r"]
+[ext_resource type="Texture2D" uid="uid://luuu7je5g7dk" path="res://addons/Background/Background - Layer 1.png" id="20_iuhad"]
+[ext_resource type="Texture2D" uid="uid://dcb0wdvqdkvj1" path="res://addons/Background/Background - Layer 2.png" id="21_jcrfr"]
+[ext_resource type="Texture2D" uid="uid://b1gxh8xfbh6sn" path="res://addons/Background/Background - Layer 3.png" id="22_jhgw3"]
+[ext_resource type="Texture2D" uid="uid://cycayjgh8xybh" path="res://addons/Background/Background - Layer 4.png" id="23_rdkyc"]
+[ext_resource type="Texture2D" uid="uid://co0onf1a8wopw" path="res://addons/Background/Background - Layer 5.png" id="24_8dcfg"]
+[ext_resource type="Texture2D" uid="uid://8e62ggjv7nf3" path="res://addons/Background/Background - Layer 6.png" id="25_wxwpf"]
+[ext_resource type="Texture2D" uid="uid://booibokt52oly" path="res://addons/Background/BackgroundLoop - Layer 7.png" id="26_28io7"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(580, 520)
@@ -279,3 +290,88 @@ visible = false
 [node name="AnimalUnlocker" parent="." instance=ExtResource("11_3gfjr")]
 position = Vector2(5028, -81)
 animalIndex = 1
+
+
+[node name="SceneArea" parent="." instance=ExtResource("12_yudqu")]
+position = Vector2(5257, -199)
+scale = Vector2(3.575, 6.425)
+nextScene = ExtResource("13_ucsgp")
+
+[node name="BG" type="Node" parent="."]
+
+[node name="Layer1" type="Parallax2D" parent="BG"]
+z_index = -10
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer1"]
+texture = ExtResource("20_iuhad")
+centered = false
+offset = Vector2(0, 69.24)
+
+[node name="Layer2" type="Parallax2D" parent="BG"]
+z_index = -20
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer2"]
+texture = ExtResource("21_jcrfr")
+centered = false
+offset = Vector2(0, 69.24)
+
+[node name="Layer3" type="Parallax2D" parent="BG"]
+z_index = -30
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+autoscroll = Vector2(-20, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer3"]
+texture = ExtResource("22_jhgw3")
+centered = false
+offset = Vector2(0, 69.24)
+
+[node name="Layer4" type="Parallax2D" parent="BG"]
+z_index = -40
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer4"]
+texture = ExtResource("23_rdkyc")
+centered = false
+offset = Vector2(0, 69.24)
+
+[node name="Layer5" type="Parallax2D" parent="BG"]
+z_index = -50
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer5"]
+texture = ExtResource("24_8dcfg")
+centered = false
+offset = Vector2(0, 69.24)
+
+[node name="Layer6" type="Parallax2D" parent="BG"]
+z_index = -60
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer6"]
+texture = ExtResource("25_wxwpf")
+centered = false
+offset = Vector2(0, 69.24)
+
+[node name="Layer7" type="Parallax2D" parent="BG"]
+z_index = -70
+scale = Vector2(5, 5)
+repeat_size = Vector2(320, 192)
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer7"]
+texture = ExtResource("26_28io7")
+centered = false
+

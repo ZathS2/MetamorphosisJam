@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://m3yj8q4k23c6"]
+[gd_scene load_steps=16 format=4 uid="uid://m3yj8q4k23c6"]
 
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_6r4wc"]
 [ext_resource type="PackedScene" uid="uid://d38k0sx0m8gt8" path="res://Scenes/button.tscn" id="2_vywsr"]
@@ -8,6 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://07jcs0g13172" path="res://Scenes/camera.tscn" id="5_jhf1t"]
 [ext_resource type="PackedScene" uid="uid://bg51vvmjh7q47" path="res://Scenes/animal_unlocker.tscn" id="6_6blxk"]
 [ext_resource type="PackedScene" uid="uid://cgw2b7lqyp3of" path="res://Scenes/Player/player.tscn" id="7_gdgv5"]
+[ext_resource type="Texture2D" uid="uid://luuu7je5g7dk" path="res://addons/Background/Background - Layer 1.png" id="9_kpcce"]
+[ext_resource type="Texture2D" uid="uid://dcb0wdvqdkvj1" path="res://addons/Background/Background - Layer 2.png" id="10_2qmax"]
+[ext_resource type="Texture2D" uid="uid://b1gxh8xfbh6sn" path="res://addons/Background/Background - Layer 3.png" id="11_6f3kq"]
+[ext_resource type="Texture2D" uid="uid://cycayjgh8xybh" path="res://addons/Background/Background - Layer 4.png" id="12_imeca"]
+[ext_resource type="Texture2D" uid="uid://co0onf1a8wopw" path="res://addons/Background/Background - Layer 5.png" id="13_jw56e"]
+[ext_resource type="Texture2D" uid="uid://8e62ggjv7nf3" path="res://addons/Background/Background - Layer 6.png" id="14_ignww"]
+[ext_resource type="Texture2D" uid="uid://booibokt52oly" path="res://addons/Background/BackgroundLoop - Layer 7.png" id="15_1qfgn"]
 
 [node name="Level4a" type="Node2D"]
 
@@ -61,3 +68,81 @@ animalIndex = 4
 
 [node name="PlayerNode" parent="." instance=ExtResource("7_gdgv5")]
 position = Vector2(12, -95)
+
+[node name="BG" type="Node" parent="."]
+
+[node name="Layer1" type="Parallax2D" parent="BG"]
+z_index = -10
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer1"]
+texture = ExtResource("9_kpcce")
+centered = false
+offset = Vector2(0, -190)
+
+[node name="Layer2" type="Parallax2D" parent="BG"]
+z_index = -20
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer2"]
+texture = ExtResource("10_2qmax")
+centered = false
+offset = Vector2(0, -190)
+
+[node name="Layer3" type="Parallax2D" parent="BG"]
+z_index = -30
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+autoscroll = Vector2(-20, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer3"]
+texture = ExtResource("11_6f3kq")
+centered = false
+offset = Vector2(0, -190)
+
+[node name="Layer4" type="Parallax2D" parent="BG"]
+z_index = -40
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer4"]
+texture = ExtResource("12_imeca")
+centered = false
+offset = Vector2(0, -190)
+
+[node name="Layer5" type="Parallax2D" parent="BG"]
+z_index = -50
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer5"]
+texture = ExtResource("13_jw56e")
+centered = false
+offset = Vector2(0, -190)
+
+[node name="Layer6" type="Parallax2D" parent="BG"]
+z_index = -60
+scale = Vector2(2, 2)
+repeat_size = Vector2(320, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer6"]
+texture = ExtResource("14_ignww")
+centered = false
+offset = Vector2(0, -190)
+
+[node name="Layer7" type="Parallax2D" parent="BG"]
+z_index = -70
+scale = Vector2(5, 5)
+repeat_size = Vector2(320, 192)
+
+[node name="Sprite2D" type="Sprite2D" parent="BG/Layer7"]
+texture = ExtResource("15_1qfgn")
+centered = false
