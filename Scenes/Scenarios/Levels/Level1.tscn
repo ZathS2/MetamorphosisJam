@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dvgpvn3dvlgag"]
+[gd_scene load_steps=29 format=4 uid="uid://dvgpvn3dvlgag"]
 
 [ext_resource type="PackedScene" uid="uid://ds67bn1h0rho3" path="res://Scenes/lever.tscn" id="1_3weaj"]
 [ext_resource type="TileSet" uid="uid://b4po35v0qj341" path="res://TileSets/ground.tres" id="1_bvtl3"]
@@ -27,6 +27,7 @@
 [ext_resource type="Texture2D" uid="uid://8e62ggjv7nf3" path="res://addons/Background/Background - Layer 6.png" id="25_wxwpf"]
 [ext_resource type="Texture2D" uid="uid://booibokt52oly" path="res://addons/Background/BackgroundLoop - Layer 7.png" id="26_28io7"]
 [ext_resource type="PackedScene" uid="uid://cbdrl7rq1ftbh" path="res://Scenes/CheckPoint.tscn" id="27_a8bke"]
+[ext_resource type="Texture2D" uid="uid://c15ssjay8ae4i" path="res://addons/Background/subsolometamorfose.png" id="28_f212p"]
 
 [node name="Level1" type="Node2D"]
 position = Vector2(580, 520)
@@ -364,12 +365,22 @@ texture = ExtResource("25_wxwpf")
 centered = false
 offset = Vector2(0, 69.24)
 
+[node name="Subsolometamorfose" type="Polygon2D" parent="BG"]
+z_index = -59
+texture_repeat = 2
+position = Vector2(95, 606)
+texture = ExtResource("28_f212p")
+polygon = PackedVector2Array(-157, 1211, -160, -98, 5932, -97, 5931, 1195)
+uv = PackedVector2Array(-375.452, 425.965, -375.452, -229.965, 695.452, -229.965, 695.452, 425.965)
+polygons = [PackedInt32Array(0, 1, 2, 3)]
+
 [node name="Layer7" type="Parallax2D" parent="BG"]
 z_index = -70
 scale = Vector2(5, 5)
 repeat_size = Vector2(320, 192)
 
 [node name="Sprite2D" type="Sprite2D" parent="BG/Layer7"]
+position = Vector2(0, -3.4)
 texture = ExtResource("26_28io7")
 centered = false
 

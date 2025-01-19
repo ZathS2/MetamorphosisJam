@@ -26,6 +26,8 @@ public partial class PlayerScript : Node2D
 	public override void _Ready()
 	{
 		GameManager = (GodotObject)GetNode<Node>("/root/GameManager");
+		//var AnimalBlocker = (HandleAnimalBlock)GetNode<Node>("/root/HandleAnimalBlock");
+		//AnimalBlocker.UnlockAll();
 		updateAnimal();
 	}
 

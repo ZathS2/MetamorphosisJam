@@ -21,6 +21,10 @@ GameManager="*res://Scripts/World/game_manager.gd"
 HandleAnimalBlock="*res://Scripts/World/HandleAnimalBlock.cs"
 MainSceneHandler="*res://Scripts/ScenesHandler/MainSceneHandler.cs"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="MetamorfoseJam"
