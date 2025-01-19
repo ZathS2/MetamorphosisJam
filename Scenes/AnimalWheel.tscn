@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://b04hx67bporj"]
+[gd_scene load_steps=13 format=3 uid="uid://b04hx67bporj"]
 
 [ext_resource type="Texture2D" uid="uid://bsr54kansh2ne" path="res://addons/circuloAnimais.png" id="1_02j0u"]
 [ext_resource type="Script" path="res://Scripts/World/AnimalWheel.cs" id="1_8lil2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dew53lm5ofn8x" path="res://addons/Player/singleSpritePlayerMetamorfose.png" id="4_cxte4"]
 [ext_resource type="Texture2D" uid="uid://c5tvbilgen1lp" path="res://addons/Animals/Onça.png" id="6_q12eg"]
 [ext_resource type="Texture2D" uid="uid://bd1o7xeqey4ht" path="res://addons/Animals/Garoupa.png" id="7_utfv1"]
+[ext_resource type="Script" path="res://Scripts/Objects/AnimalWheelNode.cs" id="7_vw166"]
 [ext_resource type="Texture2D" uid="uid://dmpbclex2un4y" path="res://addons/Animals/Mico.png" id="8_iwr1f"]
 [ext_resource type="Texture2D" uid="uid://bdcpfp4no2pye" path="res://addons/Animals/Arara.png" id="9_f12h5"]
 [ext_resource type="Texture2D" uid="uid://ce0bxli6633rx" path="res://addons/Animals/Garça .png" id="10_egsd1"]
@@ -122,6 +123,8 @@ grow_vertical = 2
 scale = Vector2(0.25, 0.25)
 pivot_offset = Vector2(0, -300)
 texture = ExtResource("6_q12eg")
+script = ExtResource("7_vw166")
+id = 5
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 1
@@ -139,6 +142,8 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(0, -300)
 texture = ExtResource("7_utfv1")
+script = ExtResource("7_vw166")
+id = 6
 
 [node name="TextureRect4" type="TextureRect" parent="."]
 layout_mode = 1
@@ -156,6 +161,8 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(0, -300)
 texture = ExtResource("8_iwr1f")
+script = ExtResource("7_vw166")
+id = 4
 
 [node name="TextureRect5" type="TextureRect" parent="."]
 layout_mode = 1
@@ -173,6 +180,8 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(0, -300)
 texture = ExtResource("9_f12h5")
+script = ExtResource("7_vw166")
+id = 3
 
 [node name="TextureRect6" type="TextureRect" parent="."]
 layout_mode = 1
@@ -190,6 +199,8 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(0, -300)
 texture = ExtResource("10_egsd1")
+script = ExtResource("7_vw166")
+id = 2
 
 [node name="TextureRect7" type="TextureRect" parent="."]
 layout_mode = 1
@@ -207,3 +218,5 @@ grow_vertical = 2
 scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(0, -300)
 texture = ExtResource("11_vjple")
+script = ExtResource("7_vw166")
+id = 1
