@@ -242,9 +242,14 @@ shape = SubResource("RectangleShape2D_iys17")
 position = Vector2(490.5, 667)
 shape = SubResource("RectangleShape2D_g7vpa")
 
+[node name="SceneArea2" parent="." instance=ExtResource("20_4bg70")]
+position = Vector2(3038, -422)
+scale = Vector2(100, 9)
+nextScene = ExtResource("21_x2b6k")
+
 [node name="SceneArea" parent="." instance=ExtResource("20_4bg70")]
-position = Vector2(3447, 251)
-scale = Vector2(10, 3)
+position = Vector2(2869, 210)
+scale = Vector2(20, 6)
 nextScene = ExtResource("21_x2b6k")
 
 [node name="CheckPoints" type="Node" parent="."]

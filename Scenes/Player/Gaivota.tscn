@@ -144,13 +144,14 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qk60f"]
-radius = 59.0
-height = 258.0
+radius = 20.0
+height = 88.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cdg6f"]
-size = Vector2(123, 124)
+size = Vector2(37.5, 37)
 
 [node name="Gaivota" type="CharacterBody2D" groups=["Garça", "Player"]]
+scale = Vector2(2, 2)
 collision_layer = 13
 collision_mask = 13
 script = ExtResource("1_3ac7y")
@@ -158,20 +159,18 @@ groundSpeed = 300.0
 flySpeed = 500.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-20, -132)
-scale = Vector2(3, 3)
+position = Vector2(0, -50)
 sprite_frames = SubResource("SpriteFrames_mpl4h")
-animation = &"run"
+animation = &"fly"
 autoplay = "idle"
-frame_progress = 0.0105351
 speed_scale = 2.0
 script = ExtResource("4_mkfqt")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(91, -156)
+position = Vector2(37, -58)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-11, -128)
+position = Vector2(4, -49)
 shape = SubResource("CapsuleShape2D_qk60f")
 
 [node name="CatchingArea" type="Area2D" parent="."]
@@ -179,6 +178,6 @@ position = Vector2(81, 14)
 script = ExtResource("3_8ew1q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CatchingArea"]
-position = Vector2(29, -144)
+position = Vector2(-40, -65)
 shape = SubResource("RectangleShape2D_cdg6f")
 debug_color = Color(0.741176, 0.666667, 0, 0.419608)

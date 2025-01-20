@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://cyehekhgbcix7" path="res://addons/Menu/Play/playNormal.png" id="1_6x254"]
 [ext_resource type="Script" path="res://Scripts/Menu/ButtonHandler.cs" id="1_mx62i"]
+[ext_resource type="PackedScene" uid="uid://dvgpvn3dvlgag" path="res://Scenes/Scenarios/Levels/Level1.tscn" id="2_aayxh"]
 [ext_resource type="Texture2D" uid="uid://ckni11cctl7jb" path="res://addons/Menu/Play/playPressed.png" id="2_fymo4"]
-[ext_resource type="PackedScene" uid="uid://dvgpvn3dvlgag" path="res://Scenes/Scenarios/Levels/Level1.tscn" id="2_y4as3"]
 [ext_resource type="Texture2D" uid="uid://cmwlqvlcghb6n" path="res://addons/Menu/Quit/QuitNormal.png" id="5_tviol"]
 [ext_resource type="Texture2D" uid="uid://bl4xr276d3y4o" path="res://addons/Menu/Quit/QuitPressed.png" id="6_tb6d3"]
 [ext_resource type="Script" path="res://Scripts/Menu/MenuMusicManager.cs" id="8_7nlfn"]
@@ -25,7 +25,7 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_mx62i")
-initialScene = ExtResource("2_y4as3")
+initialScene = ExtResource("2_aayxh")
 
 [node name="Layer4" type="TextureRect" parent="Control"]
 z_index = -1
@@ -101,6 +101,18 @@ stream = ExtResource("9_kox0a")
 autoplay = true
 script = ExtResource("8_7nlfn")
 fullLead = ExtResource("9_kox0a")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -245.0
+offset_top = 82.0
+offset_right = 246.0
+offset_bottom = 164.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 50
+text = "MONEYMORPHOSIS"
 
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Play" to="Control" method="PlayPressed"]
 [connection signal="pressed" from="Control/Buttons/VBoxContainer/Quit" to="Control" method="QuitPressed"]
